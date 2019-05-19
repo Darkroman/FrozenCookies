@@ -1,5 +1,5 @@
 javascript:(
     function () {
-        Game.LoadMod('https://Darkroman.github.io/FrozenCookiess/frozen_cookies.js');
+        Game.LoadMod('https://darkroman.github.io/FrozenCookies/frozen_cookies.js');
     }()
 );
