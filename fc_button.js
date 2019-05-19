@@ -415,7 +415,7 @@ function updateTimers() {
 function FCMenu() {
     	Game.UpdateMenu = function() {
         if (Game.onMenu !== 'fc_menu') {
-            return Game.OldUpdateMenu();
+            return Game.oldUpdateMenu();
         }
         var currentCookies, maxCookies, isTarget, isMax, targetTxt, maxTxt,
             currPrestige, resetPrestige, prestigeDifference,
