@@ -411,10 +411,7 @@ function updateTimers() {
 }
 
 function FCMenu() {
-    	Game.UpdateMenu = function() {
-        if (Game.onMenu !== 'fc_menu') {
-            return Game.UpdateMenu();
-        }
+    	Game.UpdateMenu;
         var currentCookies, maxCookies, isTarget, isMax, targetTxt, maxTxt,
             currPrestige, resetPrestige, prestigeDifference,
             currHC, resetHC, cps, baseChosen, frenzyChosen, clickStr, buildTable,
@@ -507,7 +504,7 @@ function FCMenu() {
                 subsection.append($('<div>').addClass('listing').html('<b>Max HC Gain/hr:</b> ' + Beautify(FrozenCookies.maxHCPercent)));
             }
             subsection.append($('<div>').addClass('listing').html('<b>Average HC Gain/hr:</b> ' + Beautify(60 * 60 * (FrozenCookies.lastHCAmount - currHC)/((FrozenCookies.lastHCTime - Game.startDate)/1000))));
-        }
+        
         menu.append(subsection);
 
         // Harvesting
