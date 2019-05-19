@@ -507,7 +507,7 @@ function FCMenu() {
                 subsection.append($('<div>').addClass('listing').html('<b>Max HC Gain/hr:</b> ' + Beautify(FrozenCookies.maxHCPercent)));
             }
             subsection.append($('<div>').addClass('listing').html('<b>Average HC Gain/hr:</b> ' + Beautify(60 * 60 * (FrozenCookies.lastHCAmount - currHC)/((FrozenCookies.lastHCTime - Game.startDate)/1000))));
-        
+	}
         menu.append(subsection);
 
         // Harvesting
