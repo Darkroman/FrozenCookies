@@ -513,7 +513,7 @@ function FCMenu() {
         menu.append(subsection);
 
 //	TESTING
-//	setTimeout(Game.UpdateMenu, 500);
+	setTimeout(Game.UpdateMenu, 500);
 //	END TESTING
 		
         // Harvesting
@@ -604,5 +604,4 @@ function FCMenu() {
         subsection.append($('<div>').addClass('listing').append(buildTable));
         menu.append(subsection);
     };
-    setTimeout(Game.UpdateMenu, 500);
 }
