@@ -2459,5 +2459,6 @@ function FCStart() {
 
 
 
-    FCMenu();
+//    FCMenu();
+      setTimeout(FCMenu(), 500);
 }
