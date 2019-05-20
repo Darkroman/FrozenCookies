@@ -512,8 +512,8 @@ function FCMenu() {
 	}
         menu.append(subsection);
 //	TESTING
-//	setTimeout(Game.UpdateMenu, 500);
-	Game.UpdateMenu;
+	setTimeout(Game.UpdateMenu, 1);
+//	Game.UpdateMenu;
 //	END TESTING
         // Harvesting
 	if (FrozenCookies.setHarvestBankPlant){
