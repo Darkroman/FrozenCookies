@@ -604,5 +604,5 @@ function FCMenu() {
         subsection.append($('<div>').addClass('listing').append(buildTable));
         menu.append(subsection);
     };
-    Game.UpdateMenu;
+    setTimeout(Game.UpdateMenu, 500);
 }
