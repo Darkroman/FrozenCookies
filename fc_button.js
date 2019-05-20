@@ -511,8 +511,10 @@ function FCMenu() {
             subsection.append($('<div>').addClass('listing').html('<b>Average HC Gain/hr:</b> ' + Beautify(60 * 60 * (FrozenCookies.lastHCAmount - currHC)/((FrozenCookies.lastHCTime - Game.startDate)/1000))));
 	}
         menu.append(subsection);
-	setTimeout(Game.UpdateMenu, 500);
-
+//	TESTING
+//	setTimeout(Game.UpdateMenu, 500);
+	Game.UpdateMenu;
+//	END TESTING
         // Harvesting
 	if (FrozenCookies.setHarvestBankPlant){
 	    subsection = $('<div>').addClass('subsection');
