@@ -37,8 +37,11 @@ What can Frozen Cookies do?
 
 What's new?
 -----------
+2019 May 21
+- Statistics in Frozen Cookies menu updating as it should. Thank you lumodon!
+
 2019 May 20
-- Fixed Frozen Cookies statistics not updating in the menu
+- Fixed Frozen Cookies statistics not updating in the menu (temporary hack)
 
 2018 Oct 27
 - Added Shimmering veil blacklists
