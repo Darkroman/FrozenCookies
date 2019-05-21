@@ -522,7 +522,7 @@ function FCMenu() {
         menu.append(subsection);
 
 //	TESTING
-	setTimeout(Game.UpdateMenu, 500);
+//	setTimeout(Game.UpdateMenu, 500);
 //	END TESTING
 		
         // Harvesting
