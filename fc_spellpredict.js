@@ -58,3 +58,9 @@ nextSpell = function(i) {
     Math.seedrandom();
     return '<small>' + ret + '</b></small>';
 }
+
+nextSpellName = function(spell) {
+    if nextspell(0) = '<small><b style="color:#FFDE5F">Lucky</b></small>' {
+    spell = "Lucky";
+    return spell;
+}
