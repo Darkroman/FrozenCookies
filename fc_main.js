@@ -740,7 +740,7 @@ function autoCast() {
 		}
 
 		if (nextSpellName() == "Lucky" || nextSpellName() == "Click Frenzy" || nextSpellName() == "Cookie Storm") {
-			if (Game.hasBuff('Frenzy') && Game.hasBuff('Building Special')) {
+			if (Game.hasBuff('Frenzy') && BuildingSpecialBuff == 1) {
 				m.castSpell(FTHOF);
 				logEvent('AutoSpell', 'Cast Force the Hand of Fate');
 			}
