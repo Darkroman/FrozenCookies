@@ -676,15 +676,17 @@ function autoCast() {
             case 2:
                 var FTHOF = M.spellsById[1];
                 if (M.magicM < Math.floor(FTHOF.costMin + FTHOF.costPercent*M.magicM)) return;
-                /* if(cpsBonus() >= FrozenCookies.minCpSMult) {
+                if(cpsBonus() >= FrozenCookies.minCpSMult) {
                     M.castSpell(FTHOF);
                     logEvent('AutoSpell', 'Cast Force the Hand of Fate');
-                } */
+                } 
 			
+		/* WORK IN PROGRESS
 		if (nextSpellName() == "Clot") {
 			M.castSpell(FTHOF);
 			logEvent('AutoSpell', 'Cast Force the Hand of Fate');
 		}
+		*/
                 return;
             case 3:
                 var SE = M.spellsById[3];
