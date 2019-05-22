@@ -720,7 +720,7 @@ function autoCast() {
 							m.castSpell(FTHOF);
 							logEvent('AutoSpell', 'Cast Force the Hand of Fate');
 					}
-					else if (Game.hasBuff('Click Frenzy') {
+					else if (Game.hasBuff('Click Frenzy')) {
 						m.castSpell(FTHOF);
 						logEvent('AutoSpell', 'Cast Force the Hand of Fate');
 					}
