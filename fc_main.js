@@ -676,10 +676,10 @@ function autoCast() {
             case 2:
                 var FTHOF = M.spellsById[1];
                 if (M.magicM < Math.floor(FTHOF.costMin + FTHOF.costPercent*M.magicM)) return;
-                if(cpsBonus() >= FrozenCookies.minCpSMult) {
+                /*if(cpsBonus() >= FrozenCookies.minCpSMult) {
                     M.castSpell(FTHOF);
                     logEvent('AutoSpell', 'Cast Force the Hand of Fate');
-                } 
+                }*/
 			
 		// WORK IN PROGRESS
 		//Start SMART FTHOF checks 
@@ -733,7 +733,7 @@ function autoCast() {
 					logEvent('AutoSpell', 'Cast Force the Hand of Fate');
 				}
 			}
-			else if (Game.hasBuff('Click Frenzy') {
+			else if (Game.hasBuff('Click Frenzy')) {
 				m.castSpell(FTHOF);
 				logEvent('AutoSpell', 'Cast Force the Hand of Fate');
 			}
@@ -768,7 +768,7 @@ function autoCast() {
 					logEvent('AutoSpell', 'Cast Force the Hand of Fate');
 				}
 			}
-			else if (Game.hasBuff('Click Frenzy') {
+			else if (Game.hasBuff('Click Frenzy')) {
 				m.castSpell(FTHOF);
 				logEvent('AutoSpell', 'Cast Force the Hand of Fate');
 			}
