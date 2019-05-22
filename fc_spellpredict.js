@@ -79,6 +79,10 @@ nextSpellName = function() {
     if (nextSpell(0) == '<small><b style="color:#FFDE5F">Cookie Storm</b></small>') {   
     return "Cookie Storm";
     }
+	
+    if (nextSpell(0) == '<small>Cookie Storm (Drop)</b></small>') {   
+    return "Cookie Storm (Drop)";
+    }
     
     if (nextSpell(0) == '<small><b style="color:#DAA520">Building Special</b></small>') {   
     return "Building Special";
