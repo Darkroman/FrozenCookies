@@ -60,7 +60,7 @@ nextSpell = function(i) {
 }
 
 nextSpellName = function(spell) {
-    if nextspell(0) = '<small><b style="color:#FFDE5F">Lucky</b></small>' {
-    spell = "Lucky";
+    if nextspell(0) = '<b style="color:#FF3605">Clot</b></small>' {
+    spell = "Clot";
     return spell;
 }
