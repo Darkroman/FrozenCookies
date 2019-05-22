@@ -59,9 +59,8 @@ nextSpell = function(i) {
     return '<small>' + ret + '</b></small>';
 }
 
-nextSpellName = function(spell) {
-    if (nextSpell(0) == '<b style="color:#FF3605">Clot</b></small>') {
-    spell = "Clot";
-    return spell;
+nextSpellName = function() {
+    if (nextSpell(0) == '<b style="color:#FF3605">Clot</b></small>') {   
+    return "Clot";
     }
 }
