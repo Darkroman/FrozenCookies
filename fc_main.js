@@ -676,18 +676,18 @@ function autoCast() {
                 var FTHOF = M.spellsById[1];
                 if (M.magicM < Math.floor(FTHOF.costMin + FTHOF.costPercent*M.magicM)) return;
                 //Start SMART FTHOF checks 
-				if (nextSpell(0) == 'Clot') {
+				if (nextSpell(0) == '<b style="color:#FF3605">Clot') {
 					m.castSpell(FTHOF);
 					logEvent('AutoSpell', 'Cast Force the Hand of Fate');
 				}
 				
-				if (nextSpell(0) == 'Ruin Cookies') {
+				if (nextSpell(0) == '<b style="color:#FF3605">Ruin Cookies') {
 					if(cpsBonus() == 1)
 						m.castSpell(FTHOF);
 						logEvent('AutoSpell', 'Cast Force the Hand of Fate');
 				}
 				
-				if (nextSpell(0) == 'Elder Frenzy') {
+				if (nextSpell(0) == '<b style="color:#DAA520">Elder Frenzy') {
 					if (Game.Upgrades["Elder Pact"].bought == 1) {
 						if (Game.dragonAura == 10 || Game.dragonAura2 == 10) {
 							if (Game.hasBuff('Dragonflight'))
@@ -714,7 +714,7 @@ function autoCast() {
 					}
 				}
 
-				if (nextSpell(0) == 'Frenzy' || nextSpell(0) == 'Building Special')
+				if (nextSpell(0) == '<b style="color:#FFDE5F">Frenzy' || nextSpell(0) == '<b style="color:#DAA520">Building Special')
 					if (Game.dragonAura == 10 || Game.dragonAura2 == 10) {
 						if (Game.hasBuff('Dragonflight'))
 							m.castSpell(FTHOF);
@@ -725,7 +725,7 @@ function autoCast() {
 						logEvent('AutoSpell', 'Cast Force the Hand of Fate');
 					}
 
-				if (nextSpell(0) == 'Lucky' || nextSpell(0) == 'Click Frenzy' || nextSpell(0) == 'Cookie Storm (Drop)') {
+				if (nextSpell(0) == '<b style="color:#FFDE5F">Lucky' || nextSpell(0) == '<b style="color:#FFD700">Click Frenzy' || nextSpell(0) == 'Cookie Storm (Drop)') {
 					if (Game.hasBuff('Frenzy') && Game.hasBuff('Building Special'))
 						m.castSpell(FTHOF);
 				}
