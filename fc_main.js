@@ -675,61 +675,10 @@ function autoCast() {
             case 2:
                 var FTHOF = M.spellsById[1];
                 if (M.magicM < Math.floor(FTHOF.costMin + FTHOF.costPercent*M.magicM)) return;
-                //Start SMART FTHOF checks 
-				if (nextSpell(0) == '<b style="color:#FF3605">Clot') {
-					m.castSpell(FTHOF);
-					logEvent('AutoSpell', 'Cast Force the Hand of Fate');
-				}
-				
-				if (nextSpell(0) == '<b style="color:#FF3605">Ruin Cookies') {
-					if(cpsBonus() == 1)
-						m.castSpell(FTHOF);
-						logEvent('AutoSpell', 'Cast Force the Hand of Fate');
-				}
-				
-				if (nextSpell(0) == '<b style="color:#DAA520">Elder Frenzy') {
-					if (Game.Upgrades["Elder Pact"].bought == 1) {
-						if (Game.dragonAura == 10 || Game.dragonAura2 == 10) {
-							if (Game.hasBuff('Dragonflight'))
-								m.castSpell(FTHOF);
-								logEvent('AutoSpell', 'Cast Force the Hand of Fate');
-						}
-						else if (Game.dragonAura != 10 && Game.dragonAura2 != 10) {
-							if (Game.hasBuff('Click Frenzy'))
-								m.castSpell(FTHOF);
-								logEvent('AutoSpell', 'Cast Force the Hand of Fate');
-						}
-					}
-					else if (Game.Upgrades["Elder Pact"].bought == 0) {
-						if (Game.dragonAura == 10 || Game.dragonAura2 == 10) {
-							if (Game.hasBuff('Frenzy') && Game.hasBuff('Dragonflight'))
-								m.castSpell(FTHOF);
-								logEvent('AutoSpell', 'Cast Force the Hand of Fate');
-						}
-						else if (Game.dragonAura != 10 && Game.dragonAura2 != 10) {
-							if (Game.hasBuff('Frenzy') && Game.hasBuff('Click Frenzy'))
-								m.castSpell(FTHOF);
-								logEvent('AutoSpell', 'Cast Force the Hand of Fate');
-						}
-					}
-				}
-
-				if (nextSpell(0) == '<b style="color:#FFDE5F">Frenzy' || nextSpell(0) == '<b style="color:#DAA520">Building Special')
-					if (Game.dragonAura == 10 || Game.dragonAura2 == 10) {
-						if (Game.hasBuff('Dragonflight'))
-							m.castSpell(FTHOF);
-							logEvent('AutoSpell', 'Cast Force the Hand of Fate');
-					}
-					else if (Game.hasBuff('Click Frenzy')) {
-						m.castSpell(FTHOF);
-						logEvent('AutoSpell', 'Cast Force the Hand of Fate');
-					}
-
-				if (nextSpell(0) == "<small><b style="color:#FFDE5F">Lucky</b></small>" || nextSpell(0) == '<b style="color:#FFD700">Click Frenzy' || nextSpell(0) == 'Cookie Storm (Drop)') {
-					if (Game.hasBuff('Frenzy') && Game.hasBuff('Building Special'))
-						m.castSpell(FTHOF);
-				}
-                
+                if(cpsBonus() >= FrozenCookies.minCpSMult) {
+                    M.castSpell(FTHOF);
+                    logEvent('AutoSpell', 'Cast Force the Hand of Fate');
+                }
                 return;
             case 3:
                 var SE = M.spellsById[3];
