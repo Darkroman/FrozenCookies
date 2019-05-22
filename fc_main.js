@@ -725,7 +725,7 @@ function autoCast() {
 						logEvent('AutoSpell', 'Cast Force the Hand of Fate');
 					}
 
-				if (nextSpell(0) == '<b style="color:#FFDE5F">Lucky' || nextSpell(0) == '<b style="color:#FFD700">Click Frenzy' || nextSpell(0) == 'Cookie Storm (Drop)') {
+				if (nextSpell(0) == '<small><b style="color:#FFDE5F">Lucky</b></small>' || nextSpell(0) == '<b style="color:#FFD700">Click Frenzy' || nextSpell(0) == 'Cookie Storm (Drop)') {
 					if (Game.hasBuff('Frenzy') && Game.hasBuff('Building Special'))
 						m.castSpell(FTHOF);
 				}
