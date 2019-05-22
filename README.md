@@ -37,9 +37,6 @@ What can Frozen Cookies do?
 
 What's new?
 -----------
-2019 May 22
-- Changed behavior of auto casting with Force The Hand of Fate. Now casts at certain conditions depending on the next spell in the queue. (Missing cursed finger condition for now). Also please note the minimum frenzy option does not work anymore.
-
 2019 May 21
 - Statistics in Frozen Cookies menu updating as it should. Thank you lumodon!
 
