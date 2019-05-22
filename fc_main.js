@@ -681,7 +681,7 @@ function autoCast() {
                     logEvent('AutoSpell', 'Cast Force the Hand of Fate');
                 } */
 			
-		if (nextSpellName == "Clot") {
+		if (nextSpellName() == "Clot") {
 			M.castSpell(FTHOF);
 			logEvent('AutoSpell', 'Cast Force the Hand of Fate');
 		}
