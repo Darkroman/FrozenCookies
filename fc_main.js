@@ -744,6 +744,7 @@ function autoCast() {
 				M.castSpell(FTHOF);
 				logEvent('AutoSpell', 'Cast Force the Hand of Fate');
 			}
+		}
 				
 		if (nextSpellName() == "Cursed Finger") {
 			if (Game.dragonAura == 10 || Game.dragonAura2 == 10) {
