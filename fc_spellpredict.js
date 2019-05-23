@@ -59,6 +59,7 @@ nextSpell = function(i) {
     return '<small>' + ret + '</b></small>';
 }
 
+// This converts the nextSpell(i) to a string to be used for checking conditions for auto casting Force The Hand of Fate in fc_main.
 nextSpellName = function() {   
     if (nextSpell(0) == '<small><b style="color:#FFDE5F">Lucky</b></small>') {   
     return "Lucky";
@@ -113,6 +114,8 @@ nextSpellName = function() {
     }
 }
 
+// Converts all of the games' building special named buffs to a single function to check if a building special buff is up.
+// Used for autocasting Force The Hand of Fate
 BuildingSpecialBuff = function() {
 if (Game.hasBuff('High-five') ||
 	Game.hasBuff('Slap to the face') ||
