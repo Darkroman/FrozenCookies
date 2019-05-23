@@ -683,7 +683,7 @@ function autoCast() {
 			
 		// WORK IN PROGRESS
 		//Start SMART FTHOF checks 
-		if (nextSpellName() == "Clot" || nextSpellName() == "Sugar Lump" || nextSpellName() == "Blab" || (nextSpellName() == "Cookie Chain" || nextSpellName() == "Cookie Storm (Drop)") {
+		if (nextSpellName() == "Clot" || nextSpellName() == "Sugar Lump" || nextSpellName() == "Blab" || nextSpellName() == "Cookie Chain" || nextSpellName() == "Cookie Storm (Drop)") {
 			M.castSpell(FTHOF);
 			logEvent('AutoSpell', 'Cast Force the Hand of Fate');
 		}
