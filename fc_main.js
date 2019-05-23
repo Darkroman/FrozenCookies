@@ -683,13 +683,13 @@ function autoCast() {
 			
 		// WORK IN PROGRESS
 		//Start SMART FTHOF checks 
-		if (nextSpellName() == "Clot") {
+		if (nextSpellName() == "Clot" || nextSpellName() == "Sugar Lump" || nextSpellName() == "Blab" || (nextSpellName() == "Cookie Chain" || nextSpellName() == "Cookie Storm (Drop)") {
 			M.castSpell(FTHOF);
 			logEvent('AutoSpell', 'Cast Force the Hand of Fate');
 		}
 		
 		if (nextSpellName() == "Ruin Cookies") {
-			if(cpsBonus() == 1) {
+			if(cpsBonus() <= 1) {
 				M.castSpell(FTHOF);
 				logEvent('AutoSpell', 'Cast Force the Hand of Fate');
 			}
@@ -739,27 +739,11 @@ function autoCast() {
 			}
 		}
 
-		if (nextSpellName() == "Lucky" || nextSpellName() == "Click Frenzy" || nextSpellName() == "Cookie Storm" || nextSpellName() == "Cookie Storm (Drop)") {
+		if (nextSpellName() == "Lucky" || nextSpellName() == "Click Frenzy" || nextSpellName() == "Cookie Storm") {
 			if (Game.hasBuff('Frenzy') && BuildingSpecialBuff() == 1) {
 				M.castSpell(FTHOF);
 				logEvent('AutoSpell', 'Cast Force the Hand of Fate');
 			}
-		}
-				
-		if (nextSpellName() == "Sugar Lump") {
-			M.castSpell(FTHOF);
-			logEvent('AutoSpell', 'Cast Force the Hand of Fate');
-		}
-				
-		if (nextSpellName() == "Blab") {
-			M.castSpell(FTHOF);
-			logEvent('AutoSpell', 'Cast Force the Hand of Fate');
-		}
-		
-		if (nextSpellName() == "Cookie Chain") {
-			M.castSpell(FTHOF);
-			logEvent('AutoSpell', 'Cast Force the Hand of Fate');
-		}
 				
 		if (nextSpellName() == "Cursed Finger") {
 			if (Game.dragonAura == 10 || Game.dragonAura2 == 10) {
