@@ -711,7 +711,7 @@ function autoCast() {
 					}
 				}
 				else if (Game.dragonAura != 10 && Game.dragonAura2 != 10) {
-					if (Game.hasBuff('Click Frenzy')) {
+					if (Game.hasBuff('Click frenzy')) {
 						M.castSpell(FTHOF);
 						logEvent('AutoSpell', 'Cast Force the Hand of Fate');
 					}
@@ -725,7 +725,7 @@ function autoCast() {
 					}
 				}
 				else if (Game.dragonAura != 10 && Game.dragonAura2 != 10) {
-					if (Game.hasBuff('Frenzy') && Game.hasBuff('Click Frenzy')) {
+					if (Game.hasBuff('Frenzy') && Game.hasBuff('Click frenzy')) {
 						M.castSpell(FTHOF);
 						logEvent('AutoSpell', 'Cast Force the Hand of Fate');
 					}
@@ -740,7 +740,7 @@ function autoCast() {
 					logEvent('AutoSpell', 'Cast Force the Hand of Fate');
 				}
 			}
-			else if (Game.hasBuff('Click Frenzy')) {
+			else if (Game.hasBuff('Click frenzy')) {
 				M.castSpell(FTHOF);
 				logEvent('AutoSpell', 'Cast Force the Hand of Fate');
 			}
@@ -760,7 +760,7 @@ function autoCast() {
 					logEvent('AutoSpell', 'Cast Force the Hand of Fate');
 				}
 			}
-			else if (Game.hasBuff('Click Frenzy')) {
+			else if (Game.hasBuff('Click frenzy')) {
 				M.castSpell(FTHOF);
 				logEvent('AutoSpell', 'Cast Force the Hand of Fate');
 			}
