@@ -688,6 +688,13 @@ function autoCast() {
 			logEvent('AutoSpell', 'Cast Force the Hand of Fate');
 		}
 		
+		if (nextSpellName() == "Lucky") {
+			if (cpsBonus() >= 7) {
+				M.castSpell(FTHOF);
+				logEvent('AutoSpell', 'Cast Force the Hand of Fate');
+			}
+		}
+		
 		if (nextSpellName() == "Ruin Cookies") {
 			if(cpsBonus() <= 1) {
 				M.castSpell(FTHOF);
@@ -739,7 +746,7 @@ function autoCast() {
 			}
 		}
 
-		if (nextSpellName() == "Lucky" || nextSpellName() == "Click Frenzy" || nextSpellName() == "Cookie Storm") {
+		if (nextSpellName() == "Click Frenzy" || nextSpellName() == "Cookie Storm") {
 			if (Game.hasBuff('Frenzy') && BuildingSpecialBuff() == 1) {
 				M.castSpell(FTHOF);
 				logEvent('AutoSpell', 'Cast Force the Hand of Fate');
