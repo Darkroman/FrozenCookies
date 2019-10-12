@@ -2532,6 +2532,11 @@ function FCStart() {
         FrozenCookies.autoGodzamokBot = 0;
     }
 
+    if (FrozenCookies.autoFortuneBot) {
+        clearInterval(FrozenCookies.autoFortuneBot);
+        FrozenCookies.autoFortuneBot = 0;
+    }
+
     //  if (!FrozenCookies.saveWrinklers && localStorage.wrinklers) {
     //    delete localStorage.wrinklers;
     //  }
@@ -2573,7 +2578,7 @@ function FCStart() {
     }
 
     if(FrozenCookies.autoFortune) {
-        setInterval(AutoFortuneClick, FrozenCookies.frequency*10)
+        FrozenCookies.autoFortuneBot = setInterval(AutoFortuneClick, FrozenCookies.frequency)
     }
 
     if (statSpeed(FrozenCookies.trackStats) > 0) {
