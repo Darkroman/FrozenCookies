@@ -37,6 +37,10 @@ What can Frozen Cookies do?
 
 What's new?
 -----------
+2019 Oct 27
+- Autoclick fortune news ticker feature added!
+- Fixed default frames per second setting from 48 to 30.
+
 2019 May 22
 - Implemented new smart Force The Hand of Fate casting. It overrides the old one. It'll cast FTHOF at optimal times based on next spell   in the queue. Minimum Frenzy option no longer has any effect.
 
