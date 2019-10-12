@@ -25,6 +25,11 @@ FrozenCookies.preferenceValues = {
         'display':['Autopop Wrinklers OFF', 'Autopop Wrinklers Efficiently', 'Autopop Wrinklers Instantly'],
         'default':0
     },
+    'autoFortune':{
+        'hint':'Automatically click fortune news tickers',
+        'display':['OFF', 'ON'],
+        'default':0
+    },
 /*Not working yet
     'shinyPop':{
         'hint':'Protect the endangered Shiny Wrinkler from being auomatically popped',
@@ -386,6 +391,19 @@ var upgradeJson = {
     530: {'buildings': [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,300], 'upgrades': []},
     531: {'buildings': [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,350], 'upgrades': []},
     532: {'buildings': [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,400], 'upgrades': []},
+    
+    // Javascript Console tiered upgrades
+	594: {'buildings': [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1], 'upgrades': []},
+    595: {'buildings': [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5], 'upgrades': []},
+    596: {'buildings': [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,25], 'upgrades': []},
+    597: {'buildings': [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,50], 'upgrades': []},
+    598: {'buildings': [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,100], 'upgrades': []},
+    599: {'buildings': [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,150], 'upgrades': []},
+    600: {'buildings': [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,200], 'upgrades': []},
+    601: {'buildings': [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,250], 'upgrades': []},
+    602: {'buildings': [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,300], 'upgrades': []},
+    603: {'buildings': [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,350], 'upgrades': []},
+    604: {'buildings': [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,400], 'upgrades': []},
     
     // Grandma upgrades
     57: {'buildings': [0,1,15], 'upgrades': []},
