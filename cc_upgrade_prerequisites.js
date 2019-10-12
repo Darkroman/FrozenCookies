@@ -27,7 +27,7 @@ FrozenCookies.preferenceValues = {
     },
     'autoFortune':{
         'hint':'Automatically click fortune news tickers',
-        'display':['OFF', 'ON'],
+        'display':["Autoclick Fortune Ticker OFF", "Autoclick Fortune Ticker ON"],
         'default':0
     },
 /*Not working yet
