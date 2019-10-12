@@ -2573,7 +2573,7 @@ function FCStart() {
     }
 
     if(FrozenCookies.autoFortune) {
-        setInterval(AutoFortuneClick, FrozenCookies.frequency)
+        setInterval(AutoFortuneClick, FrozenCookies.frequency*10)
     }
 
     if (statSpeed(FrozenCookies.trackStats) > 0) {
