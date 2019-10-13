@@ -120,8 +120,8 @@ FrozenCookies.preferenceValues = {
         'default':0
     },
     'autoGodzamok':{
-        'hint':'Automatically sell all farms (except one) during Dragonflight and Click Frenzy if you worship Godzamok ("Sane" prevents rapid buy/sell spam)',
-        'display':['Auto-Godzamok OFF','Auto-Godzamok ON','Auto-Godzamok ON (Sane)','Auto-Godzamok (REALLY INSANE)'],
+        'hint':'Automatically sell all farms (except one) during Dragonflight and Click Frenzy if you worship Godzamok',
+        'display':['Auto-Godzamok OFF','Auto-Godzamok ON'],
         'default':0
     },
     'farmLimit':{
