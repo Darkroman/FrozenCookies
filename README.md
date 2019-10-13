@@ -37,6 +37,9 @@ What can Frozen Cookies do?
 
 What's new?
 -----------
+2019 Oct 13
+- Added support for new upgrades with new Javascript building. (New grandma and synergy upgrades, as well as updating old reward cookies to include javascript building)
+
 2019 Oct 12
 - Autoclick fortune news ticker feature added!
 - Fixed default frames per second setting from 48 to 30.
