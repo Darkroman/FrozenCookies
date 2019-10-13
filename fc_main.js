@@ -2534,6 +2534,10 @@ function FCStart() {
         clearInterval(FrozenCookies.autoGodzamokBot);
         FrozenCookies.autoGodzamokBot = 0;
     }
+    if (FrozenCookies.autoSpellBot) {
+        clearInterval(FrozenCookies.autoSpellBot);
+        FrozenCookies.autoSpellBot = 0;
+    }
 
     if (FrozenCookies.autoFortuneBot) {
         clearInterval(FrozenCookies.autoFortuneBot);
@@ -2576,11 +2580,11 @@ function FCStart() {
         FrozenCookies.autoGodzamokBot = setInterval(autoGodzamokAction, FrozenCookies.frequency)
     }
     
-    if(FrozenCookies.autoSpell) {
-        setInterval(autoCast, FrozenCookies.frequency*10)
+    if (FrozenCookies.autoSpell) {
+        FrozenCookies.autoSpellBot = setInterval(autoCast, FrozenCookies.frequency*10)
     }
 
-    if(FrozenCookies.autoFortune) {
+    if (FrozenCookies.autoFortune) {
         FrozenCookies.autoFortuneBot = setInterval(AutoFortuneClick, FrozenCookies.frequency)
     }
 
