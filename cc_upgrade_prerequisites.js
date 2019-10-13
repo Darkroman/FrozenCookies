@@ -124,12 +124,6 @@ FrozenCookies.preferenceValues = {
         'display':['Auto-Godzamok OFF','Auto-Godzamok ON','Auto-Godzamok ON (Sane)','Auto-Godzamok (REALLY INSANE)'],
         'default':0
     },
-    'cursorLimit':{
-        'hint':'Limit max number of cursors to keep Godzamok useful',
-        'display':['Cursor Limit OFF','Cursor Limit ON'],
-        'default':0,
-        'extras':'<a class="option" id="cursorMax" onclick="updateCursorMax(\'cursorMax\');">${cursorMax} cursors</a>'
-    },
     'farmLimit':{
         'hint':'Limit max number of farms to keep Godzamok useful',
         'display':['Farm Limit OFF','Farm Limit ON'],
