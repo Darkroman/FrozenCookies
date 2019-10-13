@@ -73,7 +73,7 @@ nextSpellName = function() {
     return "Click Frenzy";
     }
     
-    if (nextSpell(0) == '<small><small><b style="color:#FFDE5F">Cookie Chain</b></small>') {   
+    if (nextSpell(0) == '<small><b style="color:#FFDE5F">Cookie Chain</b></small>') {   
     return "Cookie Chain";
     }
     
