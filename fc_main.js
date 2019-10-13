@@ -51,7 +51,7 @@ function setOverrides() {
     // Set default values for calculations
     FrozenCookies.hc_gain = 0;
     FrozenCookies.hc_gain_time = Date.now();
-    FrozenCookies.last_gc_state = (Game.hasBuff('Elder frenzy') ? Game.buffs['Elder frenzy'].multCpS : 1) * clickBuffBonus();
+    FrozenCookies.last_gc_state = (Game.hasBuff('Frenzy') ? Game.buffs['Frenzy'].multCpS : 1) * clickBuffBonus();
     FrozenCookies.last_gc_time = Date.now();
     FrozenCookies.lastCPS = Game.cookiesPs;
     FrozenCookies.lastBaseCPS = Game.cookiesPs;
