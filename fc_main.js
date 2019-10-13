@@ -334,7 +334,7 @@ function updateLocalStorage() {
     localStorage.frenzyClickSpeed = FrozenCookies.frenzyClickSpeed;
     localStorage.cookieClickSpeed = FrozenCookies.cookieClickSpeed;
     localStorage.HCAscendAmount = FrozenCookies.HCAscendAmount;
-    localStorage.cursorMax = FrozenCookies.cursorMax;
+    //  localStorage.cursorMax = FrozenCookies.cursorMax;
     localStorage.farmMax = FrozenCookies.farmMax;
     localStorage.minCpSMult = FrozenCookies.minCpSMult;
     localStorage.frenzyTimes = JSON.stringify(FrozenCookies.frenzyTimes);
@@ -506,6 +506,7 @@ function updateMaxSpecials(base) {
     }
 }
 
+/*
 function getCursorMax(current) {
     var newMax = prompt('How many Cursors should Autobuy stop at?', current);
     if (typeof(newMax) == 'undefined' || newMax == null || isNaN(Number(newMax)) || Number(newMax < 0)) {
@@ -522,6 +523,7 @@ function updateCursorMax(base) {
         FCStart();
     }
 }
+*/
 
 function getFarmMax(current) {
     var newMax2 = prompt('How many Farms should Autobuy stop at?', current);
