@@ -2558,7 +2558,7 @@ function autoFTHOFComboAction() {
 			return;
 		
 		case 1:
-			if (Game.Objects['Wizard tower'].amount >= 316 {
+			if (Game.Objects['Wizard tower'].amount >= 316) {
 				count = Game.Objects['Wizard tower'].amount - 22;
 				M.castSpell(FTHOF);
 				logEvent('AutoSpell', 'Cast Force the Hand of Fate');
@@ -2571,7 +2571,7 @@ function autoFTHOFComboAction() {
 				return;
 				
 		case 2:
-			if (Game.Objects['Wizard tower'].amount >= 312 {
+			if (Game.Objects['Wizard tower'].amount >= 312) {
 				count = Game.Objects['Wizard tower'].amount - 15;
 				M.castSpell(FTHOF);
 				logEvent('AutoSpell', 'Cast Force the Hand of Fate');
@@ -2583,7 +2583,7 @@ function autoFTHOFComboAction() {
 			}	
 				return;
 		case 3:
-			if (Game.Objects['Wizard tower'].amount >= 308 {
+			if (Game.Objects['Wizard tower'].amount >= 308) {
 				count = Game.Objects['Wizard tower'].amount - 9;
 				M.castSpell(FTHOF);
 				logEvent('AutoSpell', 'Cast Force the Hand of Fate');
@@ -2595,7 +2595,7 @@ function autoFTHOFComboAction() {
 			}	
 				return;
 		case 4:
-			if (Game.Objects['Wizard tower'].amount >= 304 {
+			if (Game.Objects['Wizard tower'].amount >= 304) {
 				count = Game.Objects['Wizard tower'].amount - 3;
 				M.castSpell(FTHOF);
 				logEvent('AutoSpell', 'Cast Force the Hand of Fate');
@@ -2607,7 +2607,7 @@ function autoFTHOFComboAction() {
 			}	
 				return;
 		case 5:
-			if (Game.Objects['Wizard tower'].amount >= 309 {
+			if (Game.Objects['Wizard tower'].amount >= 309) {
 				count = Game.Objects['Wizard tower'].amount - 1;
 				M.castSpell(FTHOF);
 				logEvent('AutoSpell', 'Cast Force the Hand of Fate');
@@ -2619,7 +2619,7 @@ function autoFTHOFComboAction() {
 			}	
 				return;
 		case 6:
-			if (Game.Objects['Wizard tower'].amount >= 390 {
+			if (Game.Objects['Wizard tower'].amount >= 390) {
 				count = Game.Objects['Wizard tower'].amount - 1;
 				M.castSpell(FTHOF);
 				logEvent('AutoSpell', 'Cast Force the Hand of Fate');
@@ -2631,7 +2631,7 @@ function autoFTHOFComboAction() {
 			}	
 				return;
 		case 7:
-			if (Game.Objects['Wizard tower'].amount >= 445 {
+			if (Game.Objects['Wizard tower'].amount >= 445) {
 				count = Game.Objects['Wizard tower'].amount - 1;
 				M.castSpell(FTHOF);
 				logEvent('AutoSpell', 'Cast Force the Hand of Fate');
@@ -2643,7 +2643,7 @@ function autoFTHOFComboAction() {
 			}	
 				return;
 		case 8:
-			if (Game.Objects['Wizard tower'].amount >= 506 {
+			if (Game.Objects['Wizard tower'].amount >= 506) {
 				count = Game.Objects['Wizard tower'].amount - 1;
 				M.castSpell(FTHOF);
 				logEvent('AutoSpell', 'Cast Force the Hand of Fate');
@@ -2655,7 +2655,7 @@ function autoFTHOFComboAction() {
 			}	
 				return;
 		case 9:
-			if (Game.Objects['Wizard tower'].amount >= 530 {
+			if (Game.Objects['Wizard tower'].amount >= 530) {
 				count = Game.Objects['Wizard tower'].amount - 1;
 				M.castSpell(FTHOF);
 				logEvent('AutoSpell', 'Cast Force the Hand of Fate');
@@ -2667,7 +2667,7 @@ function autoFTHOFComboAction() {
 			}	
 				return;
 		case 10:
-			if (Game.Objects['Wizard tower'].amount >= 598 {
+			if (Game.Objects['Wizard tower'].amount >= 598) {
 				count = Game.Objects['Wizard tower'].amount - 1;
 				M.castSpell(FTHOF);
 				logEvent('AutoSpell', 'Cast Force the Hand of Fate');
