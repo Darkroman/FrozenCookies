@@ -702,20 +702,18 @@ function autoCast() {
 			
 		// WORK IN PROGRESS
 		//Start SMART FTHOF checks 
-		if (nextSpellName() == "Clot" || nextSpellName() == "Sugar Lump" || nextSpellName() == "Blab" || nextSpellName() == "Cookie Chain" || nextSpellName() == "Cookie Storm (Drop)") {
+		if (nextSpellName() == "Clot" || nextSpellName() == "Blab" || nextSpellName() == "Cookie Storm (Drop)" || nextSpellName() == "Ruin Cookies") {
+			var hagC = M.spellsById[4];
+                	M.castSpell(hagC);
+                	logEvent('AutoSpell', 'Cast Haggler\'s Charm instead of Force the Hand of Fate');
+		}
+		
+		if (nextSpellName() == "Sugar Lump" || nextSpellName() == "Cookie Chain") {
 			M.castSpell(FTHOF);
 			logEvent('AutoSpell', 'Cast Force the Hand of Fate');
-		}
 		
 		if (nextSpellName() == "Lucky") {
 			if (cpsBonus() >= 7) {
-				M.castSpell(FTHOF);
-				logEvent('AutoSpell', 'Cast Force the Hand of Fate');
-			}
-		}
-		
-		if (nextSpellName() == "Ruin Cookies") {
-			if(cpsBonus() <= 1) {
 				M.castSpell(FTHOF);
 				logEvent('AutoSpell', 'Cast Force the Hand of Fate');
 			}
