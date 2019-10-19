@@ -153,3 +153,13 @@ if (Game.hasBuff('High-five') ||
 	
 	else { return 0; }
 }
+
+// This function will be used in fc_main.js to check time left on building buff within autoCast() function
+function BuildingBuffTime() {
+    for (var i in Game.buffs) {
+        if (Game.buffs[i].type && (Game.buffs[i].type.name == 'building buff')) {
+		return Game.buffs[i].time / 30;
+        }
+    }
+    return 0;
+}
