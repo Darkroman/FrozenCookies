@@ -147,7 +147,7 @@ if (Game.hasBuff('High-five') ||
 //	Game.hasBuff('Eclipse') ||
 	Game.hasBuff('Winning streak') ||
 //	Game.hasBuff('Dry spell') ||
-	Game.hasBuff('Macrocosm')
+	Game.hasBuff('Macrocosm'))
 //	Game.hasBuff('Microcosm')) 
     { return 1; }
 	
