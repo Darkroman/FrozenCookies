@@ -16,7 +16,7 @@ FrozenCookies.preferenceValues = {
         'default':0
     },
     'autoStoreBuyAll':{
-        'hint':'Automatically buys all upgrades. WARNING: Only should use for quick ascensions (for achievement)',
+        'hint':'Automatically uses the Buy All Upgrades option. WARNING: Only should use for quick ascensions (for the ascension achievements)',
         'display':['Auto Buy All Upgrades OFF', 'Auto Buy All Upgrades ON'],
         'default':0
     },
@@ -125,8 +125,8 @@ FrozenCookies.preferenceValues = {
         'default':0
     },
     'autoGodzamok':{
-        'hint':'Automatically sell all farms (except one) during Dragonflight and Click Frenzy if you worship Godzamok ("Sane" prevents rapid buy/sell spam)',
-        'display':['Auto-Godzamok OFF','Auto-Godzamok ON','Auto-Godzamok ON (Sane)','Auto-Godzamok (REALLY INSANE)'],
+        'hint':'Automatically sell all farms (except one) during Dragonflight and Click Frenzy if you worship Godzamok',
+        'display':['Auto-Godzamok OFF','Auto-Godzamok ON'],
         'default':0
     },
     'farmLimit':{
