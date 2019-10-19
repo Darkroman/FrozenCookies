@@ -2507,6 +2507,12 @@ function autoCookie() {
     }
 }
 
+function AutoStoreBuyAllAction() {
+if (FrozenCookies.autoStoreBuyAll < 1) return;
+
+Game.storeBuyAll()
+}
+
 function FCStart() {
     //  To allow polling frequency to change, clear intervals before setting new ones.
 
@@ -2540,6 +2546,11 @@ function FCStart() {
     if (FrozenCookies.autoFortuneBot) {
         clearInterval(FrozenCookies.autoFortuneBot);
         FrozenCookies.autoFortuneBot = 0;
+    }
+    
+    if (FrozenCookies.autoStoreBuyAllBot) {
+        clearInterval(FrozenCookies.autoStoreBuyAllBot);
+        FrozenCookies.autoStoreBuyAllBot = 0;
     }
 
     //  if (!FrozenCookies.saveWrinklers && localStorage.wrinklers) {
@@ -2585,7 +2596,11 @@ function FCStart() {
     if (FrozenCookies.autoFortune) {
         FrozenCookies.autoFortuneBot = setInterval(AutoFortuneClick, FrozenCookies.frequency)
     }
-
+    
+    if (FrozenCookies.autoStoreBuyAll) {
+    FrozenCookies.autoStoreBuyAllBot = setInterval(autoStoreBuyAllAction, FrozenCookies.frequency)
+    }
+    
     if (statSpeed(FrozenCookies.trackStats) > 0) {
         FrozenCookies.statBot = setInterval(saveStats, statSpeed(FrozenCookies.trackStats));
     } else if (FrozenCookies.trackStats == 6 && !FrozenCookies.smartTrackingBot) {
