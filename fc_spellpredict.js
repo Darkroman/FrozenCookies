@@ -61,56 +61,56 @@ nextSpell = function(i) {
 
 // This converts the nextSpell(i) to a string to be used for checking conditions for auto casting Force The Hand of Fate in fc_main.
 nextSpellName = function(i) {
-    for (i;) {
-	if (nextSpell(i) == '<small><b style="color:#FFDE5F">Lucky</b></small>') {   
+    for (var v = i;) {
+	if (nextSpell(v) == '<small><b style="color:#FFDE5F">Lucky</b></small>') {   
 	return "Lucky";
 	}
 		
-	if (nextSpell(i) == '<small><b style="color:#FFDE5F">Frenzy</b></small>') {   
+	if (nextSpell(v) == '<small><b style="color:#FFDE5F">Frenzy</b></small>') {   
 	return "Frenzy";
 	}
 		
-	if (nextSpell(i) == '<small><b style="color:#FFD700">Click Frenzy</b></small>') {   
+	if (nextSpell(v) == '<small><b style="color:#FFD700">Click Frenzy</b></small>') {   
 	return "Click Frenzy";
 	}
 		
-	if (nextSpell(i) == '<small><b style="color:#FFDE5F">Cookie Chain</b></small>') {   
+	if (nextSpell(v) == '<small><b style="color:#FFDE5F">Cookie Chain</b></small>') {   
 	return "Cookie Chain";
 	}
 		
-	if (nextSpell(i) == '<small><b style="color:#FFDE5F">Cookie Storm</b></small>') {   
+	if (nextSpell(v) == '<small><b style="color:#FFDE5F">Cookie Storm</b></small>') {   
 	return "Cookie Storm";
 	}
 		
-	if (nextSpell(i) == '<small>Cookie Storm (Drop)</b></small>') {   
+	if (nextSpell(v) == '<small>Cookie Storm (Drop)</b></small>') {   
 	return "Cookie Storm (Drop)";
 	}
 		
-	if (nextSpell(i) == '<small><b style="color:#DAA520">Building Special</b></small>') {   
+	if (nextSpell(v) == '<small><b style="color:#DAA520">Building Special</b></small>') {   
 	return "Building Special";
 	}
 		
-	if (nextSpell(i) == '<small>Blab</b></small>') {   
+	if (nextSpell(v) == '<small>Blab</b></small>') {   
 	return "Blab";
 	}
 		
-	if (nextSpell(i) == '<small><b style="color:#FF3605">Ruin Cookies</b></small>') {   
+	if (nextSpell(v) == '<small><b style="color:#FF3605">Ruin Cookies</b></small>') {   
 	return "Ruin Cookies";
 	}
 		
-	if (nextSpell(i) == '<small><b style="color:#FF3605">Clot</b></small>') {   
+	if (nextSpell(v) == '<small><b style="color:#FF3605">Clot</b></small>') {   
 	return "Clot";
 	}
 		
-	if (nextSpell(i) == '<small><b style="color:#DAA520">Cursed Finger</b></small>') {   
+	if (nextSpell(v) == '<small><b style="color:#DAA520">Cursed Finger</b></small>') {   
 	return "Cursed Finger";
 	}
 		
-	if (nextSpell(i) == '<small><b style="color:#DAA520">Elder Frenzy</b></small>') {   
+	if (nextSpell(v) == '<small><b style="color:#DAA520">Elder Frenzy</b></small>') {   
 	return "Elder Frenzy";
 	}
 		
-	if (nextSpell(i) == '<small><b style="color:#5FFFFC">Sugar Lump</b></small>') {   
+	if (nextSpell(v) == '<small><b style="color:#5FFFFC">Sugar Lump</b></small>') {   
 	return "Sugar Lump";
 	}
     }
