@@ -37,6 +37,9 @@ What can Frozen Cookies do?
 
 What's new?
 -----------
+2019 Oct 18
+- Made "Smart Force The Hand of Fate" casting even smarter. It now only casts the spell if time left on current Golden Cookie buff is at least the max time (minus one second) of the next FTHOF buff in queue. For example: If click frenzy is the next spell to be casted, and your mana is still charging up while you have a frenzy and building special up, and then hits max mana, but the time left on the buffs are less than your max click frenzy buff time (minus one second), it will NOT cast, therefore not wasting a full combo.
+
 2019 Oct 13
 - Added support for new upgrades with new Javascript building. (New grandma and synergy upgrades, as well as updating old reward cookies to include javascript building)
 
