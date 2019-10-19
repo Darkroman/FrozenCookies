@@ -15,6 +15,11 @@ FrozenCookies.preferenceValues = {
         'display':['Auto Bulkbuy OFF', 'Auto Bulkbuy x10', 'Auto Bulkbuy x100'],
         'default':0
     },
+    'autoStoreBuyAll':{
+        'hint':'Automatically buys all upgrades. WARNING: Only should use for quick ascensions (for achievement)',
+        'display':['Auto Buy All Upgrades OFF', 'Auto Buy All Upgrades ON'],
+        'default':0
+    },
     'autoGC':{
         'hint':'Automatically click Golden Cookies when they appear',
         'display':["Autoclick GC OFF", "Autoclick GC ON"],
