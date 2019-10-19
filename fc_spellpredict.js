@@ -61,7 +61,7 @@ nextSpell = function(i) {
 
 // This converts the nextSpell(i) to a string to be used for checking conditions for auto casting Force The Hand of Fate in fc_main.
 nextSpellName = function(i) {
-    for (var v = i;) {
+    for (var v = i; v <= i; v++) {
 	if (nextSpell(v) == '<small><b style="color:#FFDE5F">Lucky</b></small>') {   
 	return "Lucky";
 	}
