@@ -118,37 +118,37 @@ nextSpellName = function() {
 // Used for autocasting Force The Hand of Fate
 BuildingSpecialBuff = function() {
 if (Game.hasBuff('High-five') ||
-	Game.hasBuff('Slap to the face') ||
+//	Game.hasBuff('Slap to the face') ||
 	Game.hasBuff('Congregation') ||
-	Game.hasBuff('Senility') ||
+//	Game.hasBuff('Senility') ||
 	Game.hasBuff('Luxuriant harvest') ||
-	Game.hasBuff('Locusts') ||
+//	Game.hasBuff('Locusts') ||
 	Game.hasBuff('Ore vein') ||
-	Game.hasBuff('Cave-in') ||
+//	Game.hasBuff('Cave-in') ||
 	Game.hasBuff('Oiled-up') ||
-	Game.hasBuff('Jammed machinery') ||
+//	Game.hasBuff('Jammed machinery') ||
 	Game.hasBuff('Juicy profits') ||
-	Game.hasBuff('Recession') ||
+//	Game.hasBuff('Recession') ||
 	Game.hasBuff('Fervent adoration') ||
-	Game.hasBuff('Crisis of faith') ||
+//	Game.hasBuff('Crisis of faith') ||
 	Game.hasBuff('Manabloom') ||
-	Game.hasBuff('Magivores') ||
+//	Game.hasBuff('Magivores') ||
 	Game.hasBuff('Delicious lifeforms') ||
-	Game.hasBuff('Black holes') ||
+//	Game.hasBuff('Black holes') ||
 	Game.hasBuff('Breakthrough') ||
-	Game.hasBuff('Lab disaster') ||
+//	Game.hasBuff('Lab disaster') ||
 	Game.hasBuff('Righteous cataclysm') ||
-	Game.hasBuff('Dimensional calamity') ||
+//	Game.hasBuff('Dimensional calamity') ||
 	Game.hasBuff('Golden ages') ||
-	Game.hasBuff('Time jam') ||
+//	Game.hasBuff('Time jam') ||
 	Game.hasBuff('Extra cycles') ||
-	Game.hasBuff('Predictable tragedy') ||
+//	Game.hasBuff('Predictable tragedy') ||
 	Game.hasBuff('Solar flare') ||
-	Game.hasBuff('Eclipse') ||
+//	Game.hasBuff('Eclipse') ||
 	Game.hasBuff('Winning streak') ||
-	Game.hasBuff('Dry spell') ||
+//	Game.hasBuff('Dry spell') ||
 	Game.hasBuff('Macrocosm') ||
-	Game.hasBuff('Microcosm')) 
+//	Game.hasBuff('Microcosm')) 
     { return 1; }
 	
 	else { return 0; }
