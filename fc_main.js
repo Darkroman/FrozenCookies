@@ -711,6 +711,7 @@ function autoCast() {
 		if (nextSpellName() == "Sugar Lump" || nextSpellName() == "Cookie Chain") {
 			M.castSpell(FTHOF);
 			logEvent('AutoSpell', 'Cast Force the Hand of Fate');
+		}
 		
 		if (nextSpellName() == "Lucky") {
 			if (cpsBonus() >= 7) {
