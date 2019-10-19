@@ -779,13 +779,7 @@ function autoCast() {
 		}
 				
 		if (nextSpellName() == "Cursed Finger") {
-			if (Game.dragonAura == 10 || Game.dragonAura2 == 10) {
-				if (Game.hasBuff('Dragonflight') && Game.hasBuff('Dragonflight').time / 30 >= Math.ceil(10 * BuffTimeFactor()) - 1){
-					M.castSpell(FTHOF);
-					logEvent('AutoSpell', 'Cast Force the Hand of Fate');
-				}
-			}
-			else if (Game.hasBuff('Click frenzy') && Game.hasBuff('Click frenzy').time / 30 >= Math.ceil(10 * BuffTimeFactor()) - 1) {
+			if (Game.hasBuff('Frenzy') && BuildingSpecialBuff() == 1 && Game.hasBuff('Frenzy').time / 30 >= Math.ceil(10 * BuffTimeFactor()) - 1 && BuildingBuffTime() >= Math.ceil(10 * BuffTimeFactor())) {
 				M.castSpell(FTHOF);
 				logEvent('AutoSpell', 'Cast Force the Hand of Fate');
 			}
