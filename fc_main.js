@@ -2507,7 +2507,7 @@ function autoCookie() {
     }
 }
 
-function AutoStoreBuyAllAction() {
+function autoStoreBuyAllAction() {
 if (FrozenCookies.autoStoreBuyAll < 1) return;
 
 Game.storeBuyAll()
