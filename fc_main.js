@@ -2513,6 +2513,7 @@ if (FrozenCookies.autoStoreBuyAll < 1) return;
 Game.storeBuyAll()
 }
 
+/*
 function autoFTHOFComboAction() {
 	if (Game.Objects['Wizard tower'].level > 10 || FrozenCookies.autoFTHOFCombo == 0) // THIS WILL NOT WORK IF TOWER LEVEL IS ABOVE 10
 	return;
@@ -2649,7 +2650,7 @@ function autoFTHOFComboAction() {
 	}
 	// Game.Objects['Wizard tower'].buy(count);
 }
-
+*/
 function FCStart() {
     //  To allow polling frequency to change, clear intervals before setting new ones.
 
