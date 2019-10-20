@@ -863,11 +863,9 @@ function autoFTHOFComboAction() {
 							if (Game.Objects['Wizard tower'].amount >= 316) {
 								count = Game.Objects['Wizard tower'].amount - 22;
 								M.castSpell(FTHOF);
-								logEvent('AutoSpell', 'Cast Force the Hand of Fate');
 
 								Game.Objects['Wizard tower'].sell(count);
 								M.castSpell(FTHOF);
-								logEvent('AutoSpell', 'Double cast Force the Hand of Fate');
 								Game.Objects['Wizard tower'].buy(count);
 							}
 							return;
@@ -876,11 +874,9 @@ function autoFTHOFComboAction() {
 							if (Game.Objects['Wizard tower'].amount >= 312) {
 								count = Game.Objects['Wizard tower'].amount - 15;
 								M.castSpell(FTHOF);
-								logEvent('AutoSpell', 'Cast Force the Hand of Fate');
 
 								Game.Objects['Wizard tower'].sell(count);
 								M.castSpell(FTHOF);
-								logEvent('AutoSpell', 'Double cast Force the Hand of Fate');
 								Game.Objects['Wizard tower'].buy(count);
 							}	
 							return;
@@ -889,11 +885,9 @@ function autoFTHOFComboAction() {
 							if (Game.Objects['Wizard tower'].amount >= 308) {
 								count = Game.Objects['Wizard tower'].amount - 9;
 								M.castSpell(FTHOF);
-								logEvent('AutoSpell', 'Cast Force the Hand of Fate');
 
 								Game.Objects['Wizard tower'].sell(count);
 								M.castSpell(FTHOF);
-								logEvent('AutoSpell', 'Double cast Force the Hand of Fate');
 								Game.Objects['Wizard tower'].buy(count);
 							}	
 							return;
@@ -902,11 +896,9 @@ function autoFTHOFComboAction() {
 							if (Game.Objects['Wizard tower'].amount >= 304) {
 								count = Game.Objects['Wizard tower'].amount - 3;
 								M.castSpell(FTHOF);
-								logEvent('AutoSpell', 'Cast Force the Hand of Fate');
 
 								Game.Objects['Wizard tower'].sell(count);
 								M.castSpell(FTHOF);
-								logEvent('AutoSpell', 'Double cast Force the Hand of Fate');
 								Game.Objects['Wizard tower'].buy(count);
 							}	
 							return;
@@ -915,11 +907,9 @@ function autoFTHOFComboAction() {
 							if (Game.Objects['Wizard tower'].amount >= 309) {
 								count = Game.Objects['Wizard tower'].amount - 1;
 								M.castSpell(FTHOF);
-								logEvent('AutoSpell', 'Cast Force the Hand of Fate');
 
 								Game.Objects['Wizard tower'].sell(count);
 								M.castSpell(FTHOF);
-								logEvent('AutoSpell', 'Double cast Force the Hand of Fate');
 								Game.Objects['Wizard tower'].buy(count);
 							}	
 							return;
@@ -928,11 +918,9 @@ function autoFTHOFComboAction() {
 							if (Game.Objects['Wizard tower'].amount >= 390) {
 								count = Game.Objects['Wizard tower'].amount - 1;
 								M.castSpell(FTHOF);
-								logEvent('AutoSpell', 'Cast Force the Hand of Fate');
 
 								Game.Objects['Wizard tower'].sell(count);
 								M.castSpell(FTHOF);
-								logEvent('AutoSpell', 'Double cast Force the Hand of Fate');
 								Game.Objects['Wizard tower'].buy(count);
 							}	
 							return;
@@ -945,7 +933,6 @@ function autoFTHOFComboAction() {
 
 								Game.Objects['Wizard tower'].sell(count);
 								M.castSpell(FTHOF);
-								logEvent('AutoSpell', 'Double cast Force the Hand of Fate');
 								Game.Objects['Wizard tower'].buy(count);
 							}	
 							return;
@@ -954,11 +941,9 @@ function autoFTHOFComboAction() {
 							if (Game.Objects['Wizard tower'].amount >= 506) {
 								count = Game.Objects['Wizard tower'].amount - 1;
 								M.castSpell(FTHOF);
-								logEvent('AutoSpell', 'Cast Force the Hand of Fate');
 
 								Game.Objects['Wizard tower'].sell(count);
 								M.castSpell(FTHOF);
-								logEvent('AutoSpell', 'Double cast Force the Hand of Fate');
 								Game.Objects['Wizard tower'].buy(count);
 							}	
 							return;
@@ -967,11 +952,9 @@ function autoFTHOFComboAction() {
 							if (Game.Objects['Wizard tower'].amount >= 530) {
 								count = Game.Objects['Wizard tower'].amount - 1;
 								M.castSpell(FTHOF);
-								logEvent('AutoSpell', 'Cast Force the Hand of Fate');
 
 								Game.Objects['Wizard tower'].sell(count);
 								M.castSpell(FTHOF);
-								logEvent('AutoSpell', 'Double cast Force the Hand of Fate');
 								Game.Objects['Wizard tower'].buy(count);
 							}	
 							return;
@@ -1002,7 +985,7 @@ function autoComboP2()
 	if (autoFTHOFComboAction.state == 1 && FrozenCookies.autoFTHOFCombo == 1) {
 		M.castSpell(FTHOF);
 		//Game.Objects['Wizard tower'].buy(count);
-		FrozenCookies.logging = 1;
+		//FrozenCookies.logging = 1; //Logging interferes with the timing somehow so it would remain toggled OFF until you want it back on in the menu
 	        FrozenCookies.autoBuy = 1;
 	}
 }
