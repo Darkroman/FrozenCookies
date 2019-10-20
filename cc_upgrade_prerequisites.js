@@ -139,7 +139,7 @@ FrozenCookies.preferenceValues = {
         'hint':'Automatically cast selected spell when your mana is full',
         'display':["Auto Cast OFF","Cojure Baked Goods","Force the Hand of Fate","Spontaneous Edifice","Haggler's Charm (cheapest)"],
         'default':0,
-        if (autoSpell != 2) { 'extras':'<a class="option" id="minCpSMult" onclick="updateCpSMultMin(\'minCpSMult\');">x${minCpSMult} minimum Frenzy</a>' }
+        'extras':'<a class="option" id="minCpSMult" onclick="updateCpSMultMin(\'minCpSMult\');">x${minCpSMult} minimum Frenzy</a>'
     },
     // Careful!
     'autoFTHOFCombo':{
