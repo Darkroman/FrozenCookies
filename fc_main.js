@@ -2668,7 +2668,7 @@ function autoFTHOFComboAction() {
 				logEvent('AutoSpell', 'Cast Force the Hand of Fate');
 				
 				setTimeout(Game.Objects['Wizard tower'].sell(count), 5000);
-				(M.castSpell(FTHOF);
+				M.castSpell(FTHOF);
 				logEvent('AutoSpell', 'Double cast Force the Hand of Fate');
 				// Game.Objects['Wizard tower'].buy(count);
 			}	
