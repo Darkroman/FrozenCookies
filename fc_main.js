@@ -962,11 +962,17 @@ function autoFTHOFComboAction() {
 
 function AutoFortuneClick()
 {
-	
-	if (Game.TickerEffect && Game.TickerEffect.type=='fortune')
-	{
+    switch (FrozenCookies.autoFortune)
+    {
+        case 0:
+	    return;
+
+	case 1:
+	    if (Game.TickerEffect && Game.TickerEffect.type=='fortune')
+	    {
 		Game.tickerL.click()
-	}	
+	    }
+    }
 }
     
 function autoBlacklistOff() {
