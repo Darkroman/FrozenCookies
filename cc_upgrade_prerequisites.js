@@ -139,9 +139,9 @@ FrozenCookies.preferenceValues = {
         'hint':'Automatically cast selected spell when your mana is full',
         'display':["Auto Cast OFF","Cojure Baked Goods","Force the Hand of Fate","Spontaneous Edifice","Haggler's Charm (cheapest)"],
         'default':0,
-        'extras':'<a class="option" id="minCpSMult" onclick="updateCpSMultMin(\'minCpSMult\');">x${minCpSMult} minimum Frenzy</a>'
+        if (autoSpell != 2) { 'extras':'<a class="option" id="minCpSMult" onclick="updateCpSMultMin(\'minCpSMult\');">x${minCpSMult} minimum Frenzy</a>' }
     },
-    // WORK IN PROGRESS. Not working due to timing issues
+    // Careful!
     'autoFTHOFCombo':{
         'hint':'WARNING: A little wonky, use at own risk\. Cast Haggler\'s Charm until 2 subsequent FTHOF spells are Click Frenzy and Elder Frenzy, or Click Frenzy and Building Special',
         'display':["Auto FTHOF Combo OFF", "Auto FTHOF Combo ON"],
