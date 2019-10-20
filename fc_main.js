@@ -2738,9 +2738,9 @@ function FCStart() {
         FrozenCookies.autoStoreBuyAllBot = 0;
     }
 
-//    if (FrozenCookies.autoFTHOFComboBot) {
-//    clearInterval(FrozenCookies.autoFTHOFComboBot);
-//    FrozenCookies.autoFTHOFComboBot = 0;
+    if (FrozenCookies.autoFTHOFComboBot) {
+    clearInterval(FrozenCookies.autoFTHOFComboBot);
+    FrozenCookies.autoFTHOFComboBot = 0;
     }
 
     //  if (!FrozenCookies.saveWrinklers && localStorage.wrinklers) {
@@ -2791,9 +2791,9 @@ function FCStart() {
     FrozenCookies.autoStoreBuyAllBot = setInterval(autoStoreBuyAllAction, FrozenCookies.frequency)
     }
 
-//    if (FrozenCookies.autoFTHOFCombo) {
-//    FrozenCookies.autoFTHOFComboBot = setInterval(autoFTHOFComboAction, FrozenCookies.frequency)
-//    }
+    if (FrozenCookies.autoFTHOFCombo) {
+    FrozenCookies.autoFTHOFComboBot = setInterval(autoFTHOFComboAction, FrozenCookies.frequency)
+    }
     
     if (statSpeed(FrozenCookies.trackStats) > 0) {
         FrozenCookies.statBot = setInterval(saveStats, statSpeed(FrozenCookies.trackStats));
