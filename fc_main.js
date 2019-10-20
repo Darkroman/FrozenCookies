@@ -1002,8 +1002,7 @@ function autoComboP2()
 	if (autoFTHOFComboAction.state == 1 && FrozenCookies.autoFTHOFCombo == 1) {
 		M.castSpell(FTHOF);
 		logEvent('AutoSpell', 'Double cast Force the Hand of Fate');
-		Game.Objects['Wizard tower'].buy(count);
-		autoFTHOFComboAction.state = 0;
+		//Game.Objects['Wizard tower'].buy(count);
 	}
 }
 
