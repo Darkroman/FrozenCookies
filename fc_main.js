@@ -2667,7 +2667,7 @@ function autoFTHOFComboAction() {
 				M.castSpell(FTHOF);
 				logEvent('AutoSpell', 'Cast Force the Hand of Fate');
 				
-				setTimeout(Game.Objects['Wizard tower'].sell(count), 5000);
+				Game.Objects['Wizard tower'].sell(count);
 				M.castSpell(FTHOF);
 				logEvent('AutoSpell', 'Double cast Force the Hand of Fate');
 				// Game.Objects['Wizard tower'].buy(count);
@@ -2759,7 +2759,7 @@ function FCStart() {
     }
     
     if (FrozenCookies.autoSpell) {
-        FrozenCookies.autoSpellBot = setInterval(autoCast, FrozenCookies.frequency)
+        FrozenCookies.autoSpellBot = setInterval(autoCast, FrozenCookies.frequency*20)
     }
 
     if (FrozenCookies.autoFortune) {
