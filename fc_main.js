@@ -703,6 +703,8 @@ function autoCast() {
 		// WORK IN PROGRESS
 		//Start SMART FTHOF checks
 		
+		var combochecker = 0;
+		
 		if (FrozenCookies.autoFTHOFCombo == 1) {
 			if ((nextSpellName(0) == "Click Frenzy" && nextSpellName(1) == "Building Special") || (nextSpellName(1) == "Click Frenzy" && nextSpellName(0) == "Building Special")) {
 					if (Game.hasBuff('Frenzy') && BuildingSpecialBuff() == 1 && Game.hasBuff('Frenzy').time / 30 >= Math.ceil(13 * BuffTimeFactor()) - 1 && BuildingBuffTime() >= Math.ceil(13 * BuffTimeFactor())) {
@@ -2666,10 +2668,8 @@ function autoFTHOFComboAction() {
 				logEvent('AutoSpell', 'Cast Force the Hand of Fate');
 				
 				setTimeout(Game.Objects['Wizard tower'].sell(count), 1000);
-				if (M.magic == M.magicM) {
-				M.castSpell(FTHOF);
+				setTimeout(M.castSpell(FTHOF), 5000);
 				logEvent('AutoSpell', 'Double cast Force the Hand of Fate');
-				}
 				// Game.Objects['Wizard tower'].buy(count);
 			}	
 				return;
