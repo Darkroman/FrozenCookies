@@ -998,7 +998,7 @@ function autoFTHOFComboAction() {
 
 function autoComboP2
 {
-	if (autoFTHOFComboAction.state == 1) {
+	if (autoFTHOFComboAction.state == 1 && FrozenCookies.autoFTHOFCombo == 1) {
 		M.castSpell(FTHOF);
 		logEvent('AutoSpell', 'Double cast Force the Hand of Fate');
 		Game.Objects['Wizard tower'].buy(count);
@@ -2803,6 +2803,10 @@ function FCStart() {
 
     if (FrozenCookies.autoFTHOFCombo) {
     FrozenCookies.autoFTHOFComboBot = setInterval(autoFTHOFComboAction, FrozenCookies.frequency)
+    }
+
+    if (FrozenCookies.autoFTHOFCombo) {
+    FrozenCookies.autoFTHOFComboBot = setInterval(autoComboP2, FrozenCookies.frequency)
     }
     
     if (statSpeed(FrozenCookies.trackStats) > 0) {
