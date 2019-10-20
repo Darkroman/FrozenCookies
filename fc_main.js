@@ -709,15 +709,8 @@ function autoCast() {
 							autoFTHOFComboAction();
 					}
 				}
-			
-			else
-			{
-				var hagC = M.spellsById[4];
-						   M.castSpell(hagC);
-						   logEvent('AutoSpell', 'Cast Haggler\'s Charm instead of Force the Hand of Fate');
-			}
 				
-			if ((nextSpellName(0) == "Click Frenzy" && nextSpellName(1) == "Elder Frenzy") || (nextSpellName(1) == "Click Frenzy" && nextSpellName(0) == "Elder Frenzy")) {
+			else if ((nextSpellName(0) == "Click Frenzy" && nextSpellName(1) == "Elder Frenzy") || (nextSpellName(1) == "Click Frenzy" && nextSpellName(0) == "Elder Frenzy")) {
 					if (Game.hasBuff('Frenzy') && BuildingSpecialBuff() == 1 && Game.hasBuff('Frenzy').time / 30 >= Math.ceil(13 * BuffTimeFactor()) - 1 && BuildingBuffTime() >= Math.ceil(13 * BuffTimeFactor())) {
 							autoFTHOFComboAction();
 					}
