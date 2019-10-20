@@ -2672,7 +2672,7 @@ function autoFTHOFComboAction() {
 			}	
 				return;
 	}
-	Game.Objects['Wizard tower'].buy(count);
+	// Game.Objects['Wizard tower'].buy(count);
 }
 
 function FCStart() {
