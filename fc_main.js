@@ -703,8 +703,6 @@ function autoCast() {
 		// WORK IN PROGRESS
 		//Start SMART FTHOF checks
 		
-		var combochecker = 0;
-		
 		if (FrozenCookies.autoFTHOFCombo == 1) {
 			if ((nextSpellName(0) == "Click Frenzy" && nextSpellName(1) == "Building Special") || (nextSpellName(1) == "Click Frenzy" && nextSpellName(0) == "Building Special")) {
 					if (Game.hasBuff('Frenzy') && BuildingSpecialBuff() == 1 && Game.hasBuff('Frenzy').time / 30 >= Math.ceil(13 * BuffTimeFactor()) - 1 && BuildingBuffTime() >= Math.ceil(13 * BuffTimeFactor())) {
@@ -717,12 +715,12 @@ function autoCast() {
 							autoFTHOFComboAction();
 					}
 				}
-//			else
-//			{
-//				var hagC = M.spellsById[4];
-//						   M.castSpell(hagC);
-//						   logEvent('AutoSpell', 'Cast Haggler\'s Charm instead of Force the Hand of Fate');
-//			}
+			else
+			{
+				var hagC = M.spellsById[4];
+						   M.castSpell(hagC);
+						   logEvent('AutoSpell', 'Cast Haggler\'s Charm instead of Force the Hand of Fate');
+			}
 		
 			return;
 		}
