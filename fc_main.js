@@ -832,6 +832,7 @@ function autoFTHOFComboAction() {
 		var SugarLevel = Game.Objects['Wizard tower'].level;
 		var count = 0;
 		var ComboState = 0;
+		autoFTHOFComboAction.state = 0;
 
 		if ((nextSpellName(0) == "Click Frenzy" && nextSpellName(1) == "Building Special") || (nextSpellName(1) == "Click Frenzy" && nextSpellName(0) == "Building Special")) {
 			ComboState = 1;
@@ -980,10 +981,11 @@ function autoFTHOFComboAction() {
 								M.castSpell(FTHOF);
 								logEvent('AutoSpell', 'Cast Force the Hand of Fate');
 								Game.Objects['Wizard tower'].sell(count);
+								autoFTHOFComboAction.state = 1;
 								
-								M.castSpell(FTHOF);
-								logEvent('AutoSpell', 'Double cast Force the Hand of Fate');
-								Game.Objects['Wizard tower'].buy(count);
+								//M.castSpell(FTHOF);
+								//logEvent('AutoSpell', 'Double cast Force the Hand of Fate');
+								//Game.Objects['Wizard tower'].buy(count);
 							}	
 							return;
 							
@@ -994,6 +996,14 @@ function autoFTHOFComboAction() {
 	}
 }
 
+function autoComboP2
+{
+	if (autoFTHOFComboAction.state == 1) {
+		M.castSpell(FTHOF);
+		logEvent('AutoSpell', 'Double cast Force the Hand of Fate');
+		Game.Objects['Wizard tower'].buy(count);
+	}
+}
 
 function AutoFortuneClick()
 {
