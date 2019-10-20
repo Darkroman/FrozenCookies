@@ -852,7 +852,8 @@ function autoFTHOFComboAction() {
 
 			case 1:
 				if (Game.hasBuff('Frenzy') && BuildingSpecialBuff() == 1 && Game.hasBuff('Frenzy').time / 30 >= Math.ceil(13 * BuffTimeFactor()) - 1 && BuildingBuffTime() >= Math.ceil(13 * BuffTimeFactor())) {
-				
+					FrozenCookies.logging = 0;
+					FrozenCookies.autoBuy = 0;
 					switch (SugarLevel)
 					{
 						case 0:
@@ -1002,6 +1003,8 @@ function autoComboP2()
 		M.castSpell(FTHOF);
 		//Game.Objects['Wizard tower'].buy(count);
 	}
+	FrozenCookies.logging = 1;
+	FrozenCookies.autoBuy = 1;
 }
 
 function AutoFortuneClick()
