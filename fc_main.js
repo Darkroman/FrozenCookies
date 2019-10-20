@@ -683,6 +683,7 @@ function autoCast() {
         switch (FrozenCookies.autoSpell) {
             case 0:
                 return;
+			
             case 1:
                 var CBG = M.spellsById[0];
                 if (M.magicM < Math.floor(CBG.costMin + CBG.costPercent*M.magicM)) return;
@@ -692,6 +693,7 @@ function autoCast() {
                 } 
 		
                 return;
+			
             case 2:
                 var FTHOF = M.spellsById[1];
                 if (M.magicM < Math.floor(FTHOF.costMin + FTHOF.costPercent*M.magicM)) return;
@@ -703,96 +705,97 @@ function autoCast() {
 		// WORK IN PROGRESS
 		//Start SMART FTHOF checks
 		
-			if (nextSpellName(0) == "Clot" || nextSpellName(0) == "Blab" || nextSpellName(0) == "Cookie Storm (Drop)" || nextSpellName(0) == "Ruin Cookies") {
-				var hagC = M.spellsById[4];
-						M.castSpell(hagC);
-						logEvent('AutoSpell', 'Cast Haggler\'s Charm instead of Force the Hand of Fate');
-			}
+		if (nextSpellName(0) == "Clot" || nextSpellName(0) == "Blab" || nextSpellName(0) == "Cookie Storm (Drop)" || nextSpellName(0) == "Ruin Cookies") {
+			var hagC = M.spellsById[4];
+			M.castSpell(hagC);
+			logEvent('AutoSpell', 'Cast Haggler\'s Charm instead of Force the Hand of Fate');
+		}
 			
-			if (nextSpellName(0) == "Sugar Lump" || nextSpellName(0) == "Cookie Chain") {
+		if (nextSpellName(0) == "Sugar Lump" || nextSpellName(0) == "Cookie Chain") {
+			M.castSpell(FTHOF);
+			logEvent('AutoSpell', 'Cast Force the Hand of Fate');
+		}
+			
+		if (nextSpellName(0) == "Lucky") {
+			if (cpsBonus() >= 7) {
 				M.castSpell(FTHOF);
 				logEvent('AutoSpell', 'Cast Force the Hand of Fate');
 			}
-			
-			if (nextSpellName(0) == "Lucky") {
-				if (cpsBonus() >= 7) {
-					M.castSpell(FTHOF);
-					logEvent('AutoSpell', 'Cast Force the Hand of Fate');
-				}
-			}
+		}
 				
-			if (nextSpellName(0) == "Elder Frenzy") {
-				if (Game.Upgrades["Elder Pact"].bought == 1) {
-					if (Game.dragonAura == 10 || Game.dragonAura2 == 10) {
-						if (Game.hasBuff('Dragonflight') && Game.hasBuff('Dragonflight').time / 30 >= Math.ceil(6 * BuffTimeFactor()) - 1) {
-							M.castSpell(FTHOF);
-							logEvent('AutoSpell', 'Cast Force the Hand of Fate');
-						}
-					}
-					else if (Game.dragonAura != 10 && Game.dragonAura2 != 10) {
-						if (Game.hasBuff('Click frenzy') && Game.hasBuff('Click frenzy').time / 30 >= Math.ceil(6 * BuffTimeFactor()) - 1) {
-							M.castSpell(FTHOF);
-							logEvent('AutoSpell', 'Cast Force the Hand of Fate');
-						}
-					}
-				}
-				else if (Game.Upgrades["Elder Pact"].bought == 0) {
-					if (Game.dragonAura == 10 || Game.dragonAura2 == 10) {
-						if (Game.hasBuff('Frenzy') && Game.hasBuff('Dragonflight') && Game.hasBuff('Dragonflight').time / 30 >= Math.ceil(6 * BuffTimeFactor()) - 1) {
-							M.castSpell(FTHOF);
-							logEvent('AutoSpell', 'Cast Force the Hand of Fate');
-						}
-					}
-					else if (Game.dragonAura != 10 && Game.dragonAura2 != 10) {
-						if (Game.hasBuff('Frenzy') && Game.hasBuff('Click frenzy') && Game.hasBuff('Click frenzy').time / 30 >= Math.ceil(6 * BuffTimeFactor()) - 1) {
-							M.castSpell(FTHOF);
-							logEvent('AutoSpell', 'Cast Force the Hand of Fate');
-						}
-					}
-				}
-			}
-
-			if (nextSpellName(0) == "Frenzy" || nextSpellName(0) == "Building Special") {
+		if (nextSpellName(0) == "Elder Frenzy") {
+			if (Game.Upgrades["Elder Pact"].bought == 1) {
 				if (Game.dragonAura == 10 || Game.dragonAura2 == 10) {
-					if (Game.hasBuff('Dragonflight') && Game.hasBuff('Dragonflight').time / 30 >= Math.ceil(10 * BuffTimeFactor()) - 1) {
+					if (Game.hasBuff('Dragonflight') && Game.hasBuff('Dragonflight').time / 30 >= Math.ceil(6 * BuffTimeFactor()) - 1) {
 						M.castSpell(FTHOF);
 						logEvent('AutoSpell', 'Cast Force the Hand of Fate');
 					}
 				}
-				else if (Game.hasBuff('Click frenzy') && Game.hasBuff('Click frenzy').time / 30 >= Math.ceil(13 * BuffTimeFactor()) - 1) {
-					M.castSpell(FTHOF);
-					logEvent('AutoSpell', 'Cast Force the Hand of Fate');
+				else if (Game.dragonAura != 10 && Game.dragonAura2 != 10) {
+					if (Game.hasBuff('Click frenzy') && Game.hasBuff('Click frenzy').time / 30 >= Math.ceil(6 * BuffTimeFactor()) - 1) {
+						M.castSpell(FTHOF);
+						logEvent('AutoSpell', 'Cast Force the Hand of Fate');
+					}
 				}
 			}
+			else if (Game.Upgrades["Elder Pact"].bought == 0) {
+				if (Game.dragonAura == 10 || Game.dragonAura2 == 10) {
+					if (Game.hasBuff('Frenzy') && Game.hasBuff('Dragonflight') && Game.hasBuff('Dragonflight').time / 30 >= Math.ceil(6 * BuffTimeFactor()) - 1) {
+						M.castSpell(FTHOF);
+						logEvent('AutoSpell', 'Cast Force the Hand of Fate');
+					}
+				}
+				else if (Game.dragonAura != 10 && Game.dragonAura2 != 10) {
+					if (Game.hasBuff('Frenzy') && Game.hasBuff('Click frenzy') && Game.hasBuff('Click frenzy').time / 30 >= Math.ceil(6 * BuffTimeFactor()) - 1) {
+						M.castSpell(FTHOF);
+						logEvent('AutoSpell', 'Cast Force the Hand of Fate');
+					}
+				}
+			}
+		}
 
-			if (nextSpellName(0) == "Click Frenzy") {
-				if (Game.hasBuff('Frenzy') && BuildingSpecialBuff() == 1 && Game.hasBuff('Frenzy').time / 30 >= Math.ceil(13 * BuffTimeFactor()) - 1 && BuildingBuffTime() >= Math.ceil(13 * BuffTimeFactor())) {
+		if (nextSpellName(0) == "Frenzy" || nextSpellName(0) == "Building Special") {
+			if (Game.dragonAura == 10 || Game.dragonAura2 == 10) {
+				if (Game.hasBuff('Dragonflight') && Game.hasBuff('Dragonflight').time / 30 >= Math.ceil(10 * BuffTimeFactor()) - 1) {
 					M.castSpell(FTHOF);
 					logEvent('AutoSpell', 'Cast Force the Hand of Fate');
 				}
 			}
+			else if (Game.hasBuff('Click frenzy') && Game.hasBuff('Click frenzy').time / 30 >= Math.ceil(13 * BuffTimeFactor()) - 1) {
+				M.castSpell(FTHOF);
+				logEvent('AutoSpell', 'Cast Force the Hand of Fate');
+			}
+		}
+
+		if (nextSpellName(0) == "Click Frenzy") {
+			if (Game.hasBuff('Frenzy') && BuildingSpecialBuff() == 1 && Game.hasBuff('Frenzy').time / 30 >= Math.ceil(13 * BuffTimeFactor()) - 1 && BuildingBuffTime() >= Math.ceil(13 * BuffTimeFactor())) {
+				M.castSpell(FTHOF);
+				logEvent('AutoSpell', 'Cast Force the Hand of Fate');
+			}
+		}
 			
-			if (nextSpellName(0) == "Cookie Storm") {
-				if (Game.hasBuff('Frenzy') && BuildingSpecialBuff() == 1 && Game.hasBuff('Frenzy').time / 30 >= Math.ceil(7 * BuffTimeFactor()) - 1 && BuildingBuffTime() >= Math.ceil(7 * BuffTimeFactor())) {
-					M.castSpell(FTHOF);
-					logEvent('AutoSpell', 'Cast Force the Hand of Fate');
-				}
+		if (nextSpellName(0) == "Cookie Storm") {
+			if (Game.hasBuff('Frenzy') && BuildingSpecialBuff() == 1 && Game.hasBuff('Frenzy').time / 30 >= Math.ceil(7 * BuffTimeFactor()) - 1 && BuildingBuffTime() >= Math.ceil(7 * BuffTimeFactor())) {
+				M.castSpell(FTHOF);
+				logEvent('AutoSpell', 'Cast Force the Hand of Fate');
 			}
+		}
 					
-			if (nextSpellName(0) == "Cursed Finger") {
-				if (Game.dragonAura == 10 || Game.dragonAura2 == 10) {
-					if (Game.hasBuff('Dragonflight') && Game.hasBuff('Dragonflight').time / 30 >= Math.ceil(10 * BuffTimeFactor()) - 1){
-						M.castSpell(FTHOF);
-						logEvent('AutoSpell', 'Cast Force the Hand of Fate');
-					}
-				}
-				else if (Game.hasBuff('Click frenzy') && Game.hasBuff('Click frenzy').time / 30 >= Math.ceil(10 * BuffTimeFactor()) - 1) {
+		if (nextSpellName(0) == "Cursed Finger") {
+			if (Game.dragonAura == 10 || Game.dragonAura2 == 10) {
+				if (Game.hasBuff('Dragonflight') && Game.hasBuff('Dragonflight').time / 30 >= Math.ceil(10 * BuffTimeFactor()) - 1){
 					M.castSpell(FTHOF);
 					logEvent('AutoSpell', 'Cast Force the Hand of Fate');
 				}
 			}
+			else if (Game.hasBuff('Click frenzy') && Game.hasBuff('Click frenzy').time / 30 >= Math.ceil(10 * BuffTimeFactor()) - 1) {
+				M.castSpell(FTHOF);
+				logEvent('AutoSpell', 'Cast Force the Hand of Fate');
+			}
+		}
 			
-					return;
+		return;
+			
             case 3:
                 var SE = M.spellsById[3];
 		//Chancemaker replaced by new Fractal engine	
@@ -807,6 +810,7 @@ function autoCast() {
                 M.castSpell(SE);
                 logEvent('AutoSpell', 'Cast Spontaneous Edifice');
                 return;
+			
             case 4:
                 var hagC = M.spellsById[4];
                 if (M.magicM < Math.floor(hagC.costMin + hagC.costPercent*M.magicM)) return;
@@ -817,8 +821,148 @@ function autoCast() {
     }
 }
 
+/*
+function autoFTHOFComboAction() {
+	if (Game.Objects['Wizard tower'].level > 10 || FrozenCookies.autoFTHOFCombo == 0) // THIS WILL NOT WORK IF TOWER LEVEL IS ABOVE 10
+	return;
+	
+	var FTHOF = M.spellsById[1];
+	var x = Game.Objects['Wizard tower'].level;
+	var count = 0;
+	
+	switch (x) {
+		case 0:
+			return;
+		
+		case 1:
+			if (Game.Objects['Wizard tower'].amount >= 316) {
+				count = Game.Objects['Wizard tower'].amount - 22;
+				M.castSpell(FTHOF);
+				logEvent('AutoSpell', 'Cast Force the Hand of Fate');
+				
+				Game.Objects['Wizard tower'].sell(count);
+				M.castSpell(FTHOF);
+				logEvent('AutoSpell', 'Double cast Force the Hand of Fate');
+				
+			}
+				return;
+				
+		case 2:
+			if (Game.Objects['Wizard tower'].amount >= 312) {
+				count = Game.Objects['Wizard tower'].amount - 15;
+				M.castSpell(FTHOF);
+				logEvent('AutoSpell', 'Cast Force the Hand of Fate');
+				
+				Game.Objects['Wizard tower'].sell(count);
+				M.castSpell(FTHOF);
+				logEvent('AutoSpell', 'Double cast Force the Hand of Fate');
+				Game.Objects['Wizard tower'].buy(count);
+			}	
+				return;
+		case 3:
+			if (Game.Objects['Wizard tower'].amount >= 308) {
+				count = Game.Objects['Wizard tower'].amount - 9;
+				M.castSpell(FTHOF);
+				logEvent('AutoSpell', 'Cast Force the Hand of Fate');
+				
+				Game.Objects['Wizard tower'].sell(count);
+				M.castSpell(FTHOF);
+				logEvent('AutoSpell', 'Double cast Force the Hand of Fate');
+				Game.Objects['Wizard tower'].buy(count);
+			}	
+				return;
+		case 4:
+			if (Game.Objects['Wizard tower'].amount >= 304) {
+				count = Game.Objects['Wizard tower'].amount - 3;
+				M.castSpell(FTHOF);
+				logEvent('AutoSpell', 'Cast Force the Hand of Fate');
+				
+				Game.Objects['Wizard tower'].sell(count);
+				M.castSpell(FTHOF);
+				logEvent('AutoSpell', 'Double cast Force the Hand of Fate');
+				Game.Objects['Wizard tower'].buy(count);
+			}	
+				return;
+		case 5:
+			if (Game.Objects['Wizard tower'].amount >= 309) {
+				count = Game.Objects['Wizard tower'].amount - 1;
+				M.castSpell(FTHOF);
+				logEvent('AutoSpell', 'Cast Force the Hand of Fate');
+				
+				Game.Objects['Wizard tower'].sell(count);
+				M.castSpell(FTHOF);
+				logEvent('AutoSpell', 'Double cast Force the Hand of Fate');
+				Game.Objects['Wizard tower'].buy(count);
+			}	
+				return;
+		case 6:
+			if (Game.Objects['Wizard tower'].amount >= 390) {
+				count = Game.Objects['Wizard tower'].amount - 1;
+				M.castSpell(FTHOF);
+				logEvent('AutoSpell', 'Cast Force the Hand of Fate');
+				
+				Game.Objects['Wizard tower'].sell(count);
+				M.castSpell(FTHOF);
+				logEvent('AutoSpell', 'Double cast Force the Hand of Fate');
+				Game.Objects['Wizard tower'].buy(count);
+			}	
+				return;
+		case 7:
+			if (Game.Objects['Wizard tower'].amount >= 445) {
+				count = Game.Objects['Wizard tower'].amount - 1;
+				M.castSpell(FTHOF);
+				logEvent('AutoSpell', 'Cast Force the Hand of Fate');
+				
+				Game.Objects['Wizard tower'].sell(count);
+				M.castSpell(FTHOF);
+				logEvent('AutoSpell', 'Double cast Force the Hand of Fate');
+				Game.Objects['Wizard tower'].buy(count);
+			}	
+				return;
+		case 8:
+			if (Game.Objects['Wizard tower'].amount >= 506) {
+				count = Game.Objects['Wizard tower'].amount - 1;
+				M.castSpell(FTHOF);
+				logEvent('AutoSpell', 'Cast Force the Hand of Fate');
+				
+				Game.Objects['Wizard tower'].sell(count);
+				M.castSpell(FTHOF);
+				logEvent('AutoSpell', 'Double cast Force the Hand of Fate');
+				Game.Objects['Wizard tower'].buy(count);
+			}	
+				return;
+		case 9:
+			if (Game.Objects['Wizard tower'].amount >= 530) {
+				count = Game.Objects['Wizard tower'].amount - 1;
+				M.castSpell(FTHOF);
+				logEvent('AutoSpell', 'Cast Force the Hand of Fate');
+				
+				Game.Objects['Wizard tower'].sell(count);
+				M.castSpell(FTHOF);
+				logEvent('AutoSpell', 'Double cast Force the Hand of Fate');
+				Game.Objects['Wizard tower'].buy(count);
+			}	
+				return;
+		case 10:
+			if (Game.Objects['Wizard tower'].amount >= 598) {
+				count = Game.Objects['Wizard tower'].amount - 1;
+				M.castSpell(FTHOF);
+				logEvent('AutoSpell', 'Cast Force the Hand of Fate');
+				
+				Game.Objects['Wizard tower'].sell(count);
+				M.castSpell(FTHOF);
+				logEvent('AutoSpell', 'Double cast Force the Hand of Fate');
+				// Game.Objects['Wizard tower'].buy(count);
+			}	
+				return;
+	}
+	// Game.Objects['Wizard tower'].buy(count);
+}
+*/
+
 function AutoFortuneClick()
 {
+	
 	if (Game.TickerEffect && Game.TickerEffect.type=='fortune')
 	{
 		Game.tickerL.click()
@@ -2513,144 +2657,6 @@ if (FrozenCookies.autoStoreBuyAll < 1) return;
 Game.storeBuyAll()
 }
 
-/*
-function autoFTHOFComboAction() {
-	if (Game.Objects['Wizard tower'].level > 10 || FrozenCookies.autoFTHOFCombo == 0) // THIS WILL NOT WORK IF TOWER LEVEL IS ABOVE 10
-	return;
-	
-	var FTHOF = M.spellsById[1];
-	var x = Game.Objects['Wizard tower'].level;
-	var count = 0;
-	
-	switch (x) {
-		case 0:
-			return;
-		
-		case 1:
-			if (Game.Objects['Wizard tower'].amount >= 316) {
-				count = Game.Objects['Wizard tower'].amount - 22;
-				M.castSpell(FTHOF);
-				logEvent('AutoSpell', 'Cast Force the Hand of Fate');
-				
-				Game.Objects['Wizard tower'].sell(count);
-				M.castSpell(FTHOF);
-				logEvent('AutoSpell', 'Double cast Force the Hand of Fate');
-				
-			}
-				return;
-				
-		case 2:
-			if (Game.Objects['Wizard tower'].amount >= 312) {
-				count = Game.Objects['Wizard tower'].amount - 15;
-				M.castSpell(FTHOF);
-				logEvent('AutoSpell', 'Cast Force the Hand of Fate');
-				
-				Game.Objects['Wizard tower'].sell(count);
-				M.castSpell(FTHOF);
-				logEvent('AutoSpell', 'Double cast Force the Hand of Fate');
-				Game.Objects['Wizard tower'].buy(count);
-			}	
-				return;
-		case 3:
-			if (Game.Objects['Wizard tower'].amount >= 308) {
-				count = Game.Objects['Wizard tower'].amount - 9;
-				M.castSpell(FTHOF);
-				logEvent('AutoSpell', 'Cast Force the Hand of Fate');
-				
-				Game.Objects['Wizard tower'].sell(count);
-				M.castSpell(FTHOF);
-				logEvent('AutoSpell', 'Double cast Force the Hand of Fate');
-				Game.Objects['Wizard tower'].buy(count);
-			}	
-				return;
-		case 4:
-			if (Game.Objects['Wizard tower'].amount >= 304) {
-				count = Game.Objects['Wizard tower'].amount - 3;
-				M.castSpell(FTHOF);
-				logEvent('AutoSpell', 'Cast Force the Hand of Fate');
-				
-				Game.Objects['Wizard tower'].sell(count);
-				M.castSpell(FTHOF);
-				logEvent('AutoSpell', 'Double cast Force the Hand of Fate');
-				Game.Objects['Wizard tower'].buy(count);
-			}	
-				return;
-		case 5:
-			if (Game.Objects['Wizard tower'].amount >= 309) {
-				count = Game.Objects['Wizard tower'].amount - 1;
-				M.castSpell(FTHOF);
-				logEvent('AutoSpell', 'Cast Force the Hand of Fate');
-				
-				Game.Objects['Wizard tower'].sell(count);
-				M.castSpell(FTHOF);
-				logEvent('AutoSpell', 'Double cast Force the Hand of Fate');
-				Game.Objects['Wizard tower'].buy(count);
-			}	
-				return;
-		case 6:
-			if (Game.Objects['Wizard tower'].amount >= 390) {
-				count = Game.Objects['Wizard tower'].amount - 1;
-				M.castSpell(FTHOF);
-				logEvent('AutoSpell', 'Cast Force the Hand of Fate');
-				
-				Game.Objects['Wizard tower'].sell(count);
-				M.castSpell(FTHOF);
-				logEvent('AutoSpell', 'Double cast Force the Hand of Fate');
-				Game.Objects['Wizard tower'].buy(count);
-			}	
-				return;
-		case 7:
-			if (Game.Objects['Wizard tower'].amount >= 445) {
-				count = Game.Objects['Wizard tower'].amount - 1;
-				M.castSpell(FTHOF);
-				logEvent('AutoSpell', 'Cast Force the Hand of Fate');
-				
-				Game.Objects['Wizard tower'].sell(count);
-				M.castSpell(FTHOF);
-				logEvent('AutoSpell', 'Double cast Force the Hand of Fate');
-				Game.Objects['Wizard tower'].buy(count);
-			}	
-				return;
-		case 8:
-			if (Game.Objects['Wizard tower'].amount >= 506) {
-				count = Game.Objects['Wizard tower'].amount - 1;
-				M.castSpell(FTHOF);
-				logEvent('AutoSpell', 'Cast Force the Hand of Fate');
-				
-				Game.Objects['Wizard tower'].sell(count);
-				M.castSpell(FTHOF);
-				logEvent('AutoSpell', 'Double cast Force the Hand of Fate');
-				Game.Objects['Wizard tower'].buy(count);
-			}	
-				return;
-		case 9:
-			if (Game.Objects['Wizard tower'].amount >= 530) {
-				count = Game.Objects['Wizard tower'].amount - 1;
-				M.castSpell(FTHOF);
-				logEvent('AutoSpell', 'Cast Force the Hand of Fate');
-				
-				Game.Objects['Wizard tower'].sell(count);
-				M.castSpell(FTHOF);
-				logEvent('AutoSpell', 'Double cast Force the Hand of Fate');
-				Game.Objects['Wizard tower'].buy(count);
-			}	
-				return;
-		case 10:
-			if (Game.Objects['Wizard tower'].amount >= 598) {
-				count = Game.Objects['Wizard tower'].amount - 1;
-				M.castSpell(FTHOF);
-				logEvent('AutoSpell', 'Cast Force the Hand of Fate');
-				
-				Game.Objects['Wizard tower'].sell(count);
-				M.castSpell(FTHOF);
-				logEvent('AutoSpell', 'Double cast Force the Hand of Fate');
-				// Game.Objects['Wizard tower'].buy(count);
-			}	
-				return;
-	}
-	// Game.Objects['Wizard tower'].buy(count);
-}
-*/
 function FCStart() {
     //  To allow polling frequency to change, clear intervals before setting new ones.
 
