@@ -2808,11 +2808,11 @@ function FCStart() {
     }
 
     if (FrozenCookies.autoFTHOFCombo) {
-    FrozenCookies.autoFTHOFComboBot = setInterval(autoFTHOFComboAction, FrozenCookies.frequency)
+    FrozenCookies.autoFTHOFComboBot = setInterval(autoFTHOFComboAction, FrozenCookies.frequency*2)
     }
 
     if (FrozenCookies.autoFTHOFCombo) {
-    FrozenCookies.autoFTHOFComboBot2 = setInterval(autoComboP2, FrozenCookies.frequency*10)
+    FrozenCookies.autoFTHOFComboBot2 = setInterval(autoComboP2, FrozenCookies.frequency)
     }
     
     if (statSpeed(FrozenCookies.trackStats) > 0) {
