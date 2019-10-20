@@ -832,7 +832,7 @@ function autoFTHOFComboAction() {
 		var SugarLevel = Game.Objects['Wizard tower'].level;
 		var count = 0;
 		var ComboState = 0;
-		autoFTHOFComboAction.state = 0;
+		// autoFTHOFComboAction.state = 0;
 
 		if ((nextSpellName(0) == "Click Frenzy" && nextSpellName(1) == "Building Special") || (nextSpellName(1) == "Click Frenzy" && nextSpellName(0) == "Building Special")) {
 			ComboState = 1;
@@ -964,11 +964,11 @@ function autoFTHOFComboAction() {
 								count = Game.Objects['Wizard tower'].amount - 1;
 								M.castSpell(FTHOF);
 								Game.Objects['Wizard tower'].sell(count);
-								autoFTHOFComboAction.state = 1;
 								
-								//M.castSpell(FTHOF);
-
-								//Game.Objects['Wizard tower'].buy(count);
+								//autoFTHOFComboAction.state = 1;
+								
+								M.castSpell(FTHOF);
+								Game.Objects['Wizard tower'].buy(count);
 							}	
 							return;
 							
@@ -979,6 +979,7 @@ function autoFTHOFComboAction() {
 	}
 }
 
+/* USED FOR TEST PURPOSES
 function autoComboP2()
 {
 	var FTHOF = M.spellsById[1];
@@ -989,6 +990,7 @@ function autoComboP2()
 	        FrozenCookies.autoBuy = 1;
 	}
 }
+*/
 
 function AutoFortuneClick()
 {
@@ -2737,12 +2739,12 @@ function FCStart() {
     clearInterval(FrozenCookies.autoFTHOFComboBot);
     FrozenCookies.autoFTHOFComboBot = 0;
     }
-	
+/*	
     if (FrozenCookies.autoFTHOFComboBot2) {
     clearInterval(FrozenCookies.autoFTHOFComboBot2);
     FrozenCookies.autoFTHOFComboBot2 = 0;
     }
-
+*/
     //  if (!FrozenCookies.saveWrinklers && localStorage.wrinklers) {
     //    delete localStorage.wrinklers;
     //  }
@@ -2794,11 +2796,11 @@ function FCStart() {
     if (FrozenCookies.autoFTHOFCombo) {
     FrozenCookies.autoFTHOFComboBot = setInterval(autoFTHOFComboAction, FrozenCookies.frequency*2)
     }
-
+/*
     if (FrozenCookies.autoFTHOFCombo) {
     FrozenCookies.autoFTHOFComboBot2 = setInterval(autoComboP2, FrozenCookies.frequency)
     }
-    
+*/   
     if (statSpeed(FrozenCookies.trackStats) > 0) {
         FrozenCookies.statBot = setInterval(saveStats, statSpeed(FrozenCookies.trackStats));
     } else if (FrozenCookies.trackStats == 6 && !FrozenCookies.smartTrackingBot) {
