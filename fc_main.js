@@ -703,31 +703,6 @@ function autoCast() {
 		// WORK IN PROGRESS
 		//Start SMART FTHOF checks
 		
-		/*
-		if (FrozenCookies.autoFTHOFCombo == 1) {
-			if ((nextSpellName(0) == "Click Frenzy" && nextSpellName(1) == "Building Special") || (nextSpellName(1) == "Click Frenzy" && nextSpellName(0) == "Building Special")) {
-					if (Game.hasBuff('Frenzy') && BuildingSpecialBuff() == 1 && Game.hasBuff('Frenzy').time / 30 >= Math.ceil(13 * BuffTimeFactor()) - 1 && BuildingBuffTime() >= Math.ceil(13 * BuffTimeFactor())) {
-							autoFTHOFComboAction();
-					}
-				}
-				
-			else if ((nextSpellName(0) == "Click Frenzy" && nextSpellName(1) == "Elder Frenzy") || (nextSpellName(1) == "Click Frenzy" && nextSpellName(0) == "Elder Frenzy")) {
-					if (Game.hasBuff('Frenzy') && BuildingSpecialBuff() == 1 && Game.hasBuff('Frenzy').time / 30 >= Math.ceil(13 * BuffTimeFactor()) - 1 && BuildingBuffTime() >= Math.ceil(13 * BuffTimeFactor())) {
-							autoFTHOFComboAction();
-					}
-				}
-			else
-			{
-				var hagC = M.spellsById[4];
-						   M.castSpell(hagC);
-						   logEvent('AutoSpell', 'Cast Haggler\'s Charm instead of Force the Hand of Fate');
-			}
-		
-			return;
-		}
-		
-		else if (FrozenCookies.autoFTHOFCombo == 0) {
-		*/
 			if (nextSpellName(0) == "Clot" || nextSpellName(0) == "Blab" || nextSpellName(0) == "Cookie Storm (Drop)" || nextSpellName(0) == "Ruin Cookies") {
 				var hagC = M.spellsById[4];
 						M.castSpell(hagC);
@@ -818,7 +793,6 @@ function autoCast() {
 			}
 			
 					return;
-//	}
             case 3:
                 var SE = M.spellsById[3];
 		//Chancemaker replaced by new Fractal engine	
