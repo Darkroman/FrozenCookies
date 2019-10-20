@@ -996,7 +996,7 @@ function autoFTHOFComboAction() {
 	}
 }
 
-function autoComboP2
+function autoComboP2()
 {
 	if (autoFTHOFComboAction.state == 1 && FrozenCookies.autoFTHOFCombo == 1) {
 		M.castSpell(FTHOF);
@@ -2752,6 +2752,11 @@ function FCStart() {
     clearInterval(FrozenCookies.autoFTHOFComboBot);
     FrozenCookies.autoFTHOFComboBot = 0;
     }
+	
+    if (FrozenCookies.autoFTHOFComboBot2) {
+    clearInterval(FrozenCookies.autoFTHOFComboBot2);
+    FrozenCookies.autoFTHOFComboBot2 = 0;
+    }
 
     //  if (!FrozenCookies.saveWrinklers && localStorage.wrinklers) {
     //    delete localStorage.wrinklers;
@@ -2806,7 +2811,7 @@ function FCStart() {
     }
 
     if (FrozenCookies.autoFTHOFCombo) {
-    FrozenCookies.autoFTHOFComboBot = setInterval(autoComboP2, FrozenCookies.frequency)
+    FrozenCookies.autoFTHOFComboBot2 = setInterval(autoComboP2, FrozenCookies.frequency)
     }
     
     if (statSpeed(FrozenCookies.trackStats) > 0) {
