@@ -818,7 +818,7 @@ function autoCast() {
 			}
 			
 					return;
-		}
+//	}
             case 3:
                 var SE = M.spellsById[3];
 		//Chancemaker replaced by new Fractal engine	
