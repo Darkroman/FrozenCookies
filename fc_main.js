@@ -979,7 +979,7 @@ function autoFTHOFComboAction() {
 								count = Game.Objects['Wizard tower'].amount - 1;
 								M.castSpell(FTHOF);
 								logEvent('AutoSpell', 'Cast Force the Hand of Fate');
-								setTimeout(Game.Objects['Wizard tower'].sell(count), 2000);
+								Game.Objects['Wizard tower'].sell(count);
 								
 								setTimeout(M.castSpell(FTHOF), 2000);
 								logEvent('AutoSpell', 'Double cast Force the Hand of Fate');
@@ -2738,9 +2738,9 @@ function FCStart() {
         FrozenCookies.autoStoreBuyAllBot = 0;
     }
 
-    if (FrozenCookies.autoFTHOFComboBot) {
-    clearInterval(FrozenCookies.autoFTHOFComboBot);
-    FrozenCookies.autoFTHOFComboBot = 0;
+//    if (FrozenCookies.autoFTHOFComboBot) {
+//    clearInterval(FrozenCookies.autoFTHOFComboBot);
+//    FrozenCookies.autoFTHOFComboBot = 0;
     }
 
     //  if (!FrozenCookies.saveWrinklers && localStorage.wrinklers) {
@@ -2791,9 +2791,9 @@ function FCStart() {
     FrozenCookies.autoStoreBuyAllBot = setInterval(autoStoreBuyAllAction, FrozenCookies.frequency)
     }
 
-    if (FrozenCookies.autoFTHOFCombo) {
-    FrozenCookies.autoFTHOFComboBot = setInterval(autoFTHOFComboAction, FrozenCookies.frequency)
-    }
+//    if (FrozenCookies.autoFTHOFCombo) {
+//    FrozenCookies.autoFTHOFComboBot = setInterval(autoFTHOFComboAction, FrozenCookies.frequency)
+//    }
     
     if (statSpeed(FrozenCookies.trackStats) > 0) {
         FrozenCookies.statBot = setInterval(saveStats, statSpeed(FrozenCookies.trackStats));
