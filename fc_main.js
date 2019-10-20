@@ -960,6 +960,8 @@ function autoFTHOFComboAction() {
 							return;
 							
 						case 10:
+							FrozenCookies.logging = 0;
+							FrozenCookies.autoBuy = 0;
 							if (Game.Objects['Wizard tower'].amount >= 598) {
 								count = Game.Objects['Wizard tower'].amount - 1;
 								M.castSpell(FTHOF);
