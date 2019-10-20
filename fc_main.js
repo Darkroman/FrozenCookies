@@ -715,12 +715,12 @@ function autoCast() {
 							autoFTHOFComboAction();
 					}
 				}
-			else
-			{
-				var hagC = M.spellsById[4];
-						   M.castSpell(hagC);
-						   logEvent('AutoSpell', 'Cast Haggler\'s Charm instead of Force the Hand of Fate');
-			}
+//			else
+//			{
+//				var hagC = M.spellsById[4];
+//						   M.castSpell(hagC);
+//						   logEvent('AutoSpell', 'Cast Haggler\'s Charm instead of Force the Hand of Fate');
+//			}
 		
 			return;
 		}
