@@ -143,7 +143,7 @@ FrozenCookies.preferenceValues = {
     },
     // WORK IN PROGRESS. Not working due to timing issues
     'autoFTHOFCombo':{
-        'hint':'Cast Haggler\'s Charm until 2 subsequent FTHOF spells are Click Frenzy and Elder Frenzy, or Click Frenzy and Building Special',
+        'hint':'WARNING: A little wonky, use at own risk\. Cast Haggler\'s Charm until 2 subsequent FTHOF spells are Click Frenzy and Elder Frenzy, or Click Frenzy and Building Special',
         'display':["Auto FTHOF Combo OFF", "Auto FTHOF Combo ON"],
         'default':0
     },
