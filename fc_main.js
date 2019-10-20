@@ -2662,12 +2662,14 @@ function autoFTHOFComboAction() {
 		case 10:
 			if (Game.Objects['Wizard tower'].amount >= 598) {
 				count = Game.Objects['Wizard tower'].amount - 1;
-				setTimeout(M.castSpell(FTHOF), 1000);
+				M.castSpell(FTHOF);
 				logEvent('AutoSpell', 'Cast Force the Hand of Fate');
 				
-				setTimeout(Game.Objects['Wizard tower'].sell(count), 1000);
-				setTimeout(M.castSpell(FTHOF), 1000);
+				Game.Objects['Wizard tower'].sell(count);
+				if (M.magic == M.magicM) {
+				M.castSpell(FTHOF);
 				logEvent('AutoSpell', 'Double cast Force the Hand of Fate');
+				}
 				// Game.Objects['Wizard tower'].buy(count);
 			}	
 				return;
