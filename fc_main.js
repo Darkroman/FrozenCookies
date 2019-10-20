@@ -2759,7 +2759,7 @@ function FCStart() {
     }
     
     if (FrozenCookies.autoSpell) {
-        FrozenCookies.autoSpellBot = setInterval(autoCast, FrozenCookies.frequency*20)
+        FrozenCookies.autoSpellBot = setInterval(autoCast, FrozenCookies.frequency*10)
     }
 
     if (FrozenCookies.autoFortune) {
