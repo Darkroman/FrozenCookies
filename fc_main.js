@@ -867,6 +867,8 @@ function autoFTHOFComboAction() {
 								M.castSpell(FTHOF);
 
 								Game.Objects['Wizard tower'].sell(count);
+								for (var i = 0; i < 100000; i++)
+								{++i}								
 								
 								autoFTHOFComboAction.state = 1;
 							}
@@ -880,6 +882,8 @@ function autoFTHOFComboAction() {
 								M.castSpell(FTHOF);
 
 								Game.Objects['Wizard tower'].sell(count);
+								for (var i = 0; i < 100000; i++)
+								{++i}								
 								
 								autoFTHOFComboAction.state = 1;
 							}	
@@ -893,6 +897,8 @@ function autoFTHOFComboAction() {
 								M.castSpell(FTHOF);
 
 								Game.Objects['Wizard tower'].sell(count);
+								for (var i = 0; i < 100000; i++)
+								{++i}								
 								
 								autoFTHOFComboAction.state = 1;
 							}	
@@ -906,6 +912,8 @@ function autoFTHOFComboAction() {
 								M.castSpell(FTHOF);
 
 								Game.Objects['Wizard tower'].sell(count);
+								for (var i = 0; i < 100000; i++)
+								{++i}								
 								
 								autoFTHOFComboAction.state = 1;
 							}	
@@ -919,6 +927,8 @@ function autoFTHOFComboAction() {
 								M.castSpell(FTHOF);
 
 								Game.Objects['Wizard tower'].sell(count);
+								for (var i = 0; i < 100000; i++)
+								{++i}								
 								
 								autoFTHOFComboAction.state = 1;
 							}	
@@ -932,6 +942,8 @@ function autoFTHOFComboAction() {
 								M.castSpell(FTHOF);
 
 								Game.Objects['Wizard tower'].sell(count);
+								for (var i = 0; i < 100000; i++)
+								{++i}								
 								
 								autoFTHOFComboAction.state = 1;
 							}	
@@ -946,6 +958,8 @@ function autoFTHOFComboAction() {
 								logEvent('AutoSpell', 'Cast Force the Hand of Fate');
 
 								Game.Objects['Wizard tower'].sell(count);
+								for (var i = 0; i < 100000; i++)
+								{++i}
 								
 								autoFTHOFComboAction.state = 1;
 							}	
@@ -959,6 +973,8 @@ function autoFTHOFComboAction() {
 								M.castSpell(FTHOF);
 
 								Game.Objects['Wizard tower'].sell(count);
+								for (var i = 0; i < 100000; i++)
+								{++i}
 								
 								autoFTHOFComboAction.state = 1;
 							}	
@@ -972,6 +988,8 @@ function autoFTHOFComboAction() {
 								M.castSpell(FTHOF);
 
 								Game.Objects['Wizard tower'].sell(count);
+								for (var i = 0; i < 100000; i++)
+								{++i}
 								
 								autoFTHOFComboAction.state = 1;
 							}	
