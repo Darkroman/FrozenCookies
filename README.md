@@ -37,6 +37,10 @@ What can Frozen Cookies do?
 
 What's new?
 -----------
+2019 Oct 20
+- Added in an auto combo finder! This feature will cast Haggler's Charm until the next 2 spells in the queue are either Click Frenzy and Elder Frenzy, or Click Frenzy and Building Special and will then cast spell, bulk sell wizard towers to reduce mana so you're able to do another Force The Hand of Fate cast. WARNING: It may be a little wonky. It also turns off logging since that messes the timing for some reason. It also turns autobuy off and then back on. If your autobuy is already off, it will turn it on after it's done.
+- Fixed up the Smart Force The Hand of Fate logic up a bit
+
 2019 Oct 18
 - Made "Smart Force The Hand of Fate" casting even smarter. It now only casts the spell if time left on current Golden Cookie buff is at least the max time (minus one second) of the next FTHOF buff in queue. For example: If click frenzy is the next spell to be casted, and your mana is still charging up while you have a frenzy and building special up, and then hits max mana, but the time left on the buffs are less than your max click frenzy buff time (minus one second), it will NOT cast, therefore not wasting a full combo.
 
