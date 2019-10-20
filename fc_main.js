@@ -979,12 +979,11 @@ function autoFTHOFComboAction() {
 							if (Game.Objects['Wizard tower'].amount >= 598) {
 								count = Game.Objects['Wizard tower'].amount - 1;
 								M.castSpell(FTHOF);
-								logEvent('AutoSpell', 'Cast Force the Hand of Fate');
 								Game.Objects['Wizard tower'].sell(count);
 								autoFTHOFComboAction.state = 1;
 								
 								//M.castSpell(FTHOF);
-								//logEvent('AutoSpell', 'Double cast Force the Hand of Fate');
+
 								//Game.Objects['Wizard tower'].buy(count);
 							}	
 							return;
@@ -1001,7 +1000,6 @@ function autoComboP2()
 	var FTHOF = M.spellsById[1];
 	if (autoFTHOFComboAction.state == 1 && FrozenCookies.autoFTHOFCombo == 1) {
 		M.castSpell(FTHOF);
-		logEvent('AutoSpell', 'Double cast Force the Hand of Fate');
 		//Game.Objects['Wizard tower'].buy(count);
 	}
 }
