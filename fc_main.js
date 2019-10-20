@@ -706,13 +706,13 @@ function autoCast() {
 		if (FrozenCookies.autoFTHOFCombo == 1) {
 			if ((nextSpellName(0) == "Click Frenzy" && nextSpellName(1) == "Building Special") || (nextSpellName(1) == "Click Frenzy" && nextSpellName(0) == "Building Special")) {
 					if (Game.hasBuff('Frenzy') && BuildingSpecialBuff() == 1 && Game.hasBuff('Frenzy').time / 30 >= Math.ceil(13 * BuffTimeFactor()) - 1 && BuildingBuffTime() >= Math.ceil(13 * BuffTimeFactor())) {
-							setTimeout(autoFTHOFComboAction(), 1000);
+							autoFTHOFComboAction();
 					}
 				}
 				
 			else if ((nextSpellName(0) == "Click Frenzy" && nextSpellName(1) == "Elder Frenzy") || (nextSpellName(1) == "Click Frenzy" && nextSpellName(0) == "Elder Frenzy")) {
 					if (Game.hasBuff('Frenzy') && BuildingSpecialBuff() == 1 && Game.hasBuff('Frenzy').time / 30 >= Math.ceil(13 * BuffTimeFactor()) - 1 && BuildingBuffTime() >= Math.ceil(13 * BuffTimeFactor())) {
-							setTimeout(autoFTHOFComboAction(), 1000);
+							autoFTHOFComboAction();
 					}
 				}
 			else
@@ -2559,7 +2559,7 @@ function autoFTHOFComboAction() {
 				Game.Objects['Wizard tower'].sell(count);
 				M.castSpell(FTHOF);
 				logEvent('AutoSpell', 'Double cast Force the Hand of Fate');
-				Game.Objects['Wizard tower'].buy(count);
+				
 			}
 				return;
 				
@@ -2672,6 +2672,7 @@ function autoFTHOFComboAction() {
 			}	
 				return;
 	}
+	Game.Objects['Wizard tower'].buy(count);
 }
 
 function FCStart() {
