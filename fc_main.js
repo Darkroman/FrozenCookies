@@ -1003,6 +1003,7 @@ function autoComboP2()
 		M.castSpell(FTHOF);
 		logEvent('AutoSpell', 'Double cast Force the Hand of Fate');
 		Game.Objects['Wizard tower'].buy(count);
+		autoFTHOFComboAction.state = 0;
 	}
 }
 
