@@ -1002,7 +1002,7 @@ function autoComboP2()
 	var FTHOF = M.spellsById[1];
 	if (autoFTHOFComboAction.state == 1 && FrozenCookies.autoFTHOFCombo == 1) {
 		M.castSpell(FTHOF);
-		Game.Objects['Wizard tower'].buy(autoFTHOFComboAction.count);
+		//Game.Objects['Wizard tower'].buy(count);
 		//FrozenCookies.logging = 1; //Logging interferes with the timing somehow so it would remain toggled OFF until you want it back on in the menu
 	        FrozenCookies.autoBuy = 1;
 	}
