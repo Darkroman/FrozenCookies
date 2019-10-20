@@ -2713,12 +2713,12 @@ function FCStart() {
         clearInterval(FrozenCookies.autoStoreBuyAllBot);
         FrozenCookies.autoStoreBuyAllBot = 0;
     }
-/*
+
     if (FrozenCookies.autoFTHOFComboBot) {
     clearInterval(FrozenCookies.autoFTHOFComboBot);
     FrozenCookies.autoFTHOFComboBot = 0;
     }
-*/
+
     //  if (!FrozenCookies.saveWrinklers && localStorage.wrinklers) {
     //    delete localStorage.wrinklers;
     //  }
@@ -2766,11 +2766,11 @@ function FCStart() {
     if (FrozenCookies.autoStoreBuyAll) {
     FrozenCookies.autoStoreBuyAllBot = setInterval(autoStoreBuyAllAction, FrozenCookies.frequency)
     }
-/*
+
     if (FrozenCookies.autoFTHOFCombo) {
-    FrozenCookies.autoFTHOFComboBot = setInterval(autoFTHOFComboAction, FrozenCookies.frequency)
+    FrozenCookies.autoFTHOFComboBot = setInterval(autoFTHOFComboAction, FrozenCookies.frequency*10)
     }
-*/    
+    
     if (statSpeed(FrozenCookies.trackStats) > 0) {
         FrozenCookies.statBot = setInterval(saveStats, statSpeed(FrozenCookies.trackStats));
     } else if (FrozenCookies.trackStats == 6 && !FrozenCookies.smartTrackingBot) {
