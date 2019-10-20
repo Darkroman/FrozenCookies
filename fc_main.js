@@ -984,7 +984,7 @@ function autoFTHOFComboAction() {
 								count = Game.Objects['Wizard tower'].amount - 1;
 								M.castSpell(FTHOF);
 								Game.Objects['Wizard tower'].sell(count);
-								for (var i = 0; i < 50; i++)
+								for (var i = 0; i < 1000; i++)
 								{++i}
 								
 								autoFTHOFComboAction.state = 1;
