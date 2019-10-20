@@ -141,13 +141,13 @@ FrozenCookies.preferenceValues = {
         'default':0,
         'extras':'<a class="option" id="minCpSMult" onclick="updateCpSMultMin(\'minCpSMult\');">x${minCpSMult} minimum Frenzy</a>'
     },
-    /* WORK IN PROGRESS. Not working due to timing issues
+    // WORK IN PROGRESS. Not working due to timing issues
     'autoFTHOFCombo':{
         'hint':'Cast Haggler\'s Charm until 2 subsequent FTHOF spells are Click Frenzy and Elder Frenzy, or Click Frenzy and Building Special',
         'display':["Auto FTHOF Combo OFF", "Auto FTHOF Combo ON"],
         'default':0
     },
-    */
+    //
     'holdSEBank':{
         'hint':'Maintain a bank for Spontaneous Edifice (already enabled if Auto Casting SE)',
         'display':["SE Bank OFF","SE Bank ON"],
