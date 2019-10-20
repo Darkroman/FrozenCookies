@@ -998,6 +998,7 @@ function autoFTHOFComboAction() {
 
 function autoComboP2()
 {
+	var FTHOF = M.spellsById[1];
 	if (autoFTHOFComboAction.state == 1 && FrozenCookies.autoFTHOFCombo == 1) {
 		M.castSpell(FTHOF);
 		logEvent('AutoSpell', 'Double cast Force the Hand of Fate');
