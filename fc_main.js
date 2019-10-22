@@ -861,7 +861,7 @@ function autoFTHOFComboAction() {
 			case 1:
 				if (Game.hasBuff('Frenzy') && BuildingSpecialBuff() == 1 && Game.hasBuff('Frenzy').time / 30 >= Math.ceil(13 * BuffTimeFactor()) - 1 && BuildingBuffTime() >= Math.ceil(13 * BuffTimeFactor())) {
 					if (FrozenCookies.autoBuy > 0) {
-					autoFTHOFComboAction.autobuyyes = 1;
+						autoFTHOFComboAction.autobuyyes = 1;
 					}
 					else {
 						autoFTHOFComboAction.autobuyyes = 0;
@@ -884,6 +884,7 @@ function autoFTHOFComboAction() {
 							if (Game.Objects['Wizard tower'].amount >= 316) {
 								autoFTHOFComboAction.count = Game.Objects['Wizard tower'].amount - 22;
 								M.castSpell(FTHOF);
+								logEvent('AutoSpell', 'Cast Force the Hand of Fate');
 
 								Game.Objects['Wizard tower'].sell(autoFTHOFComboAction.count);								
 								
@@ -996,6 +997,7 @@ function autoFTHOFComboAction() {
 				
 			case 2:
 				M.castSpell(FTHOF);
+				logEvent('AutoSpell', 'Double Casted Force the Hand of Fate');
 				Game.Objects['Wizard tower'].buy(autoFTHOFComboAction.count);
 				autoFTHOFComboAction.count = Game.Objects['Wizard tower'].amount;
 				
