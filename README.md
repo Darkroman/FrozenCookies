@@ -38,7 +38,7 @@ What can Frozen Cookies do?
 What's new?
 -----------
 2019 Oct 21
-- Auto combo finder working correctly. No more timing issues! Should work as intended!
+- Auto combo finder working correctly. No more timing issues! Should work as intended! It also correctly only turns autobuy back on if you had it on previously. If you already had it off, it will not turn it on!
 
 2019 Oct 20
 - Added in an auto combo finder! This feature will cast Haggler's Charm until the next 2 spells in the queue are either Click Frenzy and Elder Frenzy, or Click Frenzy and Building Special and will then cast spell, bulk sell wizard towers to reduce mana so you're able to do another Force The Hand of Fate cast. WARNING: It may be a little wonky. It also turns off logging since that messes the timing for some reason. It also turns autobuy off and then back on. If your autobuy is already off, it will turn it on after it's done.
