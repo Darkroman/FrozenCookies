@@ -815,7 +815,7 @@ function autoCast() {
     }
 }
 
-
+// Thank goodness for static variables otherwise this function would not have worked as intended.
 function autoFTHOFComboAction() {
 	if (Game.Objects['Wizard tower'].level > 10 || FrozenCookies.autoFTHOFCombo == 0) return; // THIS WILL NOT WORK IF TOWER LEVEL IS ABOVE 10
 		
