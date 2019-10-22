@@ -826,20 +826,6 @@ function autoCast() {
 function autoFTHOFComboAction() {
 	if (Game.Objects['Wizard tower'].level > 10 || FrozenCookies.autoFTHOFCombo == 0) return; // THIS WILL NOT WORK IF TOWER LEVEL IS ABOVE 10
 		
-	if (FrozenCookies.autoBuy > 0) {
-		autoFTHOFComboAction.autobuyyes = 1;
-	}
-	else {
-		autoFTHOFComboAction.autobuyyes = 0;
-	}
-		
-	if (FrozenCookies.logging > 0) {
-		autoFTHOFComboAction.loggingyes = 1;
-	}
-	else {
-		autoFTHOFComboAction.loggingyes = 0;
-	}
-		
 	if (typeof autoFTHOFComboAction.count == 'undefined') {
 		autoFTHOFComboAction.count = Game.Objects['Wizard tower'].amount;
 	}
@@ -873,6 +859,19 @@ function autoFTHOFComboAction() {
 				return;
 
 			case 1:
+					if (FrozenCookies.autoBuy > 0) {
+						autoFTHOFComboAction.autobuyyes = 1;
+					}
+					else {
+						autoFTHOFComboAction.autobuyyes = 0;
+					}
+
+					if (FrozenCookies.logging > 0) {
+						autoFTHOFComboAction.loggingyes = 1;
+					}
+					else {
+						autoFTHOFComboAction.loggingyes = 0;
+					}
 				if (Game.hasBuff('Frenzy') && BuildingSpecialBuff() == 1 && Game.hasBuff('Frenzy').time / 30 >= Math.ceil(13 * BuffTimeFactor()) - 1 && BuildingBuffTime() >= Math.ceil(13 * BuffTimeFactor())) {
 					FrozenCookies.logging = 0;
 					FrozenCookies.autoBuy = 0;
