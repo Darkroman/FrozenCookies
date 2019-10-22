@@ -698,104 +698,97 @@ function autoCast() {
             case 2:
                 var FTHOF = M.spellsById[1];
                 if (M.magicM < Math.floor(FTHOF.costMin + FTHOF.costPercent*M.magicM)) return;
-                /*if(cpsBonus() >= FrozenCookies.minCpSMult) {
-                    M.castSpell(FTHOF);
-                    logEvent('AutoSpell', 'Cast Force the Hand of Fate');
-                }*/
-			
-		// WORK IN PROGRESS
-		//Start SMART FTHOF checks
 		
-		if (nextSpellName(0) == "Clot" || nextSpellName(0) == "Blab" || nextSpellName(0) == "Cookie Storm (Drop)" || nextSpellName(0) == "Ruin Cookies") {
-			var hagC = M.spellsById[4];
-			M.castSpell(hagC);
-			logEvent('AutoSpell', 'Cast Haggler\'s Charm instead of Force the Hand of Fate');
-		}
-			
-		if (nextSpellName(0) == "Sugar Lump" || nextSpellName(0) == "Cookie Chain") {
-			M.castSpell(FTHOF);
-			logEvent('AutoSpell', 'Cast Force the Hand of Fate');
-		}
-			
-		if (nextSpellName(0) == "Lucky") {
-			if (cpsBonus() >= 7) {
-				M.castSpell(FTHOF);
-				logEvent('AutoSpell', 'Cast Force the Hand of Fate');
-			}
-		}
-				
-		if (nextSpellName(0) == "Elder Frenzy") {
-			if (Game.Upgrades["Elder Pact"].bought == 1) {
-				if (Game.dragonAura == 10 || Game.dragonAura2 == 10) {
-					if (Game.hasBuff('Dragonflight') && Game.hasBuff('Dragonflight').time / 30 >= Math.ceil(6 * BuffTimeFactor()) - 1) {
-						M.castSpell(FTHOF);
-						logEvent('AutoSpell', 'Cast Force the Hand of Fate');
-					}
+				if (nextSpellName(0) == "Clot" || nextSpellName(0) == "Blab" || nextSpellName(0) == "Cookie Storm (Drop)" || nextSpellName(0) == "Ruin Cookies") {
+					var hagC = M.spellsById[4];
+					M.castSpell(hagC);
+					logEvent('AutoSpell', 'Cast Haggler\'s Charm instead of Force the Hand of Fate');
 				}
-				else if (Game.dragonAura != 10 && Game.dragonAura2 != 10) {
-					if (Game.hasBuff('Click frenzy') && Game.hasBuff('Click frenzy').time / 30 >= Math.ceil(6 * BuffTimeFactor()) - 1) {
-						M.castSpell(FTHOF);
-						logEvent('AutoSpell', 'Cast Force the Hand of Fate');
-					}
-				}
-			}
-			else if (Game.Upgrades["Elder Pact"].bought == 0) {
-				if (Game.dragonAura == 10 || Game.dragonAura2 == 10) {
-					if (Game.hasBuff('Frenzy') && Game.hasBuff('Dragonflight') && Game.hasBuff('Dragonflight').time / 30 >= Math.ceil(6 * BuffTimeFactor()) - 1) {
-						M.castSpell(FTHOF);
-						logEvent('AutoSpell', 'Cast Force the Hand of Fate');
-					}
-				}
-				else if (Game.dragonAura != 10 && Game.dragonAura2 != 10) {
-					if (Game.hasBuff('Frenzy') && Game.hasBuff('Click frenzy') && Game.hasBuff('Click frenzy').time / 30 >= Math.ceil(6 * BuffTimeFactor()) - 1) {
-						M.castSpell(FTHOF);
-						logEvent('AutoSpell', 'Cast Force the Hand of Fate');
-					}
-				}
-			}
-		}
 
-		if (nextSpellName(0) == "Frenzy" || nextSpellName(0) == "Building Special") {
-			if (Game.dragonAura == 10 || Game.dragonAura2 == 10) {
-				if (Game.hasBuff('Dragonflight') && Game.hasBuff('Dragonflight').time / 30 >= Math.ceil(10 * BuffTimeFactor()) - 1) {
+				if (nextSpellName(0) == "Sugar Lump" || nextSpellName(0) == "Cookie Chain") {
 					M.castSpell(FTHOF);
 					logEvent('AutoSpell', 'Cast Force the Hand of Fate');
 				}
-			}
-			else if (Game.hasBuff('Click frenzy') && Game.hasBuff('Click frenzy').time / 30 >= Math.ceil(13 * BuffTimeFactor()) - 1) {
-				M.castSpell(FTHOF);
-				logEvent('AutoSpell', 'Cast Force the Hand of Fate');
-			}
-		}
 
-		if (nextSpellName(0) == "Click Frenzy") {
-			if (Game.hasBuff('Frenzy') && BuildingSpecialBuff() == 1 && Game.hasBuff('Frenzy').time / 30 >= Math.ceil(13 * BuffTimeFactor()) - 1 && BuildingBuffTime() >= Math.ceil(13 * BuffTimeFactor())) {
-				M.castSpell(FTHOF);
-				logEvent('AutoSpell', 'Cast Force the Hand of Fate');
-			}
-		}
-			
-		if (nextSpellName(0) == "Cookie Storm") {
-			if (Game.hasBuff('Frenzy') && BuildingSpecialBuff() == 1 && Game.hasBuff('Frenzy').time / 30 >= Math.ceil(7 * BuffTimeFactor()) - 1 && BuildingBuffTime() >= Math.ceil(7 * BuffTimeFactor())) {
-				M.castSpell(FTHOF);
-				logEvent('AutoSpell', 'Cast Force the Hand of Fate');
-			}
-		}
-					
-		if (nextSpellName(0) == "Cursed Finger") {
-			if (Game.dragonAura == 10 || Game.dragonAura2 == 10) {
-				if (Game.hasBuff('Dragonflight') && Game.hasBuff('Dragonflight').time / 30 >= Math.ceil(10 * BuffTimeFactor()) - 1){
-					M.castSpell(FTHOF);
-					logEvent('AutoSpell', 'Cast Force the Hand of Fate');
+				if (nextSpellName(0) == "Lucky") {
+					if (cpsBonus() >= 7) {
+						M.castSpell(FTHOF);
+						logEvent('AutoSpell', 'Cast Force the Hand of Fate');
+					}
 				}
-			}
-			else if (Game.hasBuff('Click frenzy') && Game.hasBuff('Click frenzy').time / 30 >= Math.ceil(10 * BuffTimeFactor()) - 1) {
-				M.castSpell(FTHOF);
-				logEvent('AutoSpell', 'Cast Force the Hand of Fate');
-			}
-		}
-			
-		return;
+
+				if (nextSpellName(0) == "Elder Frenzy") {
+					if (Game.Upgrades["Elder Pact"].bought == 1) {
+						if (Game.dragonAura == 10 || Game.dragonAura2 == 10) {
+							if (Game.hasBuff('Dragonflight') && Game.hasBuff('Dragonflight').time / 30 >= Math.ceil(6 * BuffTimeFactor()) - 1) {
+								M.castSpell(FTHOF);
+								logEvent('AutoSpell', 'Cast Force the Hand of Fate');
+							}
+						}
+						else if (Game.dragonAura != 10 && Game.dragonAura2 != 10) {
+							if (Game.hasBuff('Click frenzy') && Game.hasBuff('Click frenzy').time / 30 >= Math.ceil(6 * BuffTimeFactor()) - 1) {
+								M.castSpell(FTHOF);
+								logEvent('AutoSpell', 'Cast Force the Hand of Fate');
+							}
+						}
+					}
+					else if (Game.Upgrades["Elder Pact"].bought == 0) {
+						if (Game.dragonAura == 10 || Game.dragonAura2 == 10) {
+							if (Game.hasBuff('Frenzy') && Game.hasBuff('Dragonflight') && Game.hasBuff('Dragonflight').time / 30 >= Math.ceil(6 * BuffTimeFactor()) - 1) {
+								M.castSpell(FTHOF);
+								logEvent('AutoSpell', 'Cast Force the Hand of Fate');
+							}
+						}
+						else if (Game.dragonAura != 10 && Game.dragonAura2 != 10) {
+							if (Game.hasBuff('Frenzy') && Game.hasBuff('Click frenzy') && Game.hasBuff('Click frenzy').time / 30 >= Math.ceil(6 * BuffTimeFactor()) - 1) {
+								M.castSpell(FTHOF);
+								logEvent('AutoSpell', 'Cast Force the Hand of Fate');
+							}
+						}
+					}
+				}
+
+				if (nextSpellName(0) == "Frenzy" || nextSpellName(0) == "Building Special") {
+					if (Game.dragonAura == 10 || Game.dragonAura2 == 10) {
+						if (Game.hasBuff('Dragonflight') && Game.hasBuff('Dragonflight').time / 30 >= Math.ceil(10 * BuffTimeFactor()) - 1) {
+							M.castSpell(FTHOF);
+							logEvent('AutoSpell', 'Cast Force the Hand of Fate');
+						}
+					}
+					else if (Game.hasBuff('Click frenzy') && Game.hasBuff('Click frenzy').time / 30 >= Math.ceil(13 * BuffTimeFactor()) - 1) {
+						M.castSpell(FTHOF);
+						logEvent('AutoSpell', 'Cast Force the Hand of Fate');
+					}
+				}
+
+				if (nextSpellName(0) == "Click Frenzy") {
+					if (Game.hasBuff('Frenzy') && BuildingSpecialBuff() == 1 && Game.hasBuff('Frenzy').time / 30 >= Math.ceil(13 * BuffTimeFactor()) - 1 && BuildingBuffTime() >= Math.ceil(13 * BuffTimeFactor())) {
+						M.castSpell(FTHOF);
+						logEvent('AutoSpell', 'Cast Force the Hand of Fate');
+					}
+				}
+
+				if (nextSpellName(0) == "Cookie Storm") {
+					if (Game.hasBuff('Frenzy') && BuildingSpecialBuff() == 1 && Game.hasBuff('Frenzy').time / 30 >= Math.ceil(7 * BuffTimeFactor()) - 1 && BuildingBuffTime() >= Math.ceil(7 * BuffTimeFactor())) {
+						M.castSpell(FTHOF);
+						logEvent('AutoSpell', 'Cast Force the Hand of Fate');
+					}
+				}
+
+				if (nextSpellName(0) == "Cursed Finger") {
+					if (Game.dragonAura == 10 || Game.dragonAura2 == 10) {
+						if (Game.hasBuff('Dragonflight') && Game.hasBuff('Dragonflight').time / 30 >= Math.ceil(10 * BuffTimeFactor()) - 1){
+							M.castSpell(FTHOF);
+							logEvent('AutoSpell', 'Cast Force the Hand of Fate');
+						}
+					}
+					else if (Game.hasBuff('Click frenzy') && Game.hasBuff('Click frenzy').time / 30 >= Math.ceil(10 * BuffTimeFactor()) - 1) {
+						M.castSpell(FTHOF);
+						logEvent('AutoSpell', 'Cast Force the Hand of Fate');
+					}
+				}
+
+				return;
 			
             case 3:
                 var SE = M.spellsById[3];
@@ -867,13 +860,6 @@ function autoFTHOFComboAction() {
 						autoFTHOFComboAction.autobuyyes = 0;
 					}
 
-					if (FrozenCookies.logging > 0) {
-						autoFTHOFComboAction.loggingyes = 1;
-					}
-					else {
-						autoFTHOFComboAction.loggingyes = 0;
-					}
-					//FrozenCookies.logging = 0;
 					FrozenCookies.autoBuy = 0;
 					switch (SugarLevel)
 					{
@@ -1006,27 +992,10 @@ function autoFTHOFComboAction() {
 					FrozenCookies.autoBuy = 1;
 				}
 				
-				if (autoFTHOFComboAction.loggingyes == 1) {
-					FrozenCookies.logging = 1;
-				}
-				
 				return;	
 		}
 	}
 }
-
-/*
-function autoComboP2()
-{
-	var FTHOF = M.spellsById[1];
-	if (autoFTHOFComboAction.state == 1 && FrozenCookies.autoFTHOFCombo == 1) {
-		M.castSpell(FTHOF);
-		//Game.Objects['Wizard tower'].buy(count);
-		//FrozenCookies.logging = 1; //Logging interferes with the timing somehow so it would remain toggled OFF until you want it back on in the menu
-	        FrozenCookies.autoBuy = 1;
-	}
-}
-*/
 
 function AutoFortuneClick()
 {
@@ -2775,12 +2744,7 @@ function FCStart() {
     clearInterval(FrozenCookies.autoFTHOFComboBot);
     FrozenCookies.autoFTHOFComboBot = 0;
     }
-/*	
-    if (FrozenCookies.autoFTHOFComboBot2) {
-    clearInterval(FrozenCookies.autoFTHOFComboBot2);
-    FrozenCookies.autoFTHOFComboBot2 = 0;
-    }
-*/
+
     //  if (!FrozenCookies.saveWrinklers && localStorage.wrinklers) {
     //    delete localStorage.wrinklers;
     //  }
@@ -2832,11 +2796,7 @@ function FCStart() {
     if (FrozenCookies.autoFTHOFCombo) {
     FrozenCookies.autoFTHOFComboBot = setInterval(autoFTHOFComboAction, FrozenCookies.frequency*2)
     }
-/*
-    if (FrozenCookies.autoFTHOFCombo) {
-    FrozenCookies.autoFTHOFComboBot2 = setInterval(autoComboP2, FrozenCookies.frequency)
-    }
-*/   
+
     if (statSpeed(FrozenCookies.trackStats) > 0) {
         FrozenCookies.statBot = setInterval(saveStats, statSpeed(FrozenCookies.trackStats));
     } else if (FrozenCookies.trackStats == 6 && !FrozenCookies.smartTrackingBot) {
