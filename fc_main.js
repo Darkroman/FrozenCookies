@@ -884,7 +884,6 @@ function autoFTHOFComboAction() {
 							if (Game.Objects['Wizard tower'].amount >= 316) {
 								autoFTHOFComboAction.count = Game.Objects['Wizard tower'].amount - 22;
 								M.castSpell(FTHOF);
-								logEvent('AutoSpell', 'Cast Force the Hand of Fate');
 
 								Game.Objects['Wizard tower'].sell(autoFTHOFComboAction.count);								
 								
