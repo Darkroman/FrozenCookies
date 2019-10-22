@@ -825,24 +825,42 @@ function autoCast() {
 
 function autoFTHOFComboAction() {
 	if (Game.Objects['Wizard tower'].level > 10 || FrozenCookies.autoFTHOFCombo == 0) return; // THIS WILL NOT WORK IF TOWER LEVEL IS ABOVE 10
+		
+	if (FrozenCookies.autoBuy > 0) {
+		autoFTHOFComboAction.autobuyyes = 1;
+	}
+	else {
+		autoFTHOFComboAction.autobuyyes = 0;
+	}
+		
+	if (FrozenCookies.logging > 0) {
+		autoFTHOFComboAction.loggingyes = 1;
+	}
+	else {
+		autoFTHOFComboAction.loggingyes = 0;
+	}
+		
+	if (typeof autoFTHOFComboAction.count == 'undefined') {
+		autoFTHOFComboAction.count = Game.Objects['Wizard tower'].amount;
+	}
+		
+	if (typeof autoFTHOFComboAction.state == 'undefined') {
+		autoFTHOFComboAction.state = 0;
+	}
+
+	if ((nextSpellName(0) == "Click Frenzy" && nextSpellName(1) == "Building Special") || (nextSpellName(1) == "Click Frenzy" && nextSpellName(0) == "Building Special")) {
+		autoFTHOFComboAction.state = 1;
+	}
+
+	if ((nextSpellName(0) == "Click Frenzy" && nextSpellName(1) == "Elder Frenzy") || (nextSpellName(1) == "Click Frenzy" && nextSpellName(0) == "Elder Frenzy")) {
+		autoFTHOFComboAction.state = 1;
+	}
 	
 	if (M.magic == M.magicM) {
-	
 		var FTHOF = M.spellsById[1];
 		var SugarLevel = Game.Objects['Wizard tower'].level;
-		var count = 0;
-		var ComboState = 0;
-		autoFTHOFComboAction.state = 0;
-
-		if ((nextSpellName(0) == "Click Frenzy" && nextSpellName(1) == "Building Special") || (nextSpellName(1) == "Click Frenzy" && nextSpellName(0) == "Building Special")) {
-			ComboState = 1;
-		}
-
-		if ((nextSpellName(0) == "Click Frenzy" && nextSpellName(1) == "Elder Frenzy") || (nextSpellName(1) == "Click Frenzy" && nextSpellName(0) == "Elder Frenzy")) {
-			ComboState = 1;
-		}
-
-		switch (ComboState)
+		
+		switch (autoFTHOFComboAction.state)
 		{
 			case 0:
 				var hagC = M.spellsById[4];
@@ -859,164 +877,141 @@ function autoFTHOFComboAction() {
 						case 0:
 							return;
 
-						case 1:
-							FrozenCookies.logging = 0;
-							FrozenCookies.autoBuy = 0;							
+						case 1:							
 							if (Game.Objects['Wizard tower'].amount >= 316) {
-								count = Game.Objects['Wizard tower'].amount - 22;
+								autoFTHOFComboAction.count = Game.Objects['Wizard tower'].amount - 22;
 								M.castSpell(FTHOF);
 
-								Game.Objects['Wizard tower'].sell(count);
-								for (var i = 0; i < 100000; i++)
-								{++i}								
+								Game.Objects['Wizard tower'].sell(autoFTHOFComboAction.count);								
 								
-								autoFTHOFComboAction.state = 1;
+								autoFTHOFComboAction.state = 2;
 							}
 							return;
 
-						case 2:
-							FrozenCookies.logging = 0;
-							FrozenCookies.autoBuy = 0;							
+						case 2:						
 							if (Game.Objects['Wizard tower'].amount >= 312) {
-								count = Game.Objects['Wizard tower'].amount - 15;
+								autoFTHOFComboAction.count = Game.Objects['Wizard tower'].amount - 15;
 								M.castSpell(FTHOF);
 
-								Game.Objects['Wizard tower'].sell(count);
-								for (var i = 0; i < 100000; i++)
-								{++i}								
+								Game.Objects['Wizard tower'].sell(autoFTHOFComboAction.count);						
 								
-								autoFTHOFComboAction.state = 1;
+								autoFTHOFComboAction.state = 2;
 							}	
 							return;
 							
-						case 3:
-							FrozenCookies.logging = 0;
-							FrozenCookies.autoBuy = 0;							
+						case 3:							
 							if (Game.Objects['Wizard tower'].amount >= 308) {
-								count = Game.Objects['Wizard tower'].amount - 9;
+								autoFTHOFComboAction.count = Game.Objects['Wizard tower'].amount - 9;
 								M.castSpell(FTHOF);
 
-								Game.Objects['Wizard tower'].sell(count);
-								for (var i = 0; i < 100000; i++)
-								{++i}								
+								Game.Objects['Wizard tower'].sell(autoFTHOFComboAction.count);							
 								
-								autoFTHOFComboAction.state = 1;
+								autoFTHOFComboAction.state = 2;
 							}	
 							return;
 							
-						case 4:
-							FrozenCookies.logging = 0;
-							FrozenCookies.autoBuy = 0;							
+						case 4:						
 							if (Game.Objects['Wizard tower'].amount >= 304) {
-								count = Game.Objects['Wizard tower'].amount - 3;
+								autoFTHOFComboAction.count = Game.Objects['Wizard tower'].amount - 3;
 								M.castSpell(FTHOF);
 
-								Game.Objects['Wizard tower'].sell(count);
-								for (var i = 0; i < 100000; i++)
-								{++i}								
+								Game.Objects['Wizard tower'].sell(autoFTHOFComboAction.count);						
 								
-								autoFTHOFComboAction.state = 1;
+								autoFTHOFComboAction.state = 2;
 							}	
 							return;
 							
-						case 5:
-							FrozenCookies.logging = 0;
-							FrozenCookies.autoBuy = 0;							
+						case 5:							
 							if (Game.Objects['Wizard tower'].amount >= 309) {
-								count = Game.Objects['Wizard tower'].amount - 1;
+								autoFTHOFComboAction.count = Game.Objects['Wizard tower'].amount - 1;
 								M.castSpell(FTHOF);
 
-								Game.Objects['Wizard tower'].sell(count);
-								for (var i = 0; i < 100000; i++)
-								{++i}								
+								Game.Objects['Wizard tower'].sell(autoFTHOFComboAction.count);							
 								
-								autoFTHOFComboAction.state = 1;
+								autoFTHOFComboAction.state = 2;
 							}	
 							return;
 							
-						case 6:
-							FrozenCookies.logging = 0;
-							FrozenCookies.autoBuy = 0;							
+						case 6:						
 							if (Game.Objects['Wizard tower'].amount >= 390) {
-								count = Game.Objects['Wizard tower'].amount - 1;
+								autoFTHOFComboAction.count = Game.Objects['Wizard tower'].amount - 1;
 								M.castSpell(FTHOF);
 
-								Game.Objects['Wizard tower'].sell(count);
-								for (var i = 0; i < 100000; i++)
-								{++i}								
+								Game.Objects['Wizard tower'].sell(autoFTHOFComboAction.count);							
 								
-								autoFTHOFComboAction.state = 1;
+								autoFTHOFComboAction.state = 2;
 							}	
 							return;
 							
-						case 7:
-							FrozenCookies.logging = 0;
-							FrozenCookies.autoBuy = 0;							
+						case 7:							
 							if (Game.Objects['Wizard tower'].amount >= 445) {
-								count = Game.Objects['Wizard tower'].amount - 1;
+								autoFTHOFComboAction.count = Game.Objects['Wizard tower'].amount - 1;
 								M.castSpell(FTHOF);
 								logEvent('AutoSpell', 'Cast Force the Hand of Fate');
 
-								Game.Objects['Wizard tower'].sell(count);
-								for (var i = 0; i < 100000; i++)
-								{++i}
+								Game.Objects['Wizard tower'].sell(autoFTHOFComboAction.count);
 								
-								autoFTHOFComboAction.state = 1;
+								autoFTHOFComboAction.state = 2;
 							}	
 							return;
 							
-						case 8:
-							FrozenCookies.logging = 0;
-							FrozenCookies.autoBuy = 0;							
+						case 8:							
 							if (Game.Objects['Wizard tower'].amount >= 506) {
-								count = Game.Objects['Wizard tower'].amount - 1;
+								autoFTHOFComboAction.count = Game.Objects['Wizard tower'].amount - 1;
 								M.castSpell(FTHOF);
 
-								Game.Objects['Wizard tower'].sell(count);
-								for (var i = 0; i < 100000; i++)
-								{++i}
+								Game.Objects['Wizard tower'].sell(autoFTHOFComboAction.count);
 								
-								autoFTHOFComboAction.state = 1;
+								autoFTHOFComboAction.state = 2;
 							}	
 							return;
 							
 						case 9:
-							FrozenCookies.logging = 0;
-							FrozenCookies.autoBuy = 0;
 							if (Game.Objects['Wizard tower'].amount >= 530) {
-								count = Game.Objects['Wizard tower'].amount - 1;
+								autoFTHOFComboAction.count = Game.Objects['Wizard tower'].amount - 1;
 								M.castSpell(FTHOF);
 
-								Game.Objects['Wizard tower'].sell(count);
-								for (var i = 0; i < 100000; i++)
-								{++i}
+								Game.Objects['Wizard tower'].sell(autoFTHOFComboAction.count);
 								
-								autoFTHOFComboAction.state = 1;
+								autoFTHOFComboAction.state = 2;
 							}	
 							return;
 							
 						case 10:
-							FrozenCookies.logging = 0;
-							FrozenCookies.autoBuy = 0;
 							if (Game.Objects['Wizard tower'].amount >= 598) {
-								count = Game.Objects['Wizard tower'].amount - 1;
+								autoFTHOFComboAction.count = Game.Objects['Wizard tower'].amount - 1;
 								M.castSpell(FTHOF);
-								Game.Objects['Wizard tower'].sell(count);
-								for (var i = 0; i < 100000; i++)
-								{++i}
+								Game.Objects['Wizard tower'].sell(autoFTHOFComboAction.count);
 								
-								autoFTHOFComboAction.state = 1;
+								autoFTHOFComboAction.state = 2;
 							}	
 							return;
 							
 					}
 				}
 				return;
+				
+			case 2:
+				M.castSpell(FTHOF);
+				Game.Objects['Wizard tower'].buy(autoFTHOFComboAction.count);
+				autoFTHOFComboAction.count = Game.Objects['Wizard tower'].amount;
+				
+				autoFTHOFComboAction.state = 0;
+				
+				if (autoFTHOFComboAction.autobuyyes == 1) {
+					FrozenCookies.autoBuy = 1;
+				}
+				
+				if (autoFTHOFComboAction.loggingyes == 1) {
+					FrozenCookies.logging = 1;
+				}
+				
+				return;	
 		}
 	}
 }
 
-
+/*
 function autoComboP2()
 {
 	var FTHOF = M.spellsById[1];
@@ -1027,7 +1022,7 @@ function autoComboP2()
 	        FrozenCookies.autoBuy = 1;
 	}
 }
-
+*/
 
 function AutoFortuneClick()
 {
@@ -2776,12 +2771,12 @@ function FCStart() {
     clearInterval(FrozenCookies.autoFTHOFComboBot);
     FrozenCookies.autoFTHOFComboBot = 0;
     }
-	
+/*	
     if (FrozenCookies.autoFTHOFComboBot2) {
     clearInterval(FrozenCookies.autoFTHOFComboBot2);
     FrozenCookies.autoFTHOFComboBot2 = 0;
     }
-
+*/
     //  if (!FrozenCookies.saveWrinklers && localStorage.wrinklers) {
     //    delete localStorage.wrinklers;
     //  }
@@ -2833,11 +2828,11 @@ function FCStart() {
     if (FrozenCookies.autoFTHOFCombo) {
     FrozenCookies.autoFTHOFComboBot = setInterval(autoFTHOFComboAction, FrozenCookies.frequency*2)
     }
-
+/*
     if (FrozenCookies.autoFTHOFCombo) {
     FrozenCookies.autoFTHOFComboBot2 = setInterval(autoComboP2, FrozenCookies.frequency)
     }
-   
+*/   
     if (statSpeed(FrozenCookies.trackStats) > 0) {
         FrozenCookies.statBot = setInterval(saveStats, statSpeed(FrozenCookies.trackStats));
     } else if (FrozenCookies.trackStats == 6 && !FrozenCookies.smartTrackingBot) {
