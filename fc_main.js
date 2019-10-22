@@ -873,7 +873,7 @@ function autoFTHOFComboAction() {
 					else {
 						autoFTHOFComboAction.loggingyes = 0;
 					}
-					FrozenCookies.logging = 0;
+					//FrozenCookies.logging = 0;
 					FrozenCookies.autoBuy = 0;
 					switch (SugarLevel)
 					{
