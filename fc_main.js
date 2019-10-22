@@ -859,8 +859,9 @@ function autoFTHOFComboAction() {
 				return;
 
 			case 1:
+				if (Game.hasBuff('Frenzy') && BuildingSpecialBuff() == 1 && Game.hasBuff('Frenzy').time / 30 >= Math.ceil(13 * BuffTimeFactor()) - 1 && BuildingBuffTime() >= Math.ceil(13 * BuffTimeFactor())) {
 					if (FrozenCookies.autoBuy > 0) {
-						autoFTHOFComboAction.autobuyyes = 1;
+					autoFTHOFComboAction.autobuyyes = 1;
 					}
 					else {
 						autoFTHOFComboAction.autobuyyes = 0;
@@ -872,7 +873,6 @@ function autoFTHOFComboAction() {
 					else {
 						autoFTHOFComboAction.loggingyes = 0;
 					}
-				if (Game.hasBuff('Frenzy') && BuildingSpecialBuff() == 1 && Game.hasBuff('Frenzy').time / 30 >= Math.ceil(13 * BuffTimeFactor()) - 1 && BuildingBuffTime() >= Math.ceil(13 * BuffTimeFactor())) {
 					FrozenCookies.logging = 0;
 					FrozenCookies.autoBuy = 0;
 					switch (SugarLevel)
