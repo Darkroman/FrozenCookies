@@ -620,7 +620,7 @@ function swapIn(godId, targetSlot) { //mostly code copied from minigamePantheon.
 
 function autoRigidel() {
     if (!T) return; //Exit if pantheon doesnt even exist
-    var timeToRipe = (Game.lumpRipeAge - (Date.now() - Game.lumpT))/60000; //Minutes until sugar lump ripens
+    var timeToRipe = (Math.ceil(Game.lumpRipeAge) - (Date.now() - Game.lumpT))/60000; //Minutes until sugar lump ripens
     var orderLvl = Game.hasGod('order') ? Game.hasGod('order') : 0;
     switch (orderLvl) {
         case 0: //Rigidel isn't in a slot
