@@ -2549,7 +2549,7 @@ function autoCookie() {
         }
         if (FrozenCookies.autoSL) {
              var started = Game.lumpT;
-             var ripeAge = Game.lumpRipeAge;
+             var ripeAge = Math.ceil(Game.lumpRipeAge);
              if ((Date.now() - started) >= ripeAge) {
                  Game.clickLump();
              }
