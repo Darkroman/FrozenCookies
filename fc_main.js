@@ -620,38 +620,86 @@ function swapIn(godId, targetSlot) { //mostly code copied from minigamePantheon.
 
 function autoRigidel() {
     if (!T) return; //Exit if pantheon doesnt even exist
+	
+	if (typeof autoRigidel.state == 'undefined') {
+		autoRigidel.state = 0;
+	}
+	
+	if (typeof autoRigidel.prev == 'undefined') {
+		autoRigidel.prev = 0;
+	}
+	
     var timeToRipe = (Math.ceil(Game.lumpRipeAge) - (Date.now() - Game.lumpT))/60000; //Minutes until sugar lump ripens
     var orderLvl = Game.hasGod('order') ? Game.hasGod('order') : 0;
-    switch (orderLvl) {
-        case 0: //Rigidel isn't in a slot
-            if (T.swaps < 2 || (T.swaps == 1 && T.slot[0] == -1) ) return; //Don't do anything if we can't swap Rigidel in
-            if (timeToRipe < 60) {
-                var prev = T.slot[0] //cache whatever god you have equipped
-                swapIn(10,0); //swap in rigidel
-                Game.computeLumpTimes();
-                rigiSell(); //Meet the %10 condition
-                Game.clickLump(); //harvest the ripe lump, AutoSL probably covers this but this should avoid issues with autoBuy going first and disrupting Rigidel
-                if (prev != -1) swapIn(prev, 0); //put the old one back
-            }
-        case 1: //Rigidel is already in diamond slot
-            if(timeToRipe < 60 && Game.BuildingsOwned%10) {
-                rigiSell();
-                Game.computeLumpTimes();
-                Game.clickLump();
-            }
-        case 2: //Rigidel in Ruby slot,
-            if(timeToRipe < 40 && Game.BuildingsOwned%10) {
-                rigiSell();
-                Game.computeLumpTimes();
-                Game.clickLump();
-            }
-        case 3: //Rigidel in Jade slot
-            if (timeToRipe < 20 && Game.BuildingsOwned%10) {
-                rigiSell();
-                Game.computeLumpTimes();
-                Game.clickLump();
-            }
-    }
+	switch (autoRigidel.state) {
+		case 0:
+			if (FrozenCookies.autoBuy > 0) {
+				autoRigidel.autobuyyes = 1;
+			}
+			else {
+				autoRigidel.autobuyyes = 0;
+			}
+		
+			switch (orderLvl) {
+				case 0: //Rigidel isn't in a slot
+					if (T.swaps < 2 || (T.swaps == 1 && T.slot[0] == -1) ) return; //Don't do anything if we can't swap Rigidel in									
+					if (timeToRipe < 60) {
+						FrozenCookies.autoBuy = 0;
+						autoRigidel.prev = T.slot[0] //cache whatever god you have equipped
+						swapIn(10,0); //swap in rigidel
+						Game.computeLumpTimes();
+						rigiSell(); //Meet the %10 condition
+						autoRigidel.state = 1;
+					}
+					return;
+				case 1: //Rigidel is already in diamond slot
+					if(timeToRipe < 60 && Game.BuildingsOwned%10) {
+						FrozenCookies.autoBuy = 0;
+						rigiSell();
+						Game.computeLumpTimes();
+						autoRigidel.state = 2;
+					}
+					return;
+				case 2: //Rigidel in Ruby slot,
+					if(timeToRipe < 40 && Game.BuildingsOwned%10) {
+						FrozenCookies.autoBuy = 0;
+						rigiSell();
+						Game.computeLumpTimes();
+						autoRigidel.state = 2;
+					}
+					return;
+				case 3: //Rigidel in Jade slot
+					if (timeToRipe < 20 && Game.BuildingsOwned%10) {
+						FrozenCookies.autoBuy = 0;
+						rigiSell();
+						Game.computeLumpTimes();
+						autoRigidel.state = 2;
+					}
+					return;
+			}
+			return;
+		
+		case 1:
+			Game.clickLump(); //harvest the ripe lump
+			if (autoRigidel.prev != -1) swapIn(autoRigidel.prev, 0); //put the old one back
+			autoRigidel.state = 0;
+			
+			if (autoRigidel.autobuyyes == 1) {
+					FrozenCookies.autoBuy = 1;
+			}
+			
+			return;
+			
+		case 2:
+			Game.clickLump();
+			autoRigidel.state = 0;
+			
+			if (autoRigidel.autobuyyes == 1) {
+				FrozenCookies.autoBuy = 1;
+			}
+			
+			return;
+	}
 }
 
 // Used in autoCast() for some maths in the smart Force The Hand of Fate subroutine
