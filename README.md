@@ -37,6 +37,9 @@ What can Frozen Cookies do?
 
 What's new?
 -----------
+2019 Nov 12
+- Auto Rigidel swap function working correctly! No longer harvests too early resulting in a 50% chance of a botched harvest.
+
 2019 Oct 21
 - Auto combo finder working correctly. No more timing issues! Should work as intended! It also correctly only turns autobuy back on if you had it on previously. If you already had it off, it will not turn it on!
 
