@@ -680,9 +680,8 @@ function autoRigidel() {
 			return;
 		
 		case 1:
-			Game.clickLump(); //harvest the ripe lump
 			if (autoRigidel.prev != -1) swapIn(autoRigidel.prev, 0); //put the old one back
-			autoRigidel.state = 0;
+			autoRigidel.state = 2;
 			
 			if (autoRigidel.autobuyyes == 1) {
 					FrozenCookies.autoBuy = 1;
