@@ -618,8 +618,8 @@ function swapIn(godId, targetSlot) { //mostly code copied from minigamePantheon.
     Game.SparkleAt((rect.left+rect.right)/2,(rect.top+rect.bottom)/2-24);
 }
 
-function autoRigidel() {
-    if (!T) return; //Exit if pantheon doesnt even exist
+function autoRigidelAction() {
+    if (!T || autoRigidel == 0) return; //Exit if pantheon doesnt even exist
 	
 	if (typeof autoRigidel.state == 'undefined') {
 		autoRigidel.state = 0;
@@ -695,6 +695,16 @@ function autoRigidel() {
 			
 			return;
 	}
+}
+
+function autoSL {
+	if (FrozenCookies.autoSL) {
+         var started = Game.lumpT;
+         var ripeAge = Math.ceil(Game.lumpRipeAge);
+         if ((Date.now() - started) >= ripeAge) {
+             Game.clickLump();
+         }
+    }
 }
 
 // Used in autoCast() for some maths in the smart Force The Hand of Fate subroutine
@@ -2590,13 +2600,6 @@ function autoCookie() {
         if (FrozenCookies.timeTravelAmount) {
             doTimeTravel();
         }
-        if (FrozenCookies.autoSL) {
-             var started = Game.lumpT;
-             var ripeAge = Math.ceil(Game.lumpRipeAge);
-             if ((Date.now() - started) >= ripeAge) {
-                 Game.clickLump();
-             }
-        }
         if (FrozenCookies.autoSL == 2) autoRigidel();
         if (FrozenCookies.autoWrinkler == 1) {
             var popCount = 0;
@@ -2788,9 +2791,9 @@ function FCStart() {
     FrozenCookies.autoFTHOFComboBot = 0;
     }
 	
-    if (FrozenCookies.autoSLBot) {
-    clearInterval(FrozenCookies.autoSLBot);
-    FrozenCookies.autoSLBot = 0;
+    if (FrozenCookies.autoRigidelBot) {
+    clearInterval(FrozenCookies.autoRigidelBot);
+    FrozenCookies.autoRigidelBot = 0;
     }
 
     //  if (!FrozenCookies.saveWrinklers && localStorage.wrinklers) {
@@ -2845,8 +2848,8 @@ function FCStart() {
     FrozenCookies.autoFTHOFComboBot = setInterval(autoFTHOFComboAction, FrozenCookies.frequency*2)
     }
 	
-	if (FrozenCookies.autoSL) {
-    FrozenCookies.autoSLBot = setInterval(autoRigidel, FrozenCookies.frequency*10)
+	if (FrozenCookies.autoRigidel) {
+    FrozenCookies.autoRigidelBot = setInterval(autoRigidelAction, FrozenCookies.frequency*10)
     }
 
     if (statSpeed(FrozenCookies.trackStats) > 0) {
