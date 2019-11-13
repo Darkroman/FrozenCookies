@@ -669,7 +669,7 @@ function autoRigidel() {
 					}
 					return;
 				case 3: //Rigidel in Jade slot
-					if (timeToRipe < 39.98 && Game.BuildingsOwned%10) {
+					if (timeToRipe < 19.98 && Game.BuildingsOwned%10) {
 						FrozenCookies.autoBuy = 0;
 						rigiSell();
 						Game.computeLumpTimes();
