@@ -680,17 +680,17 @@ function autoRigidel() {
 			return;
 		
 		case 1:
-			if (autoRigidel.prev != -1) swapIn(autoRigidel.prev, 0); //put the old one back
+			Game.clickLump();					
 			autoRigidel.state = 2;
-						
-			return;
 			
+			return;
+		
 		case 2:
-			Game.clickLump();
+			if (autoRigidel.prev != -1) swapIn(autoRigidel.prev, 0); //put the old one back
 			autoRigidel.state = 0;
 			
 			if (autoRigidel.autobuyyes == 1) {
-				FrozenCookies.autoBuy = 1;
+					FrozenCookies.autoBuy = 1;
 			}
 			
 			return;
