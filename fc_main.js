@@ -619,7 +619,7 @@ function swapIn(godId, targetSlot) { //mostly code copied from minigamePantheon.
 }
 
 function autoRigidelAction() {
-    if (!T || autoRigidel == 0) return; //Exit if pantheon doesnt even exist
+    if (!T || FrozenCookies.autoRigidel == 0) return; //Exit if pantheon doesnt even exist
 	
 	if (typeof autoRigidelAction.state == 'undefined') {
 		autoRigidelAction.state = 0;
@@ -698,7 +698,7 @@ function autoRigidelAction() {
 }
 
 function autoSLAction() {
-	if (FrozenCookies.autoSL) {
+	if (FrozenCookies.autoSL && FrozenCookies.autoRigidel < 1) {
          var started = Game.lumpT;
          var ripeAge = Math.ceil(Game.lumpRipeAge);
          if ((Date.now() - started) >= ripeAge) {
