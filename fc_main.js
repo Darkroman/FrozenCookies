@@ -2787,6 +2787,11 @@ function FCStart() {
     clearInterval(FrozenCookies.autoFTHOFComboBot);
     FrozenCookies.autoFTHOFComboBot = 0;
     }
+	
+    if (FrozenCookies.autoSLBot) {
+    clearInterval(FrozenCookies.autoSLBot);
+    FrozenCookies.autoSLBot = 0;
+    }
 
     //  if (!FrozenCookies.saveWrinklers && localStorage.wrinklers) {
     //    delete localStorage.wrinklers;
@@ -2838,6 +2843,10 @@ function FCStart() {
 
     if (FrozenCookies.autoFTHOFCombo) {
     FrozenCookies.autoFTHOFComboBot = setInterval(autoFTHOFComboAction, FrozenCookies.frequency*2)
+    }
+	
+	if (FrozenCookies.autoSL) {
+    FrozenCookies.autoSLBot = setInterval(autoRigidel, FrozenCookies.frequency*2)
     }
 
     if (statSpeed(FrozenCookies.trackStats) > 0) {
