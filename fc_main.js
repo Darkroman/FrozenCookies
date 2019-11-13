@@ -643,7 +643,7 @@ function autoRigidelAction() {
 			switch (orderLvl) {
 				case 0: //Rigidel isn't in a slot
 					if (T.swaps < 2 || (T.swaps == 1 && T.slot[0] == -1) ) return; //Don't do anything if we can't swap Rigidel in									
-					if (timeToRipe < 59.98) {
+					if (timeToRipe < 60) {
 						FrozenCookies.autoBuy = 0;
 						autoRigidelAction.prev = T.slot[0] //cache whatever god you have equipped
 						swapIn(10,0); //swap in rigidel
@@ -653,7 +653,7 @@ function autoRigidelAction() {
 					}
 					return;
 				case 1: //Rigidel is already in diamond slot
-					if(timeToRipe < 59.98 && Game.BuildingsOwned%10) {
+					if(timeToRipe < 60 && Game.BuildingsOwned%10) {
 						FrozenCookies.autoBuy = 0;
 						rigiSell();
 						Game.computeLumpTimes();
@@ -661,7 +661,7 @@ function autoRigidelAction() {
 					}
 					return;
 				case 2: //Rigidel in Ruby slot,
-					if(timeToRipe < 39.98 && Game.BuildingsOwned%10) {
+					if(timeToRipe < 40 && Game.BuildingsOwned%10) {
 						FrozenCookies.autoBuy = 0;
 						rigiSell();
 						Game.computeLumpTimes();
@@ -669,7 +669,7 @@ function autoRigidelAction() {
 					}
 					return;
 				case 3: //Rigidel in Jade slot
-					if (timeToRipe < 19.98 && Game.BuildingsOwned%10) {
+					if (timeToRipe < 20 && Game.BuildingsOwned%10) {
 						FrozenCookies.autoBuy = 0;
 						rigiSell();
 						Game.computeLumpTimes();
@@ -680,8 +680,10 @@ function autoRigidelAction() {
 			return;
 		
 		case 1:
+			if (timeToRipe <= 0) {
 			Game.clickLump();					
 			autoRigidelAction.state = 2;
+			}
 			
 			return;
 			
