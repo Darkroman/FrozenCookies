@@ -2855,7 +2855,7 @@ function FCStart() {
     }
 	
     if (FrozenCookies.autoRigidel) {
-    FrozenCookies.autoRigidelBot = setInterval(autoRigidelAction, FrozenCookies.frequency*10)
+    FrozenCookies.autoRigidelBot = setInterval(autoRigidelAction, FrozenCookies.frequency*3)
     }
 	
 	if (FrozenCookies.autoSL) {
