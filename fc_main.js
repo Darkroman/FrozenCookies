@@ -2846,7 +2846,7 @@ function FCStart() {
     }
 	
 	if (FrozenCookies.autoSL) {
-    FrozenCookies.autoSLBot = setInterval(autoSL, FrozenCookies.frequency*10)
+    FrozenCookies.autoSLBot = setInterval(autoRigidel, FrozenCookies.frequency*2)
     }
 
     if (statSpeed(FrozenCookies.trackStats) > 0) {
