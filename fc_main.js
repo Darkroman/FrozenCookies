@@ -697,7 +697,7 @@ function autoRigidelAction() {
 	}
 }
 
-function autoSLAction {
+function autoSLAction() {
 	if (FrozenCookies.autoSL) {
          var started = Game.lumpT;
          var ripeAge = Math.ceil(Game.lumpRipeAge);
