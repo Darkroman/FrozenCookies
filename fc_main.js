@@ -657,7 +657,7 @@ function autoRigidel() {
 						FrozenCookies.autoBuy = 0;
 						rigiSell();
 						Game.computeLumpTimes();
-						autoRigidel.state = 1;
+						autoRigidel.state = 2;
 					}
 					return;
 				case 2: //Rigidel in Ruby slot,
@@ -665,7 +665,7 @@ function autoRigidel() {
 						FrozenCookies.autoBuy = 0;
 						rigiSell();
 						Game.computeLumpTimes();
-						autoRigidel.state = 1;
+						autoRigidel.state = 2;
 					}
 					return;
 				case 3: //Rigidel in Jade slot
@@ -673,24 +673,24 @@ function autoRigidel() {
 						FrozenCookies.autoBuy = 0;
 						rigiSell();
 						Game.computeLumpTimes();
-						autoRigidel.state = 1;
+						autoRigidel.state = 2;
 					}
 					return;
 			}
 			return;
-			
-		case 1:
-			Game.clickLump();					
-			autoRigidel.state = 2;
-			
-			return;
 		
-		case 2:
+		case 1:
 			if (autoRigidel.prev != -1) swapIn(autoRigidel.prev, 0); //put the old one back
+			autoRigidel.state = 2;
+						
+			return;
+			
+		case 2:
+			Game.clickLump();
 			autoRigidel.state = 0;
 			
 			if (autoRigidel.autobuyyes == 1) {
-					FrozenCookies.autoBuy = 1;
+				FrozenCookies.autoBuy = 1;
 			}
 			
 			return;
