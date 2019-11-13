@@ -621,23 +621,23 @@ function swapIn(godId, targetSlot) { //mostly code copied from minigamePantheon.
 function autoRigidelAction() {
     if (!T || autoRigidel == 0) return; //Exit if pantheon doesnt even exist
 	
-	if (typeof autoRigidel.state == 'undefined') {
-		autoRigidel.state = 0;
+	if (typeof autoRigidelAction.state == 'undefined') {
+		autoRigidelAction.state = 0;
 	}
 	
-	if (typeof autoRigidel.prev == 'undefined') {
-		autoRigidel.prev = -1;
+	if (typeof autoRigidelAction.prev == 'undefined') {
+		autoRigidelAction.prev = -1;
 	}
 	
     var timeToRipe = (Math.ceil(Game.lumpRipeAge) - (Date.now() - Game.lumpT))/60000; //Minutes until sugar lump ripens
     var orderLvl = Game.hasGod('order') ? Game.hasGod('order') : 0;
-	switch (autoRigidel.state) {
+	switch (autoRigidelAction.state) {
 		case 0:
 			if (FrozenCookies.autoBuy > 0) {
-				autoRigidel.autobuyyes = 1;
+				autoRigidelAction.autobuyyes = 1;
 			}
 			else {
-				autoRigidel.autobuyyes = 0;
+				autoRigidelAction.autobuyyes = 0;
 			}
 		
 			switch (orderLvl) {
@@ -645,11 +645,11 @@ function autoRigidelAction() {
 					if (T.swaps < 2 || (T.swaps == 1 && T.slot[0] == -1) ) return; //Don't do anything if we can't swap Rigidel in									
 					if (timeToRipe < 59.98) {
 						FrozenCookies.autoBuy = 0;
-						autoRigidel.prev = T.slot[0] //cache whatever god you have equipped
+						autoRigidelAction.prev = T.slot[0] //cache whatever god you have equipped
 						swapIn(10,0); //swap in rigidel
 						Game.computeLumpTimes();
 						rigiSell(); //Meet the %10 condition
-						autoRigidel.state = 1;
+						autoRigidelAction.state = 1;
 					}
 					return;
 				case 1: //Rigidel is already in diamond slot
@@ -657,7 +657,7 @@ function autoRigidelAction() {
 						FrozenCookies.autoBuy = 0;
 						rigiSell();
 						Game.computeLumpTimes();
-						autoRigidel.state = 2;
+						autoRigidelAction.state = 2;
 					}
 					return;
 				case 2: //Rigidel in Ruby slot,
@@ -665,7 +665,7 @@ function autoRigidelAction() {
 						FrozenCookies.autoBuy = 0;
 						rigiSell();
 						Game.computeLumpTimes();
-						autoRigidel.state = 2;
+						autoRigidelAction.state = 2;
 					}
 					return;
 				case 3: //Rigidel in Jade slot
@@ -673,7 +673,7 @@ function autoRigidelAction() {
 						FrozenCookies.autoBuy = 0;
 						rigiSell();
 						Game.computeLumpTimes();
-						autoRigidel.state = 2;
+						autoRigidelAction.state = 2;
 					}
 					return;
 			}
@@ -681,15 +681,15 @@ function autoRigidelAction() {
 		
 		case 1:
 			Game.clickLump();					
-			autoRigidel.state = 2;
+			autoRigidelAction.state = 2;
 			
 			return;
 			
 		case 2:
-			if (autoRigidel.prev != -1) swapIn(autoRigidel.prev, 0); //put the old one back
-			autoRigidel.state = 0;
+			if (autoRigidelAction.prev != -1) swapIn(autoRigidelAction.prev, 0); //put the old one back
+			autoRigidelAction.state = 0;
 			
-			if (autoRigidel.autobuyyes == 1) {
+			if (autoRigidelAction.autobuyyes == 1) {
 				FrozenCookies.autoBuy = 1;
 			}
 			
@@ -697,7 +697,7 @@ function autoRigidelAction() {
 	}
 }
 
-function autoSL {
+function autoSLAction {
 	if (FrozenCookies.autoSL) {
          var started = Game.lumpT;
          var ripeAge = Math.ceil(Game.lumpRipeAge);
@@ -2796,6 +2796,11 @@ function FCStart() {
     FrozenCookies.autoRigidelBot = 0;
     }
 
+	if (FrozenCookies.autoSLBot) {
+    clearInterval(FrozenCookies.autoSLBot);
+    FrozenCookies.autoSLBot = 0;
+    }
+
     //  if (!FrozenCookies.saveWrinklers && localStorage.wrinklers) {
     //    delete localStorage.wrinklers;
     //  }
@@ -2848,8 +2853,12 @@ function FCStart() {
     FrozenCookies.autoFTHOFComboBot = setInterval(autoFTHOFComboAction, FrozenCookies.frequency*2)
     }
 	
-	if (FrozenCookies.autoRigidel) {
+    if (FrozenCookies.autoRigidel) {
     FrozenCookies.autoRigidelBot = setInterval(autoRigidelAction, FrozenCookies.frequency*10)
+    }
+	
+	if (FrozenCookies.autoSL) {
+    FrozenCookies.autoSLBot = setInterval(autoSLAction, FrozenCookies.frequency)
     }
 
     if (statSpeed(FrozenCookies.trackStats) > 0) {
