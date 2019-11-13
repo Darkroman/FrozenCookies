@@ -647,7 +647,7 @@ function autoRigidelAction() {
 						FrozenCookies.autoBuy = 0;
 						autoRigidelAction.prev = T.slot[0] //cache whatever god you have equipped
 						swapIn(10,0); //swap in rigidel
-						Game.computeLumpTimes();
+						//Game.computeLumpTimes();
 						rigiSell(); //Meet the %10 condition
 						autoRigidelAction.state = 1;
 					}
@@ -656,7 +656,7 @@ function autoRigidelAction() {
 					if(timeToRipe < 60 && Game.BuildingsOwned%10) {
 						FrozenCookies.autoBuy = 0;
 						rigiSell();
-						Game.computeLumpTimes();
+						//Game.computeLumpTimes();
 						autoRigidelAction.state = 2;
 					}
 					return;
@@ -664,7 +664,7 @@ function autoRigidelAction() {
 					if(timeToRipe < 40 && Game.BuildingsOwned%10) {
 						FrozenCookies.autoBuy = 0;
 						rigiSell();
-						Game.computeLumpTimes();
+						//Game.computeLumpTimes();
 						autoRigidelAction.state = 2;
 					}
 					return;
@@ -672,7 +672,7 @@ function autoRigidelAction() {
 					if (timeToRipe < 20 && Game.BuildingsOwned%10) {
 						FrozenCookies.autoBuy = 0;
 						rigiSell();
-						Game.computeLumpTimes();
+						//Game.computeLumpTimes();
 						autoRigidelAction.state = 2;
 					}
 					return;
