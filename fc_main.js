@@ -585,7 +585,7 @@ var M = Game.Objects['Wizard tower'].minigame;
 
 function rigiSell() {
     //Sell enough cursors to enable Rigidels effect
-    if (Game.BuildingsOwned%10) Game.Objects['Cursor'].sell(Game.BuildingsOwned%10);
+    if (Game.BuildingsOwned%10) Game.Objects['Farm'].sell(Game.BuildingsOwned%10);
     return;
 }
 
