@@ -37,6 +37,12 @@ What can Frozen Cookies do?
 
 What's new?
 -----------
+2020 Nov 8
+- Cookie Clicker 2.031 released Nov 1 2020
+- Added in new buildings, synergies, and upgrades. (Idleverse building added plus new synergies and grandma upgrades)
+- Updated Spontaneous Edifice autocast for Idleverse
+- Added in building special buff check for new buildings
+
 2019 Nov 12
 - Auto Rigidel swap function working correctly! No longer harvests too early resulting in a 50% chance of a botched harvest.
 
