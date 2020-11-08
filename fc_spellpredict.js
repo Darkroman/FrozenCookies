@@ -149,8 +149,12 @@ if (Game.hasBuff('High-five') ||
 //	Game.hasBuff('Eclipse') ||
 	Game.hasBuff('Winning streak') ||
 //	Game.hasBuff('Dry spell') ||
-	Game.hasBuff('Macrocosm'))
-//	Game.hasBuff('Microcosm')) 
+	Game.hasBuff('Macrocosm') ||
+//	Game.hasBuff('Microcosm') ||
+	Game.hasBuff('Refactoring') ||
+//	Game.hasBuff('Antipattern') ||
+    	Game.hasBuff('Cosmic nursery'))
+//	Game.hasBuff('Big crunch'))
     { return 1; }
 	
 	else { return 0; }
