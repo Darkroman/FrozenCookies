@@ -620,7 +620,8 @@ var upgradeJson = {
     171: {'buildings': [], 'upgrades': [170,184]},
     172: {'buildings': [], 'upgrades': [171,184]},
     173: {'buildings': [], 'upgrades': [172,184]},
-    174: {'buildings': [], 'upgrades': [173,184]}
+    174: {'buildings': [], 'upgrades': [173,184]},
+    645: {'buildings': [], 'upgrades': [174,184]}
 };
 
 var blacklist = [
