@@ -1603,9 +1603,9 @@ function recommendationList(recalculate) {
                 return a.efficiency != b.efficiency ? a.efficiency - b.efficiency : (a.delta_cps != b.delta_cps ? b.delta_cps - a.delta_cps : a.cost - b.cost);
             }));
         //If autocasting Spontaneous Edifice, don't buy any Fractal engine after 399
-        if (M && FrozenCookies.autoSpell == 3 && Game.Objects['Fractal engine'].amount >= 399) {
+        if (M && FrozenCookies.autoSpell == 3 && Game.Objects['Idleverse'].amount >= 399) {
             for (var i = 0; i < FrozenCookies.caches.recommendationList.length; i++) {
-                if (FrozenCookies.caches.recommendationList[i].id == 15) {
+                if (FrozenCookies.caches.recommendationList[i].id == 16) {
                     FrozenCookies.caches.recommendationList.splice(i , 1);
                 }
             }
