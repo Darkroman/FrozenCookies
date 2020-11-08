@@ -847,14 +847,14 @@ function autoCast() {
 			
             case 3:
                 var SE = M.spellsById[3];
-		//Chancemaker replaced by new Fractal engine	
-                //If you don't have any Fractal engine yet, or can't cast SE, just give up.
-                if (Game.Objects['Fractal engine'].amount == 0 || M.magicM < Math.floor(SE.costMin + SE.costPercent*M.magicM)) return;
-                //If we have over 400 CM, always going to sell down to 399. If you don't have half a Chancemaker in bank, sell one
-                while (Game.Objects['Fractal engine'].amount >= 400 || Game.cookies < Game.Objects['Fractal engine'].price/2) {
-                   Game.Objects['Fractal engine'].sell(1);
+		//Updated to check Idleverse	
+                //If you don't have any Idleverses yet, or can't cast SE, just give up.
+                if (Game.Objects['Idleverse'].amount == 0 || M.magicM < Math.floor(SE.costMin + SE.costPercent*M.magicM)) return;
+                //If we have over 400 Idleverses, always going to sell down to 399. If you don't have half a Idleverse in bank, sell one
+                while (Game.Objects['idleverse'].amount >= 400 || Game.cookies < Game.Objects['Idleverse'].price/2) {
+                   Game.Objects['Idleverse'].sell(1);
 		//log event calculation outdated. sell return was reduced from .85 with earth shatterer to .5
-                   logEvent('Store', 'Sold 1 Fractal engine for ' + Beautify(Game.Objects['Fractal engine'].price*1.15*.50));
+                   logEvent('Store', 'Sold 1 Idleverse for ' + Beautify(Game.Objects['Idleverse'].price*1.15*.50));
                 }
                 M.castSpell(SE);
                 logEvent('AutoSpell', 'Cast Spontaneous Edifice');
