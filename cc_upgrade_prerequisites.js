@@ -151,6 +151,11 @@ FrozenCookies.preferenceValues = {
         'display':["Auto FTHOF Combo OFF", "Auto FTHOF Combo ON"],
         'default':0
     },
+    'autoEaster':{
+        'hint':'Switches to Easter season if Cookie Storm is active and you do not have all eggs yet',
+        'display':["Auto Easter OFF","Auto Easter ON"],
+        'default':0,
+    },
     'holdSEBank':{
         'hint':'Maintain a bank for Spontaneous Edifice (already enabled if Auto Casting SE)',
         'display':["SE Bank OFF","SE Bank ON"],
