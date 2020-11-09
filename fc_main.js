@@ -882,16 +882,14 @@ function autoFTHOFComboAction() {
 		autoFTHOFComboAction.state = 0;
 	}
 
-	if ((nextSpellName(0) == "Click Frenzy" && nextSpellName(1) == "Building Special") || (nextSpellName(1) == "Click Frenzy" && nextSpellName(0) == "Building Special")) {
-		if (autoFTHOFComboAction.state != 2) {
+	if (autoFTHOFComboAction.state != 2) {
+		if ((nextSpellName(0) == "Click Frenzy" && nextSpellName(1) == "Building Special") || 
+		    (nextSpellName(1) == "Click Frenzy" && nextSpellName(0) == "Building Special") ||
+		    (nextSpellName(0) == "Click Frenzy" && nextSpellName(1) == "Elder Frenzy") || 		
+		    (nextSpellName(1) == "Click Frenzy" && nextSpellName(0) == "Elder Frenzy")) {
 			autoFTHOFComboAction.state = 1;
 		}
-	}
-
-	if ((nextSpellName(0) == "Click Frenzy" && nextSpellName(1) == "Elder Frenzy") || (nextSpellName(1) == "Click Frenzy" && nextSpellName(0) == "Elder Frenzy")) {
-		if (autoFTHOFComboAction.state != 2) {
-			autoFTHOFComboAction.state = 1;
-		}
+		else { autoFTHOFComboAction.state = 0; }
 	}
 	
 	if (M.magic == M.magicM) {
