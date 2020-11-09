@@ -1050,6 +1050,15 @@ function autoFTHOFComboAction() {
 	}
 }
 
+function autoEasterAction() {
+
+	if (FrozenCookies.autoEaster == 0) { return; }
+
+	if (Game.hasBuff('Cookie storm') && !haveAll('easter') && Game.season != 'easter') {
+		Game.UpgradesById[209].buy()
+	}
+}
+
 function AutoFortuneClick()
 {
     switch (FrozenCookies.autoFortune)
@@ -2791,6 +2800,11 @@ function FCStart() {
     clearInterval(FrozenCookies.autoFTHOFComboBot);
     FrozenCookies.autoFTHOFComboBot = 0;
     }
+
+    if (FrozenCookies.autoEasterBot) {
+    clearInterval(FrozenCookies.autoEasterBot);
+    FrozenCookies.autoEasterBot = 0;
+    }
 	
     if (FrozenCookies.autoRigidelBot) {
     clearInterval(FrozenCookies.autoRigidelBot);
@@ -2852,6 +2866,10 @@ function FCStart() {
 
     if (FrozenCookies.autoFTHOFCombo) {
     FrozenCookies.autoFTHOFComboBot = setInterval(autoFTHOFComboAction, FrozenCookies.frequency*2)
+    }
+
+	if (FrozenCookies.autoEaster) {
+        FrozenCookies.autoEasterBot = setInterval(autoEasterAction, FrozenCookies.frequency)
     }
 	
     if (FrozenCookies.autoRigidel) {
