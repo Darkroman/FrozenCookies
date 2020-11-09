@@ -42,6 +42,9 @@ What's new?
 - Added in new buildings, synergies, and upgrades. (Idleverse building added plus new synergies and grandma upgrades)
 - Updated Spontaneous Edifice autocast for Idleverse
 - Added in building special buff check for new buildings
+- Cleaned up the logic a bit in the AutoFTHOFComboAction function
+- Spell Predict now takes into account chime, and chime + valentine/easter
+- Added an "Auto Easter". This will switch to the Easter season if a Cookie Storm is active and if not all eggs are unlocked.
 
 2019 Nov 12
 - Auto Rigidel swap function working correctly! No longer harvests too early resulting in a 50% chance of a botched harvest.
