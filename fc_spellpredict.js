@@ -39,8 +39,7 @@ nextSpell = function(i) {
     var choices = [];
     if (!spell.fail || Math.random() < (1 - failChance)) {
         Math.random();Math.random();
-        if (Game.season=='valentines' || Game.season=='easter' || Game.chimeType==1){Math.random();}
-	if ((Game.season=='valentines' || Game.season=='easter') && (Game.chimeType==1)){Math.random();}
+        if (Game.season=='valentines' || Game.season=='easter'){Math.random();}
         choices.push('<b style="color:#FFDE5F">Frenzy', '<b style="color:#FFDE5F">Lucky');
         if (!Game.hasBuff('Dragonflight')) choices.push('<b style="color:#FFD700">Click Frenzy');
         if (Math.random() < 0.1) choices.push('<b style="color:#FFDE5F">Cookie Chain', '<b style="color:#FFDE5F">Cookie Storm', 'Blab');
@@ -49,8 +48,7 @@ nextSpell = function(i) {
         if (Math.random() < 0.0001) choices.push('<b style="color:#5FFFFC">Sugar Lump');
     } else {
         Math.random();Math.random();
-        if (Game.season=='valentines' || Game.season=='easter' || Game.chimeType==1){Math.random();}
-	if ((Game.season=='valentines' || Game.season=='easter') && (Game.chimeType==1)){Math.random();}
+        if (Game.season=='valentines' || Game.season=='easter'){Math.random();}
         choices.push('<b style="color:#FF3605">Clot', '<b style="color:#FF3605">Ruin Cookies');
         if (Math.random() < 0.1) choices.push('<b style="color:#DAA520">Cursed Finger', '<b style="color:#DAA520">Elder Frenzy');
         if (Math.random() < 0.003) choices.push('<b style="color:#5FFFFC">Sugar Lump');
