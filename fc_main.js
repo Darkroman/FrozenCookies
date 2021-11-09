@@ -902,6 +902,7 @@ function autoFTHOFComboAction() {
 				var hagC = M.spellsById[4];
 				M.castSpell(hagC);
 				logEvent('AutoSpell', 'Cast Haggler\'s Charm instead of Force the Hand of Fate');
+				autoFTHOFComboAction.count = Game.Objects['Wizard tower'].amount; // Additional check to make sure Wizard Tower count is correct on sell and buyback				
 				return;
 
 			case 1:
@@ -914,6 +915,7 @@ function autoFTHOFComboAction() {
 					}
 
 					FrozenCookies.autoBuy = 0;
+					autoFTHOFComboAction.count = Game.Objects['Wizard tower'].amount; // Additional check to make sure Wizard Tower count is correct on sell and buyback
 					switch (SugarLevel)
 					{
 						case 0:
