@@ -151,6 +151,11 @@ FrozenCookies.preferenceValues = {
         'display':["Auto FTHOF Combo OFF", "Auto FTHOF Combo ON"],
         'default':0
     },
+    'auto100ConsistencyCombo':{
+        'hint':'HIGHLY EXPERIMENTAL: Does the 100% Consistency Combo but with 2 building specials',
+        'display':["Auto 100% Consistency Combo OFF", "Auto 100% Consistency Combo ON"],
+        'default':0
+    },
     'autoEaster':{
         'hint':'Switches to Easter season if Cookie Storm is active and you do not have all eggs yet',
         'display':["Auto Easter OFF","Auto Easter ON"],
