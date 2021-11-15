@@ -1052,6 +1052,177 @@ function autoFTHOFComboAction() {
 	}
 }
 
+function auto100ConsistencyComboAction() {
+	if (Game.Objects['Wizard tower'].level < 10 || FrozenCookies.auto100ConsistencyCombo == 0 || T.swaps < 2) return; // For now only works with wizard towers level 10
+	
+	if (typeof auto100ConsistencyComboAction.count == 'undefined') {
+		auto100ConsistencyComboAction.count = Game.Objects['Wizard tower'].amount;
+	}
+	
+	if (typeof auto100ConsistencyComboAction.state == 'undefined') {
+		auto100ConsistencyComboAction.state = 0;
+	}
+	
+	if (auto100ConsistencyComboAction.state == 0) {
+		if ((nextSpellName(0) == "Click Frenzy" && nextSpellName(1) == "Building Special") || 
+		    (nextSpellName(1) == "Click Frenzy" && nextSpellName(0) == "Building Special") ||
+		    (nextSpellName(0) == "Click Frenzy" && nextSpellName(1) == "Elder Frenzy") || 		
+		    (nextSpellName(1) == "Click Frenzy" && nextSpellName(0) == "Elder Frenzy")) {
+			auto100ConsistencyComboAction.state = 1;
+		}
+		else { auto100ConsistencyComboAction.state = 0; }
+	}
+	
+	if (M.magic == M.magicM) {
+		var FTHOF = M.spellsById[1];
+		
+		switch (auto100ConsistencyComboAction.state)
+		{
+			case 0: //Continue casting Haggler's Charm
+				var hagC = M.spellsById[4];
+				M.castSpell(hagC);
+				logEvent('AutoSpell', 'Cast Haggler\'s Charm instead of Force the Hand of Fate');
+							
+				return;
+
+			case 1: // Turn off auto buy
+				if (Game.hasBuff('Frenzy') && Game.hasBuff('dragon harvest') && BuildingSpecialBuff() == 1 && Game.hasBuff('Frenzy').time / 30 >= Math.ceil(13 * BuffTimeFactor()) - 1 && Game.hasBuff('dragon harvest').time / 30 >= Math.ceil(13 * BuffTimeFactor()) - 1 && BuildingBuffTime() >= Math.ceil(13 * BuffTimeFactor())) {
+					if (FrozenCookies.autoBuy > 0) {
+						auto100ConsistencyComboAction.autobuyyes = 1;
+					}
+					else {
+						auto100ConsistencyComboAction.autobuyyes = 0;
+					}
+
+					FrozenCookies.autoBuy = 0;
+					
+					auto100ConsistencyComboAction.state = 2;
+				}
+					
+				return;
+					
+				
+			case 2: // Turn off auto click golden cookie
+				if (FrozenCookies.autoGC > 0) {
+					auto100consistencyCombo.autogcyes = 1;
+				}
+				else {
+					auto100consistencyCombo.autogcyes = 0;
+				}
+				
+				FrozenCookies.autoGC = 0;
+				
+				auto100ConsistencyComboAction.state = 3;
+				
+				return;
+				
+			case 3: // Harvest garden then plant whiskerbloom
+				Game.Objects['Farm'].minigame.harvestAll();
+				
+				for (var y = 0; y <= 5; y++)
+				{
+					for (var x = 0; x <= 5; x++)
+					{
+						Game.Objects['Farm'].minigame.seedSelected = Game.Objects['Farm'].minigame.plants['whiskerbloom'].id;
+						Game.Objects['Farm'].minigame.clickTile(x,y);
+					}
+				}
+				
+				auto100ConsistencyComboAction.state = 4;
+				
+				return;
+				
+			case 4: // Change dragon auras to radiant appetite and dragon's fortune
+				Game.SetDragonAura(15, 0);
+				Game.ConfirmPrompt();
+				Game.SetDragonAura(16, 1);
+				Game.ConfirmPrompt();
+				
+				auto100ConsistencyComboAction.state = 5;
+				
+				return;
+				
+			case 5: // Cast FTHOF then sell
+				if (Game.Objects['Wizard tower'].amount >= 598) {
+					auto100ConsistencyComboAction.count = Game.Objects['Wizard tower'].amount - 1;
+					M.castSpell(FTHOF);
+					Game.Objects['Wizard tower'].sell(auto100ConsistencyComboAction.count);
+				
+					auto100ConsistencyComboAction.state = 6;
+				}
+				
+				return;
+				
+			case 6: // Cast FTHOF then buy
+				M.castSpell(FTHOF);
+				Game.Objects['Wizard tower'].buy(auto100ConsistencyComboAction.count);
+				auto100ConsistencyComboAction.count = Game.Objects['Wizard tower'].amount;
+				
+				auto100ConsistencyComboAction.state = 7;
+				
+				return;
+				
+			case 7: // Use sugar lump to refill magic
+				Game.Objects['Wizard tower'].minigame.lumpRefill.click();
+				
+				auto100ConsistencyComboAction.state = 8;
+				
+				return;
+				
+			case 8: // Cast FTHOF then sell
+				if (Game.Objects['Wizard tower'].amount >= 598) {
+					auto100ConsistencyComboAction.count = Game.Objects['Wizard tower'].amount - 1;
+					M.castSpell(FTHOF);
+					Game.Objects['Wizard tower'].sell(auto100ConsistencyComboAction.count);
+				
+					auto100ConsistencyComboAction.state = 9;
+				}
+				
+				return;
+				
+			case 9: // Cast FTHOF then buy
+				M.castSpell(FTHOF);
+				Game.Objects['Wizard tower'].buy(auto100ConsistencyComboAction.count);
+				auto100ConsistencyComboAction.count = Game.Objects['Wizard tower'].amount;
+				
+				auto100ConsistencyComboAction.state = 10;
+			
+				return;
+				
+			case 10: // Take Stock Market loans
+				Game.Objects['Bank'].minigame.takeLoan(1);
+				Game.Objects['Bank'].minigame.takeLoan(2);
+				Game.Objects['Bank'].minigame.takeLoan(3);
+				
+				auto100ConsistencyComboAction.state = 11;
+				
+				return;
+			
+			case 11: // Activate Building Special and Click Frenzy buffs
+				Game.shimmers[0].pop();
+				Game.shimmers[0].pop();
+				
+				auto100ConsistencyComboAction.state = 12;
+				
+				return;
+			
+			case 12: // Swap Holobre to ruby slot
+				swapIn(0,1);
+				
+				auto100ConsistencyComboAction.state = 13;
+				
+				return;
+				
+			case 13: // Swap Mokalsium to diamond slot
+				swapIn(8,0);
+				
+				auto100ConsistencyComboAction.state = 0;
+				
+				return;
+		}
+	}
+}
+
 function autoEasterAction() {
 
 	if (FrozenCookies.autoEaster == 0) { return; }
@@ -2869,7 +3040,11 @@ function FCStart() {
     if (FrozenCookies.autoFTHOFCombo) {
     FrozenCookies.autoFTHOFComboBot = setInterval(autoFTHOFComboAction, FrozenCookies.frequency*2)
     }
-
+    
+    if (FrozenCookies.auto100ConsistencyCombo) {
+    FrozenCookies.auto100ConsistencyComboBot = setInterval(auto100ConsistencyComboAction, FrozenCookies.frequency*2)
+    }
+    
 	if (FrozenCookies.autoEaster) {
         FrozenCookies.autoEasterBot = setInterval(autoEasterAction, FrozenCookies.frequency)
     }
