@@ -1070,7 +1070,6 @@ function auto100ConsistencyComboAction() {
 		    (nextSpellName(1) == "Click Frenzy" && nextSpellName(0) == "Elder Frenzy")) {
 			auto100ConsistencyComboAction.state = 1;
 		}
-		else { auto100ConsistencyComboAction.state = 0; }
 	}
 	
 	if (M.magic == M.magicM) {
