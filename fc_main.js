@@ -1104,10 +1104,10 @@ function auto100ConsistencyComboAction() {
 				
 			case 2: // Turn off auto click golden cookie
 				if (FrozenCookies.autoGC > 0) {
-					auto100consistencyCombo.autogcyes = 1;
+					auto100ConsistencyComboAction.autogcyes = 1;
 				}
 				else {
-					auto100consistencyCombo.autogcyes = 0;
+					auto100ConsistencyComboAction.autogcyes = 0;
 				}
 				
 				FrozenCookies.autoGC = 0;
@@ -1163,6 +1163,7 @@ function auto100ConsistencyComboAction() {
 				return;
 				
 			case 7: // Use sugar lump to refill magic
+				Game.Objects['Wizard tower'].minigame.lumpRefill.click();
 				Game.Objects['Wizard tower'].minigame.lumpRefill.click();
 				
 				auto100ConsistencyComboAction.state = 8;
