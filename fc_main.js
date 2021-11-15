@@ -1055,8 +1055,44 @@ function autoFTHOFComboAction() {
 function auto100ConsistencyComboAction() {
 	if (Game.Objects['Wizard tower'].level < 10 || FrozenCookies.auto100ConsistencyCombo == 0 || T.swaps < 2) return; // For now only works with wizard towers level 10
 	
-	if (typeof auto100ConsistencyComboAction.count == 'undefined') {
-		auto100ConsistencyComboAction.count = Game.Objects['Wizard tower'].amount;
+	if (typeof auto100ConsistencyComboAction.countFarm == 'undefined') {
+		auto100ConsistencyComboAction.countFarm = Game.Objects['Farm'].amount;
+	}
+	
+	if (typeof auto100ConsistencyComboAction.countMine == 'undefined') {
+		auto100ConsistencyComboAction.countMine = Game.Objects['Mine'].amount;
+	}
+	
+	if (typeof auto100ConsistencyComboAction.countFactory == 'undefined') {
+		auto100ConsistencyComboAction.countFactory = Game.Objects['Factory'].amount;
+	}
+	
+	if (typeof auto100ConsistencyComboAction.countBank == 'undefined') {
+		auto100ConsistencyComboAction.countBank = Game.Objects['Bank'].amount;
+	}
+	
+	if (typeof auto100ConsistencyComboAction.countTemple == 'undefined') {
+		auto100ConsistencyComboAction.countTemple = Game.Objects['Temple'].amount;
+	}
+	
+	if (typeof auto100ConsistencyComboAction.countWizard == 'undefined') {
+		auto100ConsistencyComboAction.countWizard = Game.Objects['Wizard tower'].amount;
+	}
+	
+	if (typeof auto100ConsistencyComboAction.countShipment == 'undefined') {
+		auto100ConsistencyComboAction.countShipment = Game.Objects['Shipment'].amount;
+	}
+	
+	if (typeof auto100ConsistencyComboAction.countAlchemy == 'undefined') {
+		auto100ConsistencyComboAction.countAlchemy = Game.Objects['Alchemy lab'].amount;
+	}
+	
+	if (typeof auto100ConsistencyComboAction.countTimeMach == 'undefined') {
+		auto100ConsistencyComboAction.countTimeMach = Game.Objects['Time machine'].amount;
+	}
+	
+	if (typeof auto100ConsistencyComboAction.countAntiMatter == 'undefined') {
+		auto100ConsistencyComboAction.countAntiMatter = Game.Objects['Antimatter condenser'].amount;
 	}
 	
 	if (typeof auto100ConsistencyComboAction.state == 'undefined') {
@@ -1176,7 +1212,6 @@ function auto100ConsistencyComboAction() {
 				
 			case 7: // Use sugar lump to refill magic
 				Game.Objects['Wizard tower'].minigame.lumpRefill.click();
-				Game.Objects['Wizard tower'].minigame.lumpRefill.click();
 				
 				auto100ConsistencyComboAction.state = 8;
 				
@@ -1211,23 +1246,101 @@ function auto100ConsistencyComboAction() {
 				
 				return;
 			
-			case 11: // Activate Building Special and Click Frenzy buffs
-				Game.shimmers[0].pop();
-				Game.shimmers[0].pop();
+			case 11: // If autoGodzamok is on, disable
+				if (FrozenCookies.autoGodzamok > 0) {
+					auto100ConsistencyComboAction.autogodyes = 1;
+				}
+				else {
+					auto100ConsistencyComboAction.autogodyes = 0;
+				}
+
+				FrozenCookies.autoGodzamok = 0;
 				
 				auto100ConsistencyComboAction.state = 12;
 				
 				return;
+				
 			
-			case 12: // Swap Holobre to ruby slot
-				swapIn(0,1);
+			case 12: // Activate Building Special and Click Frenzy buffs
+				Game.shimmers[0].pop();
+				Game.shimmers[0].pop();
 				
 				auto100ConsistencyComboAction.state = 13;
 				
 				return;
+			
+			case 13: // Swap Holobre to ruby slot
+				swapIn(0,1);
 				
-			case 13: // Swap Mokalsium to diamond slot
+				auto100ConsistencyComboAction.state = 14;
+				
+				return;
+			
+			case 14: // sell buildings				
+
+				Game.Objects['Farm'].sell(auto100ConsistencyComboAction.countFarm);
+				Game.Objects['Mine'].sell(auto100ConsistencyComboAction.countMine);
+				Game.Objects['Factory'].sell(auto100ConsistencyComboAction.countFactory);
+				Game.Objects['Bank'].sell(auto100ConsistencyComboAction.countBank);
+				Game.Objects['Temple'].sell(auto100ConsistencyComboAction.countTemple);
+				Game.Objects['Wizard tower'].sell(auto100ConsistencyComboAction.countWizard);
+				Game.Objects['Shipment'].sell(auto100ConsistencyComboAction.countShipment);
+				Game.Objects['Alchemy lab'].sell(auto100ConsistencyComboAction.countAlchemy);
+				Game.Objects['Time machine'].sell(auto100ConsistencyComboAction.countTimeMach);
+				Game.Objects['Antimatter condenser'].sell(auto100ConsistencyComboAction.countAntiMatter);
+				
+				auto100ConsistencyComboAction.state = 15;
+				
+				return;
+				
+			case 15: // Swap Mokalsium to diamond slot
 				swapIn(8,0);
+				
+				auto100ConsistencyComboAction.state = 16;
+				
+				return;
+			
+			case 16: // buy back buildings
+				Game.Objects['Farm'].buy(auto100ConsistencyComboAction.countFarm);
+				Game.Objects['Mine'].buy(auto100ConsistencyComboAction.countMine);
+				Game.Objects['Factory'].buy(auto100ConsistencyComboAction.countFactory);
+				Game.Objects['Bank'].buy(auto100ConsistencyComboAction.countBank);
+				Game.Objects['Temple'].buy(auto100ConsistencyComboAction.countTemple);
+				Game.Objects['Wizard tower'].buy(auto100ConsistencyComboAction.countWizard);
+				Game.Objects['Shipment'].buy(auto100ConsistencyComboAction.countShipment);
+				Game.Objects['Alchemy lab'].buy(auto100ConsistencyComboAction.countAlchemy);
+				Game.Objects['Time machine'].buy(auto100ConsistencyComboAction.countTimeMach);
+				Game.Objects['Antimatter condenser'].buy(auto100ConsistencyComboAction.countAntiMatter);
+				
+				auto100ConsistencyComboAction.state = 17;
+				
+				return;
+				
+				
+			case 17: // Turn autobuy back on if on before
+				if (auto100ConsistencyComboAction.autobuyyes == 1) {
+					FrozenCookies.autoBuy = 1;
+				}
+				
+				auto100ConsistencyComboAction.state = 18;
+				
+				return;
+				
+			case 18: // Once click frenzy buff is gone, turn autoGC on if it were on previously
+				if (!Game.hasBuff('Click frenzy')) {
+					if (auto100ConsistencyComboAction.autogcyes == 1) {
+						FrozenCookies.autoGC = 1;
+					}
+					
+					auto100ConsistencyComboAction.state = 19;
+				}
+				
+				return;
+			
+			case 19: // Re-enable autoGodzamok if it were on previously
+				if (auto100ConsistencyComboAction.autogodyes == 1) {
+					FrozenCookies.autoGodzamok = 1;
+				}
 				
 				auto100ConsistencyComboAction.state = 0;
 				
@@ -2986,6 +3099,11 @@ function FCStart() {
     clearInterval(FrozenCookies.autoFTHOFComboBot);
     FrozenCookies.autoFTHOFComboBot = 0;
     }
+	
+	if (FrozenCookies.auto100ConsistencyComboBot) {
+    clearInterval(FrozenCookies.auto100ConsistencyComboBot);
+    FrozenCookies.autoFTHOFComboBot = 0;
+	}
 
     if (FrozenCookies.autoEasterBot) {
     clearInterval(FrozenCookies.autoEasterBot);
