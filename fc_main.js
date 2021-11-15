@@ -1086,7 +1086,7 @@ function auto100ConsistencyComboAction() {
 				return;
 
 			case 1: // Turn off auto buy
-				if (Game.hasBuff('Frenzy') && Game.hasBuff('dragon harvest') && BuildingSpecialBuff() == 1 && Game.hasBuff('Frenzy').time / 30 >= Math.ceil(13 * BuffTimeFactor()) - 1 && Game.hasBuff('dragon harvest').time / 30 >= Math.ceil(13 * BuffTimeFactor()) - 1 && BuildingBuffTime() >= Math.ceil(13 * BuffTimeFactor())) {
+				if (Game.hasBuff('Frenzy') && Game.hasBuff('Dragon Harvest') && BuildingSpecialBuff() == 1 && Game.hasBuff('Frenzy').time / 30 >= Math.ceil(13 * BuffTimeFactor()) - 1 && Game.hasBuff('dragon harvest').time / 30 >= Math.ceil(13 * BuffTimeFactor()) - 1 && BuildingBuffTime() >= Math.ceil(13 * BuffTimeFactor())) {
 					if (FrozenCookies.autoBuy > 0) {
 						auto100ConsistencyComboAction.autobuyyes = 1;
 					}
