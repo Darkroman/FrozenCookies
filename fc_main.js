@@ -907,14 +907,13 @@ function autoFTHOFComboAction() {
 
 			case 1:
 				if (Game.hasBuff('Frenzy') && BuildingSpecialBuff() == 1 && Game.hasBuff('Frenzy').time / 30 >= Math.ceil(13 * BuffTimeFactor()) - 1 && BuildingBuffTime() >= Math.ceil(13 * BuffTimeFactor())) {
-					if (FrozenCookies.autoBuy > 0) {
+					if (FrozenCookies.autoBuy == 1) {
 						autoFTHOFComboAction.autobuyyes = 1;
+						FrozenCookies.autoBuy = 0;
 					}
 					else {
 						autoFTHOFComboAction.autobuyyes = 0;
 					}
-
-					FrozenCookies.autoBuy = 0;
 					
 					switch (SugarLevel)
 					{
@@ -1041,11 +1040,11 @@ function autoFTHOFComboAction() {
 				Game.Objects['Wizard tower'].buy(autoFTHOFComboAction.count);
 				autoFTHOFComboAction.count = Game.Objects['Wizard tower'].amount;
 				
-				autoFTHOFComboAction.state = 0;
-				
 				if (autoFTHOFComboAction.autobuyyes == 1) {
 					FrozenCookies.autoBuy = 1;
 				}
+				
+				autoFTHOFComboAction.state = 0;
 				
 				return;	
 		}
@@ -1123,14 +1122,13 @@ function auto100ConsistencyComboAction() {
 
 			case 1: // Turn off auto buy
 				if (Game.hasBuff('Frenzy') && Game.hasBuff('Dragon Harvest') && BuildingSpecialBuff() == 1 && Game.hasBuff('Frenzy').time / 30 >= Math.ceil(13 * BuffTimeFactor()) - 1 && Game.hasBuff('Dragon Harvest').time / 30 >= Math.ceil(13 * BuffTimeFactor()) - 1 && BuildingBuffTime() >= Math.ceil(13 * BuffTimeFactor())) {
-					if (FrozenCookies.autoBuy > 0) {
+					if (FrozenCookies.autoBuy == 1) {
 						auto100ConsistencyComboAction.autobuyyes = 1;
+						FrozenCookies.autoBuy = 0;
 					}
 					else {
 						auto100ConsistencyComboAction.autobuyyes = 0;
 					}
-
-					FrozenCookies.autoBuy = 0;
 					
 					auto100ConsistencyComboAction.state = 2;
 				}
