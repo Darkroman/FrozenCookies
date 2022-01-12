@@ -1291,8 +1291,8 @@ function auto100ConsistencyComboAction() {
 				
 				return;
 			/*	
-			case 15: // Swap Mokalsium to diamond slot
-				swapIn(8,0);
+			case 15: // Swap Mokalsium to ruby slot
+				swapIn(8,1);
 				
 				auto100ConsistencyComboAction.state = 16;
 				
