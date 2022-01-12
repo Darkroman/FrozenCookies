@@ -1099,10 +1099,10 @@ function auto100ConsistencyComboAction() {
 	}
 	
 	if (auto100ConsistencyComboAction.state == 0) {
-		if ((nextSpellName(0) == "Click Frenzy" && nextSpellName(1) == "Building Special") || 
+		if ((nextSpellName(0) == "Click Frenzy" /* && nextSpellName(1) == "Building Special") || 
 		    (nextSpellName(1) == "Click Frenzy" && nextSpellName(0) == "Building Special") ||
 		    (nextSpellName(0) == "Click Frenzy" && nextSpellName(1) == "Elder Frenzy") || 		
-		    (nextSpellName(1) == "Click Frenzy" && nextSpellName(0) == "Elder Frenzy")) {
+		    (nextSpellName(1) == "Click Frenzy" && nextSpellName(0) == "Elder Frenzy" */)) {
 			auto100ConsistencyComboAction.state = 1;
 		}
 	}
@@ -1240,10 +1240,10 @@ function auto100ConsistencyComboAction() {
 				Game.Objects['Bank'].minigame.takeLoan(2);
 				Game.Objects['Bank'].minigame.takeLoan(3);
 				
-				auto100ConsistencyComboAction.state = 11;
+				auto100ConsistencyComboAction.state = 12;
 				
 				return;
-			
+			/*
 			case 11: // If autoGodzamok is on, disable
 				if (FrozenCookies.autoGodzamok > 0) {
 					auto100ConsistencyComboAction.autogodyes = 1;
@@ -1258,22 +1258,22 @@ function auto100ConsistencyComboAction() {
 				
 				return;
 				
-			
+			*/
 			case 12: // Activate Building Special and Click Frenzy buffs
 				Game.shimmers[0].pop();
 				Game.shimmers[0].pop();
 				
-				auto100ConsistencyComboAction.state = 13;
+				auto100ConsistencyComboAction.state = 14;
 				
 				return;
-			
+			/*
 			case 13: // Swap Holobre to ruby slot
 				swapIn(0,1);
 				
 				auto100ConsistencyComboAction.state = 14;
 				
 				return;
-			
+			*/
 			case 14: // sell buildings				
 
 				Game.Objects['Farm'].sell(auto100ConsistencyComboAction.countFarm - 1);
@@ -1287,17 +1287,17 @@ function auto100ConsistencyComboAction() {
 				Game.Objects['Time machine'].sell(auto100ConsistencyComboAction.countTimeMach);
 				Game.Objects['Antimatter condenser'].sell(auto100ConsistencyComboAction.countAntiMatter);
 				
-				auto100ConsistencyComboAction.state = 15;
+				auto100ConsistencyComboAction.state = 16;
 				
 				return;
-				
+			/*	
 			case 15: // Swap Mokalsium to diamond slot
 				swapIn(8,0);
 				
 				auto100ConsistencyComboAction.state = 16;
 				
 				return;
-			
+			*/
 			case 16: // buy back buildings
 				Game.Objects['Farm'].buy(auto100ConsistencyComboAction.countFarm - 1);
 				Game.Objects['Mine'].buy(auto100ConsistencyComboAction.countMine);
@@ -1310,11 +1310,11 @@ function auto100ConsistencyComboAction() {
 				Game.Objects['Time machine'].buy(auto100ConsistencyComboAction.countTimeMach);
 				Game.Objects['Antimatter condenser'].buy(auto100ConsistencyComboAction.countAntiMatter);
 				
-				auto100ConsistencyComboAction.state = 17;
+				auto100ConsistencyComboAction.state = 18;
 				
 				return;
 				
-				
+			/*	
 			case 17: // Turn autobuy back on if on before
 				if (auto100ConsistencyComboAction.autobuyyes == 1) {
 					FrozenCookies.autoBuy = 1;
@@ -1323,7 +1323,7 @@ function auto100ConsistencyComboAction() {
 				auto100ConsistencyComboAction.state = 18;
 				
 				return;
-				
+			*/	
 			case 18: // Once click frenzy buff is gone, turn autoGC on if it were on previously
 				if (!Game.hasBuff('Click frenzy')) {
 					if (auto100ConsistencyComboAction.autogcyes == 1) {
