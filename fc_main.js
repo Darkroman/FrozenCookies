@@ -1243,7 +1243,7 @@ function auto100ConsistencyComboAction() {
 				auto100ConsistencyComboAction.state = 12;
 				
 				return;
-			/*
+			
 			case 11: // If autoGodzamok is on, disable
 				if (FrozenCookies.autoGodzamok > 0) {
 					auto100ConsistencyComboAction.autogodyes = 1;
@@ -1258,7 +1258,7 @@ function auto100ConsistencyComboAction() {
 				
 				return;
 				
-			*/
+			
 			case 12: // Activate Building Special and Click Frenzy buffs
 				Game.shimmers[0].pop();
 				Game.shimmers[0].pop();
@@ -1287,17 +1287,17 @@ function auto100ConsistencyComboAction() {
 				Game.Objects['Time machine'].sell(auto100ConsistencyComboAction.countTimeMach);
 				Game.Objects['Antimatter condenser'].sell(auto100ConsistencyComboAction.countAntiMatter);
 				
-				auto100ConsistencyComboAction.state = 16;
+				auto100ConsistencyComboAction.state = 15;
 				
 				return;
-			/*	
+				
 			case 15: // Swap Mokalsium to ruby slot
 				swapIn(8,1);
 				
 				auto100ConsistencyComboAction.state = 16;
 				
 				return;
-			*/
+			
 			case 16: // buy back buildings
 				Game.Objects['Farm'].buy(auto100ConsistencyComboAction.countFarm - 1);
 				Game.Objects['Mine'].buy(auto100ConsistencyComboAction.countMine);
@@ -1310,7 +1310,10 @@ function auto100ConsistencyComboAction() {
 				Game.Objects['Time machine'].buy(auto100ConsistencyComboAction.countTimeMach);
 				Game.Objects['Antimatter condenser'].buy(auto100ConsistencyComboAction.countAntiMatter);
 				
-				auto100ConsistencyComboAction.state = 18;
+				if (Game.hasBuff('Click frenzy')) {
+					auto100ConsistencyComboAction.state = 14;
+				else
+					auto100ConsistencyComboAction.state = 18;
 				
 				return;
 				
