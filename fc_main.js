@@ -1240,7 +1240,7 @@ function auto100ConsistencyComboAction() {
 				Game.Objects['Bank'].minigame.takeLoan(2);
 				Game.Objects['Bank'].minigame.takeLoan(3);
 				
-				auto100ConsistencyComboAction.state = 12;
+				auto100ConsistencyComboAction.state = 11;
 				
 				return;
 			
@@ -1313,11 +1313,11 @@ function auto100ConsistencyComboAction() {
 				if (Game.hasBuff('Click frenzy')) {
 					auto100ConsistencyComboAction.state = 14;
 				else
-					auto100ConsistencyComboAction.state = 18;
+					auto100ConsistencyComboAction.state = 17;
 				
 				return;
 				
-			/*	
+				
 			case 17: // Turn autobuy back on if on before
 				if (auto100ConsistencyComboAction.autobuyyes == 1) {
 					FrozenCookies.autoBuy = 1;
@@ -1326,7 +1326,7 @@ function auto100ConsistencyComboAction() {
 				auto100ConsistencyComboAction.state = 18;
 				
 				return;
-			*/	
+				
 			case 18: // Once click frenzy buff is gone, turn autoGC on if it were on previously
 				if (!Game.hasBuff('Click frenzy')) {
 					if (auto100ConsistencyComboAction.autogcyes == 1) {
