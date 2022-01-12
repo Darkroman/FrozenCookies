@@ -1312,9 +1312,10 @@ function auto100ConsistencyComboAction() {
 				
 				if (Game.hasBuff('Click frenzy')) {
 					auto100ConsistencyComboAction.state = 14;
-				else
+				}
+				else {
 					auto100ConsistencyComboAction.state = 17;
-				
+				}
 				return;
 				
 				
