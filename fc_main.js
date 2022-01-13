@@ -1313,8 +1313,8 @@ function auto100ConsistencyComboAction() {
 				auto100ConsistencyComboAction.state = 17;
 
 				return;
-			case 17 // Perform custom autogodzamok
-				if (Game.hasGod('ruin') && (!Game.hasBuff('Devastation')) && hasClickBuff())
+			case 17: // Perform custom autogodzamok
+				if ((Game.hasGod('ruin') && (!Game.hasBuff('Devastation')) && hasClickBuff())
 				{
 					if (Game.Objects['Farm'].amount >= 10)
 					{
