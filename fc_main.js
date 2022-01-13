@@ -1267,14 +1267,7 @@ function auto100ConsistencyComboAction() {
 				
 				return;
 			
-			case 13: // Swap Holobre to ruby slot
-				swapIn(0,1);
-				
-				auto100ConsistencyComboAction.state = 14;
-				
-				return;
-			
-			case 14: // sell buildings				
+			case 13: // sell buildings				
 
 				Game.Objects['Farm'].sell(auto100ConsistencyComboAction.countFarm - 1);
 				Game.Objects['Mine'].sell(auto100ConsistencyComboAction.countMine);
@@ -1287,18 +1280,18 @@ function auto100ConsistencyComboAction() {
 				Game.Objects['Time machine'].sell(auto100ConsistencyComboAction.countTimeMach);
 				Game.Objects['Antimatter condenser'].sell(auto100ConsistencyComboAction.countAntiMatter);
 				
+				auto100ConsistencyComboAction.state = 14;
+				
+				return;
+				
+			case 14: // Swap Mokalsium to diamond slot
+				swapIn(8,1);
+				
 				auto100ConsistencyComboAction.state = 15;
 				
 				return;
-				
-			case 15: // Swap Mokalsium to diamond slot
-				swapIn(8,0);
-				
-				auto100ConsistencyComboAction.state = 16;
-				
-				return;
 			
-			case 16: // buy back buildings
+			case 15: // buy back buildings
 				Game.Objects['Farm'].buy(auto100ConsistencyComboAction.countFarm - 1);
 				Game.Objects['Mine'].buy(auto100ConsistencyComboAction.countMine);
 				Game.Objects['Factory'].buy(auto100ConsistencyComboAction.countFactory);
@@ -1310,11 +1303,11 @@ function auto100ConsistencyComboAction() {
 				Game.Objects['Time machine'].buy(auto100ConsistencyComboAction.countTimeMach);
 				Game.Objects['Antimatter condenser'].buy(auto100ConsistencyComboAction.countAntiMatter);
 								
-				auto100ConsistencyComboAction.state = 18;
+				auto100ConsistencyComboAction.state = 16;
 
 				return;
-			/*	
-			case 17: // Perform custom autogodzamok
+	
+			case 16: // Perform custom autogodzamok
 				if (((Game.hasGod('ruin')) && (!Game.hasBuff('Devastation'))) && hasClickBuff())
 				{
 					if (Game.Objects['Farm'].amount >= 10)
@@ -1347,32 +1340,32 @@ function auto100ConsistencyComboAction() {
 				
 				if (!hasClickBuff())
 				{
-					auto100ConsistencyComboAction.state = 18;
+					auto100ConsistencyComboAction.state = 17;
 				}
 				
 				return;
-			*/	
-			case 18: // Turn autobuy back on if on before
+
+			case 17: // Turn autobuy back on if on before
 				if (auto100ConsistencyComboAction.autobuyyes == 1) {
 					FrozenCookies.autoBuy = 1;
 				}
 				
-				auto100ConsistencyComboAction.state = 19;
+				auto100ConsistencyComboAction.state = 18;
 				
 				return;
 				
-			case 19: // Once click frenzy buff is gone, turn autoGC on if it were on previously
+			case 18: // Once click frenzy buff is gone, turn autoGC on if it were on previously
 				if (!Game.hasBuff('Click frenzy')) {
 					if (auto100ConsistencyComboAction.autogcyes == 1) {
 						FrozenCookies.autoGC = 1;
 					}
 					
-					auto100ConsistencyComboAction.state = 20;
+					auto100ConsistencyComboAction.state = 19;
 				}
 				
 				return;
 			
-			case 20: // Re-enable autoGodzamok if it were on previously
+			case 19: // Re-enable autoGodzamok if it were on previously
 				if (auto100ConsistencyComboAction.autogodyes == 1) {
 					FrozenCookies.autoGodzamok = 1;
 				}
