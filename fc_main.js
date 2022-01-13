@@ -1263,7 +1263,7 @@ function auto100ConsistencyComboAction() {
 				Game.shimmers[0].pop();
 				Game.shimmers[0].pop();
 				
-				auto100ConsistencyComboAction.state = 14;
+				auto100ConsistencyComboAction.state = 13;
 				
 				return;
 			
