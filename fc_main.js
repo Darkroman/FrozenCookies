@@ -1266,14 +1266,14 @@ function auto100ConsistencyComboAction() {
 				auto100ConsistencyComboAction.state = 14;
 				
 				return;
-			/*
+			
 			case 13: // Swap Holobre to ruby slot
 				swapIn(0,1);
 				
 				auto100ConsistencyComboAction.state = 14;
 				
 				return;
-			*/
+			
 			case 14: // sell buildings				
 
 				Game.Objects['Farm'].sell(auto100ConsistencyComboAction.countFarm - 1);
@@ -1291,8 +1291,8 @@ function auto100ConsistencyComboAction() {
 				
 				return;
 				
-			case 15: // Swap Mokalsium to ruby slot
-				swapIn(8,1);
+			case 15: // Swap Mokalsium to diamond slot
+				swapIn(8,0);
 				
 				auto100ConsistencyComboAction.state = 16;
 				
@@ -1310,10 +1310,10 @@ function auto100ConsistencyComboAction() {
 				Game.Objects['Time machine'].buy(auto100ConsistencyComboAction.countTimeMach);
 				Game.Objects['Antimatter condenser'].buy(auto100ConsistencyComboAction.countAntiMatter);
 								
-				auto100ConsistencyComboAction.state = 17;
+				auto100ConsistencyComboAction.state = 18;
 
 				return;
-				
+			/*	
 			case 17: // Perform custom autogodzamok
 				if (((Game.hasGod('ruin')) && (!Game.hasBuff('Devastation'))) && hasClickBuff())
 				{
@@ -1351,7 +1351,7 @@ function auto100ConsistencyComboAction() {
 				}
 				
 				return;
-				
+			*/	
 			case 18: // Turn autobuy back on if on before
 				if (auto100ConsistencyComboAction.autobuyyes == 1) {
 					FrozenCookies.autoBuy = 1;
