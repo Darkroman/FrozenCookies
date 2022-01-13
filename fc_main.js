@@ -1099,10 +1099,10 @@ function auto100ConsistencyComboAction() {
 	}
 	
 	if (auto100ConsistencyComboAction.state == 0) {
-		if ((nextSpellName(0) == "Click Frenzy" /* && nextSpellName(1) == "Building Special") || 
+		if ((nextSpellName(0) == "Click Frenzy" && nextSpellName(1) == "Building Special") || 
 		    (nextSpellName(1) == "Click Frenzy" && nextSpellName(0) == "Building Special") ||
 		    (nextSpellName(0) == "Click Frenzy" && nextSpellName(1) == "Elder Frenzy") || 		
-		    (nextSpellName(1) == "Click Frenzy" && nextSpellName(0) == "Elder Frenzy" */)) {
+		    (nextSpellName(1) == "Click Frenzy" && nextSpellName(0) == "Elder Frenzy" )) {
 			auto100ConsistencyComboAction.state = 1;
 		}
 	}
