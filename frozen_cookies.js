@@ -13,8 +13,8 @@ var FrozenCookies = {
 
 // Load external libraries
 var script_list = [
-    '//ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js',
-    '//ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css',
+    '//ajax.googleapis.com/ajax/libs/jqueryui/1.13.1/jquery-ui.min.js',
+    '//ajax.googleapis.com/ajax/libs/jqueryui/1.13.1/themes/smoothness/jquery-ui.css',
     '//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js',
     '//cdnjs.cloudflare.com/ajax/libs/jcanvas/20.1.1/min/jcanvas.min.js',
     '//cdnjs.cloudflare.com/ajax/libs/jqPlot/1.0.9/jquery.jqplot.min.js',
