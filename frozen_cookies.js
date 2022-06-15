@@ -67,7 +67,7 @@ function loadScript(id) {
 function fcInit() {
     var jquery = document.createElement('script');
     jquery.setAttribute('type', 'text/javascript');
-    jquery.setAttribute('src', '//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js');
+    jquery.setAttribute('src', '//ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js');
     jquery.onload = function() {
         loadScript(0);
     };
